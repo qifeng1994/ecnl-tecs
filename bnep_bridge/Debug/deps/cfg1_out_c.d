@@ -1,0 +1,1 @@
+cfg1_out.timestamp: ../../asp3_dcre/target/gr_peach_gcc/target_kernel.cfg ../src/main.cfg ../../asp3_dcre/target/gr_peach_gcc/target_timer.cfg ../../asp3_dcre/arch/arm_gcc/rza1/chip_timer.cfg ./gen/tecsgen.cfg ../../asp3_dcre/mbed/mbed_stub.cfg ../../ntshell/fatfs/ffarch.cfg ../../asp3_dcre/../usbhost/src/usb_hbth.cfg ../src/if_mbed.cfg ../../ntshell/src/ntshell_main.cfg
