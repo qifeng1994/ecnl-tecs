@@ -1,0 +1,56 @@
+{
+  "_from": "ssng",
+  "_id": "ssng@0.0.15",
+  "_inBundle": false,
+  "_integrity": "sha512-RBjWYSZe1MaWVHzrznb8y80+HjC0jgtI+M7Q61NTi21B9AWqfl5j/9tluthISEiMyhhjRXKgBB9tbbN2/LmEMw==",
+  "_location": "/ssng",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ssng",
+    "name": "ssng",
+    "escapedName": "ssng",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ssng/-/ssng-0.0.15.tgz",
+  "_shasum": "bf40758a4ed6846d920249806159274d90a95aad",
+  "_spec": "ssng",
+  "_where": "C:\\Users\\maido",
+  "author": {
+    "name": "Hiroyuki Fujita",
+    "email": "hiro.fujita@he.kanagawa-it.ac.jp",
+    "url": "https://github.com/fujita-kait"
+  },
+  "bin": {
+    "ssng": "app.js"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "express": "^4.16.4",
+    "ws": "^6.2.0"
+  },
+  "deprecated": false,
+  "description": "SSNG, a tool for ECHONET Lite packets",
+  "files": [
+    "html/*"
+  ],
+  "keywords": [
+    "Echonet Lite",
+    "SSNG",
+    "KAIT"
+  ],
+  "license": "MIT",
+  "main": "app.js",
+  "name": "ssng",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.15"
+}
