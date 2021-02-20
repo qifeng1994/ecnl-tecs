@@ -19,14 +19,28 @@
 /* eiTask : omitted by entry port optimize */
 
 /* entry port descriptor referenced by call port (differ from actual definition) #_CPEPD_# */
+extern struct tag_sTaskBody_VDES MainTask_eTaskBody_des;
+
+extern struct tag_sTaskBody_VDES LogTask_LogTaskMain_eLogTaskBody_des;
 
 /* call port array #_CPA_# */
+
 
 /* array of attr/var #_AVAI_# */
 /* cell INIB #_INIB_# */
 tTask_INIB tTask_INIB_tab[] = {
-    /* cell: tTask_CB_tab[0]:  LogTask_Task id=1 */
+    /* cell: tTask_CB_tab[0]:  Task id=1 */
     {
+        /* call port (INIB) #_CP_# */ 
+        &MainTask_eTaskBody_des,                 /* cTaskBody #_CCP1_# */
+        /* entry port #_EP_# */ 
+        /* attribute(RO) */ 
+        TSKID_tTask_Task,                        /* id */
+    },
+    /* cell: tTask_CB_tab[1]:  LogTask_Task id=2 */
+    {
+        /* call port (INIB) #_CP_# */ 
+        &LogTask_LogTaskMain_eLogTaskBody_des,   /* cTaskBody #_CCP1_# */
         /* entry port #_EP_# */ 
         /* attribute(RO) */ 
         TSKID_tTask_LogTask_Task,                /* id */
@@ -34,6 +48,8 @@ tTask_INIB tTask_INIB_tab[] = {
 };
 
 /* entry port descriptor #_EPD_# */
+/* eTask : omitted by entry port optimize */
+/* eiTask : omitted by entry port optimize */
 /* eTask : omitted by entry port optimize */
 /* eiTask : omitted by entry port optimize */
 /* CB initialize code #_CIC_# */

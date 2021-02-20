@@ -33,6 +33,7 @@ extern "C" {
 /* cell INIB type definition #_CIP_# */
 typedef const struct tag_tTask_INIB {
     /* call port #_TCP_# */
+    struct tag_sTaskBody_VDES const*cTaskBody;
     /* call port #_NEP_# */ 
     /* attribute(RO) #_ATO_# */ 
     ID             id;
@@ -73,17 +74,8 @@ Inline ER           tTask_eiTask_releaseWait(tTask_IDX idx);
 #endif /* __cplusplus */
 #endif /* TOPPERS_MACRO_ONLY */
 
-/* to get the definition of CB type of referenced celltype for optimization #_ICT_# */
-#ifndef  TOPPERS_CB_TYPE_ONLY
-#define  tTask_CB_TYPE_ONLY
-#define TOPPERS_CB_TYPE_ONLY
-#endif  /* TOPPERS_CB_TYPE_ONLY */
-#include "tLogTaskMain_tecsgen.h"
-#ifdef  tTask_CB_TYPE_ONLY
-#undef TOPPERS_CB_TYPE_ONLY
-#endif /* tTask_CB_TYPE_ONLY */
 #define tTask_ID_BASE               (1)  /* ID Base  #_NIDB_# */
-#define tTask_N_CELL                (1)  /*  number of cells  #_NCEL_# */
+#define tTask_N_CELL                (2)  /*  number of cells  #_NCEL_# */
 
 /* IDX validation macro #_CVI_# */
 #define tTask_VALID_IDX(IDX) (1)
@@ -102,8 +94,8 @@ Inline ER           tTask_eiTask_releaseWait(tTask_IDX idx);
 #ifndef TECSFLOW
  /* call port function macro #_CPM_# */
 #define tTask_cTaskBody_main( p_that ) \
-	  tLogTaskMain_eLogTaskBody_main( \
-	    )
+	  (p_that)->cTaskBody->VMT->main__T( \
+	   (p_that)->cTaskBody )
 
 #else  /* TECSFLOW */
 #define tTask_cTaskBody_main( p_that ) \
@@ -144,7 +136,7 @@ extern "C" {
 
 /* call port function macro (abbrev) #_CPMA_# */
 #define cTaskBody_main( ) \
-          ((void)p_cellcb, tTask_cTaskBody_main( p_cellcb ))
+          tTask_cTaskBody_main( p_cellcb )
 
 
 

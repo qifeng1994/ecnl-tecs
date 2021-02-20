@@ -186,6 +186,8 @@ extern "C" {
 #endif /* __cplusplus */
 
 /* prototype declaration of entry port function (referenced when VMT useless optimise enabled) #_EPSP_# */
+/* eLogTaskBody */
+void           tLogTaskMain_eLogTaskBody_main_skel( const struct tag_sTaskBody_VDES *epd);
 /* eLogTaskTerminate */
 void           tLogTaskMain_eLogTaskTerminate_main_skel( const struct tag_sRoutineBody_VDES *epd);
 

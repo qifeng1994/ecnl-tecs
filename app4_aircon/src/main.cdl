@@ -120,3 +120,31 @@ cell tBanner Banner {
 	targetName      = BannerTargetName;
 	copyrightNotice = BannerCopyrightNotice;
 };
+
+//---------------------------------------------------
+signature sAircon{
+	void setOn(void);
+	void setOff(void);
+};
+celltype tMainTask{
+	entry sTaskBody eTaskBody;
+	call sAircon cAircon;
+};
+cell tMainTask MainTask{
+	cAircon=Aircon.eAircon;
+};
+
+celltype tAircon{
+	entry sAircon eAircon;
+};
+cell tTask Task{
+	cTaskBody = MainTask.eTaskBody;
+	attribute = C_EXP("TA_ACT");
+	stackSize = 1024;
+	priority = 10;
+};
+
+
+cell tAircon Aircon{
+
+};

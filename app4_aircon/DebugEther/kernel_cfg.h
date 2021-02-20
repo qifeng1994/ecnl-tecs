@@ -2,21 +2,22 @@
 #ifndef TOPPERS_KERNEL_CFG_H
 #define TOPPERS_KERNEL_CFG_H
 
-#define TNUM_TSKID	14
-#define TSKID_tTask_LogTask_Task	1
-#define IF_MBED_PHY_TASK	2
-#define NET_TIMER_TASK	3
-#define ETHER_OUTPUT_TASK	4
-#define ETHER_INPUT_TASK	5
-#define TCP_OUTPUT_TASK	6
-#define UDP_OUTPUT_TASK	7
-#define NET_MISC_TASK	8
-#define FFARCH_TASK	9
-#define NTSHELL_TASK	10
-#define ECHONET_SVC_TASK	11
-#define ECHONET_UDP_TASK	12
-#define ECHONET_MAIN_TASK	13
-#define MAIN_TASK	14
+#define TNUM_TSKID	15
+#define TSKID_tTask_Task	1
+#define TSKID_tTask_LogTask_Task	2
+#define IF_MBED_PHY_TASK	3
+#define NET_TIMER_TASK	4
+#define ETHER_OUTPUT_TASK	5
+#define ETHER_INPUT_TASK	6
+#define TCP_OUTPUT_TASK	7
+#define UDP_OUTPUT_TASK	8
+#define NET_MISC_TASK	9
+#define FFARCH_TASK	10
+#define NTSHELL_TASK	11
+#define ECHONET_SVC_TASK	12
+#define ECHONET_UDP_TASK	13
+#define ECHONET_MAIN_TASK	14
+#define MAIN_TASK	15
 
 #define TNUM_SEMID	40
 #define SEMID_tSemaphore_SerialPort1_ReceiveSemaphore	1

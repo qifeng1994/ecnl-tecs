@@ -1,7 +1,7 @@
 # Celltype: tTask  #_MDEP_#
-$(_TECS_OBJ_DIR)tTask_tecsgen.o : tTask_tecsgen.c  $(GEN_DIR)/tLogTaskMain_tecsgen.h  $(GEN_DIR)/tPutLogSIOPort_tecsgen.h  $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h  $(GEN_DIR)/tSemaphore_tecsgen.h  $(GEN_DIR)/tSerialPortMain_tecsgen.h  $(GEN_DIR)/tSysLog_tecsgen.h  tSemaphore_inline.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/sTask_tecsgen.h $(GEN_DIR)/siTask_tecsgen.h $(GEN_DIR)/tTask_factory.h $(GEN_DIR)/tTask_tecsgen.h tTask_inline.h
-$(_TECS_OBJ_DIR)tTask_templ.o : tTask_templ.c  $(GEN_DIR)/tLogTaskMain_tecsgen.h  $(GEN_DIR)/tPutLogSIOPort_tecsgen.h  $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h  $(GEN_DIR)/tSemaphore_tecsgen.h  $(GEN_DIR)/tSerialPortMain_tecsgen.h  $(GEN_DIR)/tSysLog_tecsgen.h  tSemaphore_inline.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/sTask_tecsgen.h $(GEN_DIR)/siTask_tecsgen.h $(GEN_DIR)/tTask_factory.h $(GEN_DIR)/tTask_tecsgen.h tTask_inline.h
-$(_TECS_OBJ_DIR)tTask.o : tTask.c  $(GEN_DIR)/tLogTaskMain_tecsgen.h  $(GEN_DIR)/tPutLogSIOPort_tecsgen.h  $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h  $(GEN_DIR)/tSemaphore_tecsgen.h  $(GEN_DIR)/tSerialPortMain_tecsgen.h  $(GEN_DIR)/tSysLog_tecsgen.h  tSemaphore_inline.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/sTask_tecsgen.h $(GEN_DIR)/siTask_tecsgen.h $(GEN_DIR)/tTask_factory.h $(GEN_DIR)/tTask_tecsgen.h tTask_inline.h
+$(_TECS_OBJ_DIR)tTask_tecsgen.o : tTask_tecsgen.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/sTask_tecsgen.h $(GEN_DIR)/siTask_tecsgen.h $(GEN_DIR)/tTask_factory.h $(GEN_DIR)/tTask_tecsgen.h tTask_inline.h
+$(_TECS_OBJ_DIR)tTask_templ.o : tTask_templ.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/sTask_tecsgen.h $(GEN_DIR)/siTask_tecsgen.h $(GEN_DIR)/tTask_factory.h $(GEN_DIR)/tTask_tecsgen.h tTask_inline.h
+$(_TECS_OBJ_DIR)tTask.o : tTask.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/sTask_tecsgen.h $(GEN_DIR)/siTask_tecsgen.h $(GEN_DIR)/tTask_factory.h $(GEN_DIR)/tTask_tecsgen.h tTask_inline.h
 
 # Celltype: tSemaphore  #_MDEP_#
 $(_TECS_OBJ_DIR)tSemaphore_tecsgen.o : tSemaphore_tecsgen.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSemaphore_tecsgen.h $(GEN_DIR)/siSemaphore_tecsgen.h $(GEN_DIR)/tSemaphore_factory.h $(GEN_DIR)/tSemaphore_tecsgen.h tSemaphore_inline.h
@@ -57,4 +57,14 @@ $(_TECS_OBJ_DIR)tPutLogSIOPort.o : tPutLogSIOPort.c  $(GEN_DIR)/tSIOPortNTShellM
 $(_TECS_OBJ_DIR)tSIOPortNTShellMain_tecsgen.o : tSIOPortNTShellMain_tecsgen.c  $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h  $(GEN_DIR)/tSemaphore_tecsgen.h  $(GEN_DIR)/tSerialPortMain_tecsgen.h  tSemaphore_inline.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sRoutineBody_tecsgen.h $(GEN_DIR)/sSIOPort_tecsgen.h $(GEN_DIR)/siSIOCBR_tecsgen.h $(GEN_DIR)/tSIOPortNTShellMain_factory.h $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h
 $(_TECS_OBJ_DIR)tSIOPortNTShellMain_templ.o : tSIOPortNTShellMain_templ.c  $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h  $(GEN_DIR)/tSemaphore_tecsgen.h  $(GEN_DIR)/tSerialPortMain_tecsgen.h  tSemaphore_inline.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sRoutineBody_tecsgen.h $(GEN_DIR)/sSIOPort_tecsgen.h $(GEN_DIR)/siSIOCBR_tecsgen.h $(GEN_DIR)/tSIOPortNTShellMain_factory.h $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h
 $(_TECS_OBJ_DIR)tSIOPortNTShellMain.o : tSIOPortNTShellMain.c  $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h  $(GEN_DIR)/tSemaphore_tecsgen.h  $(GEN_DIR)/tSerialPortMain_tecsgen.h  tSemaphore_inline.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sRoutineBody_tecsgen.h $(GEN_DIR)/sSIOPort_tecsgen.h $(GEN_DIR)/siSIOCBR_tecsgen.h $(GEN_DIR)/tSIOPortNTShellMain_factory.h $(GEN_DIR)/tSIOPortNTShellMain_tecsgen.h
+
+# Celltype: tMainTask  #_MDEP_#
+$(_TECS_OBJ_DIR)tMainTask_tecsgen.o : tMainTask_tecsgen.c  $(GEN_DIR)/tAircon_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sAircon_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/tMainTask_factory.h $(GEN_DIR)/tMainTask_tecsgen.h
+$(_TECS_OBJ_DIR)tMainTask_templ.o : tMainTask_templ.c  $(GEN_DIR)/tAircon_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sAircon_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/tMainTask_factory.h $(GEN_DIR)/tMainTask_tecsgen.h
+$(_TECS_OBJ_DIR)tMainTask.o : tMainTask.c  $(GEN_DIR)/tAircon_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sAircon_tecsgen.h $(GEN_DIR)/sTaskBody_tecsgen.h $(GEN_DIR)/tMainTask_factory.h $(GEN_DIR)/tMainTask_tecsgen.h
+
+# Celltype: tAircon  #_MDEP_#
+$(_TECS_OBJ_DIR)tAircon_tecsgen.o : tAircon_tecsgen.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sAircon_tecsgen.h $(GEN_DIR)/tAircon_factory.h $(GEN_DIR)/tAircon_tecsgen.h
+$(_TECS_OBJ_DIR)tAircon_templ.o : tAircon_templ.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sAircon_tecsgen.h $(GEN_DIR)/tAircon_factory.h $(GEN_DIR)/tAircon_tecsgen.h
+$(_TECS_OBJ_DIR)tAircon.o : tAircon.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sAircon_tecsgen.h $(GEN_DIR)/tAircon_factory.h $(GEN_DIR)/tAircon_tecsgen.h
 

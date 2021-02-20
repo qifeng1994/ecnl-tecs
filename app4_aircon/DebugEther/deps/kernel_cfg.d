@@ -132,19 +132,11 @@ kernel_cfg.o: kernel_cfg.c ../../asp3_dcre/kernel/kernel_int.h \
  ../../asp3_dcre/arch/arm_gcc/common/core_syssvc.h \
  ../../musl-1.1.18/include/termios.h \
  ../../musl-1.1.18/include/bits/termios.h gen/sTask_tecsgen.h \
- gen/siTask_tecsgen.h gen/sTaskBody_tecsgen.h gen/tLogTaskMain_tecsgen.h \
- gen/sRoutineBody_tecsgen.h gen/sLogTask_tecsgen.h \
- gen/sSerialPort_tecsgen.h gen/snSerialPortManage_tecsgen.h \
- gen/sSysLog_tecsgen.h gen/sPutLog_tecsgen.h \
- gen/tSerialPortMain_tecsgen.h gen/sSIOPort_tecsgen.h \
- gen/siSIOCBR_tecsgen.h gen/sSemaphore_tecsgen.h \
- gen/siSemaphore_tecsgen.h gen/tSIOPortNTShellMain_tecsgen.h \
- gen/tSemaphore_tecsgen.h ../../asp3_dcre/tecs_kernel/tSemaphore_inline.h \
- gen/tSysLog_tecsgen.h gen/tPutLogSIOPort_tecsgen.h \
+ gen/siTask_tecsgen.h gen/sTaskBody_tecsgen.h \
  ../../asp3_dcre/tecs_kernel/tTask_inline.h \
- gen/tInitializeRoutine_tecsgen.h gen/tBannerMain_tecsgen.h \
- gen/tTerminateRoutine_tecsgen.h ../../asp3_dcre/include/itron.h \
- ../../asp3_dcre/tinet/tinet_defs.h \
+ gen/tInitializeRoutine_tecsgen.h gen/sRoutineBody_tecsgen.h \
+ gen/tBannerMain_tecsgen.h gen/tTerminateRoutine_tecsgen.h \
+ ../../asp3_dcre/include/itron.h ../../asp3_dcre/tinet/tinet_defs.h \
  ../../asp3_dcre/tinet/tinet_kernel_defs.h \
  ../../asp3_dcre/target/gr_peach_gcc/tinet_target_defs.h \
  ../../asp3_dcre/tinet/net/if.h ../../asp3_dcre/tinet/net/if_ppp.h \
@@ -487,43 +479,11 @@ gen/siTask_tecsgen.h:
 
 gen/sTaskBody_tecsgen.h:
 
-gen/tLogTaskMain_tecsgen.h:
-
-gen/sRoutineBody_tecsgen.h:
-
-gen/sLogTask_tecsgen.h:
-
-gen/sSerialPort_tecsgen.h:
-
-gen/snSerialPortManage_tecsgen.h:
-
-gen/sSysLog_tecsgen.h:
-
-gen/sPutLog_tecsgen.h:
-
-gen/tSerialPortMain_tecsgen.h:
-
-gen/sSIOPort_tecsgen.h:
-
-gen/siSIOCBR_tecsgen.h:
-
-gen/sSemaphore_tecsgen.h:
-
-gen/siSemaphore_tecsgen.h:
-
-gen/tSIOPortNTShellMain_tecsgen.h:
-
-gen/tSemaphore_tecsgen.h:
-
-../../asp3_dcre/tecs_kernel/tSemaphore_inline.h:
-
-gen/tSysLog_tecsgen.h:
-
-gen/tPutLogSIOPort_tecsgen.h:
-
 ../../asp3_dcre/tecs_kernel/tTask_inline.h:
 
 gen/tInitializeRoutine_tecsgen.h:
+
+gen/sRoutineBody_tecsgen.h:
 
 gen/tBannerMain_tecsgen.h:
 

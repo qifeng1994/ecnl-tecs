@@ -6,7 +6,11 @@
 #include "tLogTaskMain_factory.h"
 
 /* entry port descriptor type #_EDT_# */
-/* eLogTaskBody : omitted by entry port optimize */
+/* eLogTaskBody */
+struct tag_tLogTaskMain_eLogTaskBody_DES {
+    const struct tag_sTaskBody_VMT *vmt;
+    tLogTaskMain_IDX  idx;
+};
 
 /* eLogTaskTerminate */
 struct tag_tLogTaskMain_eLogTaskTerminate_DES {
@@ -17,7 +21,11 @@ struct tag_tLogTaskMain_eLogTaskTerminate_DES {
 /* eLogTask : omitted by entry port optimize */
 
 /* entry port skelton function #_EPSF_# */
-/* eLogTaskBody : omitted by entry port optimize */
+/* eLogTaskBody */
+void           tLogTaskMain_eLogTaskBody_main_skel( const struct tag_sTaskBody_VDES *epd)
+{
+    tLogTaskMain_eLogTaskBody_main( );
+}
 /* eLogTaskTerminate */
 void           tLogTaskMain_eLogTaskTerminate_main_skel( const struct tag_sRoutineBody_VDES *epd)
 {
@@ -26,7 +34,10 @@ void           tLogTaskMain_eLogTaskTerminate_main_skel( const struct tag_sRouti
 /* eLogTask : omitted by entry port optimize */
 
 /* entry port skelton function table #_EPSFT_# */
-/* eLogTaskBody : omitted by entry port optimize */
+/* eLogTaskBody */
+const struct tag_sTaskBody_VMT tLogTaskMain_eLogTaskBody_MT_ = {
+    tLogTaskMain_eLogTaskBody_main_skel,
+};
 /* eLogTaskTerminate */
 const struct tag_sRoutineBody_VMT tLogTaskMain_eLogTaskTerminate_MT_ = {
     tLogTaskMain_eLogTaskTerminate_main_skel,
@@ -48,7 +59,11 @@ tLogTaskMain_INIB tLogTaskMain_SINGLE_CELL_INIB =
 };
 
 /* entry port descriptor #_EPD_# */
-/* eLogTaskBody : omitted by entry port optimize */
+extern const struct tag_tLogTaskMain_eLogTaskBody_DES LogTask_LogTaskMain_eLogTaskBody_des;
+const struct tag_tLogTaskMain_eLogTaskBody_DES LogTask_LogTaskMain_eLogTaskBody_des = {
+    &tLogTaskMain_eLogTaskBody_MT_,
+    &tLogTaskMain_SINGLE_CELL_INIB,      /* INIB 3 */
+};
 extern const struct tag_tLogTaskMain_eLogTaskTerminate_DES LogTask_LogTaskMain_eLogTaskTerminate_des;
 const struct tag_tLogTaskMain_eLogTaskTerminate_DES LogTask_LogTaskMain_eLogTaskTerminate_des = {
     &tLogTaskMain_eLogTaskTerminate_MT_,

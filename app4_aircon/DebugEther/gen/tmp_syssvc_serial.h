@@ -1,26 +1,26 @@
-/*  1 "./gen/tmp_C_src.c" */
-/*  1 "<built-in>" */
-/*  1 "<command-line>" */
-/*  1 "./gen/tmp_C_src.c" */
-/*  34 "./gen/tmp_C_src.c" */
+/*  1 "./gen/tmp_C_src.c" */
+/*  1 "<built-in>" */
+/*  1 "<command-line>" */
+/*  1 "./gen/tmp_C_src.c" */
+/*  34 "./gen/tmp_C_src.c" */
 typedef struct { int dummy; } va_list;
 
-/*  1 "../../asp3_dcre/syssvc/serial.h" 1 */
-/*  50 "../../asp3_dcre/syssvc/serial.h" */
-/*  1 "../../asp3_dcre/include/kernel.h" 1 */
-/*  64 "../../asp3_dcre/include/kernel.h" */
-/*  1 "../../asp3_dcre/include/t_stddef.h" 1 */
-/*  65 "../../asp3_dcre/include/t_stddef.h" */
-/*  1 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 1 */
-/*  61 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" */
-/*  1 "../../musl-1.1.18/include/stdint.h" 1 */
-/*  20 "../../musl-1.1.18/include/stdint.h" */
-/*  1 "../../musl-1.1.18/include/bits/alltypes.h" 1 */
-/*  93 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  1 "../../asp3_dcre/syssvc/serial.h" 1 */
+/*  50 "../../asp3_dcre/syssvc/serial.h" */
+/*  1 "../../asp3_dcre/include/kernel.h" 1 */
+/*  64 "../../asp3_dcre/include/kernel.h" */
+/*  1 "../../asp3_dcre/include/t_stddef.h" 1 */
+/*  65 "../../asp3_dcre/include/t_stddef.h" */
+/*  1 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 1 */
+/*  61 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" */
+/*  1 "../../musl-1.1.18/include/stdint.h" 1 */
+/*  20 "../../musl-1.1.18/include/stdint.h" */
+/*  1 "../../musl-1.1.18/include/bits/alltypes.h" 1 */
+/*  93 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef unsigned int uintptr_t;
-/*  108 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  108 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef int intptr_t;
-/*  124 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  124 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef signed char int8_t;
 
 
@@ -62,9 +62,9 @@ typedef unsigned int uint32_t;
 
 
 typedef unsigned long long uint64_t;
-/*  174 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  174 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef unsigned long long uintmax_t;
-/*  21 "../../musl-1.1.18/include/stdint.h" 2 */
+/*  21 "../../musl-1.1.18/include/stdint.h" 2 */
 
 typedef int8_t int_fast8_t;
 typedef int64_t int_fast64_t;
@@ -81,57 +81,57 @@ typedef uint8_t uint_least8_t;
 typedef uint16_t uint_least16_t;
 typedef uint32_t uint_least32_t;
 typedef uint64_t uint_least64_t;
-/*  95 "../../musl-1.1.18/include/stdint.h" */
-/*  1 "../../musl-1.1.18/include/bits/stdint.h" 1 */
+/*  95 "../../musl-1.1.18/include/stdint.h" */
+/*  1 "../../musl-1.1.18/include/bits/stdint.h" 1 */
 typedef int32_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-/*  96 "../../musl-1.1.18/include/stdint.h" 2 */
-/*  62 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 2 */
+/*  96 "../../musl-1.1.18/include/stdint.h" 2 */
+/*  62 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 2 */
 
 
 
-/*  1 "../../asp3_dcre/arch/gcc/tool_stddef.h" 1 */
-/*  81 "../../asp3_dcre/arch/gcc/tool_stddef.h" */
-/*  1 "../../musl-1.1.18/include/stddef.h" 1 */
-/*  17 "../../musl-1.1.18/include/stddef.h" */
-/*  1 "../../musl-1.1.18/include/bits/alltypes.h" 1 */
-/*  18 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  1 "../../asp3_dcre/arch/gcc/tool_stddef.h" 1 */
+/*  81 "../../asp3_dcre/arch/gcc/tool_stddef.h" */
+/*  1 "../../musl-1.1.18/include/stddef.h" 1 */
+/*  17 "../../musl-1.1.18/include/stddef.h" */
+/*  1 "../../musl-1.1.18/include/bits/alltypes.h" 1 */
+/*  18 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef unsigned wchar_t;
-/*  36 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  36 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef struct { long long __ll; long double __ld; } max_align_t;
-/*  88 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  88 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef unsigned int size_t;
-/*  98 "../../musl-1.1.18/include/bits/alltypes.h" */
+/*  98 "../../musl-1.1.18/include/bits/alltypes.h" */
 typedef int ptrdiff_t;
-/*  18 "../../musl-1.1.18/include/stddef.h" 2 */
-/*  82 "../../asp3_dcre/arch/gcc/tool_stddef.h" 2 */
-/*  1 "../../musl-1.1.18/include/limits.h" 1 */
+/*  18 "../../musl-1.1.18/include/stddef.h" 2 */
+/*  82 "../../asp3_dcre/arch/gcc/tool_stddef.h" 2 */
+/*  1 "../../musl-1.1.18/include/limits.h" 1 */
 
 
 
-/*  1 "../../musl-1.1.18/include/features.h" 1 */
-/*  5 "../../musl-1.1.18/include/limits.h" 2 */
+/*  1 "../../musl-1.1.18/include/features.h" 1 */
+/*  5 "../../musl-1.1.18/include/limits.h" 2 */
 
 
 
-/*  1 "../../musl-1.1.18/include/bits/limits.h" 1 */
-/*  9 "../../musl-1.1.18/include/limits.h" 2 */
-/*  83 "../../asp3_dcre/arch/gcc/tool_stddef.h" 2 */
-/*  191 "../../asp3_dcre/arch/gcc/tool_stddef.h" */
+/*  1 "../../musl-1.1.18/include/bits/limits.h" 1 */
+/*  9 "../../musl-1.1.18/include/limits.h" 2 */
+/*  83 "../../asp3_dcre/arch/gcc/tool_stddef.h" 2 */
+/*  191 "../../asp3_dcre/arch/gcc/tool_stddef.h" */
 typedef float float32_t;
 typedef double double64_t;
-/*  66 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 2 */
+/*  66 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 2 */
 
 
 
 
-/*  1 "../../asp3_dcre/arch/arm_gcc/rza1/chip_stddef.h" 1 */
-/*  68 "../../asp3_dcre/arch/arm_gcc/rza1/chip_stddef.h" */
-/*  1 "../../asp3_dcre/arch/arm_gcc/common/core_stddef.h" 1 */
-/*  69 "../../asp3_dcre/arch/arm_gcc/rza1/chip_stddef.h" 2 */
-/*  71 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 2 */
+/*  1 "../../asp3_dcre/arch/arm_gcc/rza1/chip_stddef.h" 1 */
+/*  68 "../../asp3_dcre/arch/arm_gcc/rza1/chip_stddef.h" */
+/*  1 "../../asp3_dcre/arch/arm_gcc/common/core_stddef.h" 1 */
+/*  69 "../../asp3_dcre/arch/arm_gcc/rza1/chip_stddef.h" 2 */
+/*  71 "../../asp3_dcre/target/gr_peach_gcc/target_stddef.h" 2 */
 
 
 
@@ -146,8 +146,8 @@ TOPPERS_assert_abort(void)
 
  __asm__ volatile("bkpt #0");
 }
-/*  66 "../../asp3_dcre/include/t_stddef.h" 2 */
-/*  84 "../../asp3_dcre/include/t_stddef.h" */
+/*  66 "../../asp3_dcre/include/t_stddef.h" 2 */
+/*  84 "../../asp3_dcre/include/t_stddef.h" */
 struct TOPPERS_dummy_t { int TOPPERS_dummy_field; };
 typedef void (*TOPPERS_fp_t)(struct TOPPERS_dummy_t);
 
@@ -196,17 +196,17 @@ typedef struct acvct {
  ACPTN acptn3;
  ACPTN acptn4;
 } ACVCT;
-/*  65 "../../asp3_dcre/include/kernel.h" 2 */
+/*  65 "../../asp3_dcre/include/kernel.h" 2 */
 
 
 
 
-/*  1 "../../asp3_dcre/target/gr_peach_gcc/target_kernel.h" 1 */
-/*  55 "../../asp3_dcre/target/gr_peach_gcc/target_kernel.h" */
-/*  1 "../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel.h" 1 */
-/*  104 "../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel.h" */
-/*  1 "../../asp3_dcre/arch/arm_gcc/common/core_kernel.h" 1 */
-/*  105 "../../asp3_dcre/arch/arm_gcc/common/core_kernel.h" */
+/*  1 "../../asp3_dcre/target/gr_peach_gcc/target_kernel.h" 1 */
+/*  55 "../../asp3_dcre/target/gr_peach_gcc/target_kernel.h" */
+/*  1 "../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel.h" 1 */
+/*  104 "../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel.h" */
+/*  1 "../../asp3_dcre/arch/arm_gcc/common/core_kernel.h" 1 */
+/*  105 "../../asp3_dcre/arch/arm_gcc/common/core_kernel.h" */
 typedef struct t_excinf {
  uint32_t nest_count;
  uint32_t intpri;
@@ -221,10 +221,10 @@ typedef struct t_excinf {
  uint32_t pc;
  uint32_t cpsr;
 } T_EXCINF;
-/*  105 "../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel.h" 2 */
-/*  56 "../../asp3_dcre/target/gr_peach_gcc/target_kernel.h" 2 */
-/*  70 "../../asp3_dcre/include/kernel.h" 2 */
-/*  105 "../../asp3_dcre/include/kernel.h" */
+/*  105 "../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel.h" 2 */
+/*  56 "../../asp3_dcre/target/gr_peach_gcc/target_kernel.h" 2 */
+/*  70 "../../asp3_dcre/include/kernel.h" 2 */
+/*  105 "../../asp3_dcre/include/kernel.h" */
 typedef uint_t FLGPTN;
 typedef uint_t INTNO;
 typedef uint_t INHNO;
@@ -449,7 +449,7 @@ typedef struct t_cisr {
  ISR isr;
  PRI isrpri;
 } T_CISR;
-/*  337 "../../asp3_dcre/include/kernel.h" */
+/*  337 "../../asp3_dcre/include/kernel.h" */
 extern ER_ID acre_tsk(const T_CTSK *pk_ctsk) ;
 extern ER del_tsk(ID tskid) ;
 extern ER act_tsk(ID tskid) ;
@@ -608,13 +608,13 @@ extern ER get_ipm(PRI *p_intpri) ;
 
 
 extern bool_t xsns_dpn(void *p_excinf) ;
-/*  51 "../../asp3_dcre/syssvc/serial.h" 2 */
-/*  59 "../../asp3_dcre/syssvc/serial.h" */
+/*  51 "../../asp3_dcre/syssvc/serial.h" 2 */
+/*  59 "../../asp3_dcre/syssvc/serial.h" */
 typedef struct {
  uint_t reacnt;
  uint_t wricnt;
 } T_SERIAL_RPOR;
-/*  79 "../../asp3_dcre/syssvc/serial.h" */
+/*  79 "../../asp3_dcre/syssvc/serial.h" */
 extern ER serial_opn_por(ID portid) ;
 extern ER serial_cls_por(ID portid) ;
 extern ER_UINT serial_trea_dat(ID portid, char *buf, uint_t len, TMO tmout) ;
@@ -626,4 +626,4 @@ static inline ER_UINT serial_rea_dat(ID portid, char *buf, uint_t len)
 {
  return serial_trea_dat(portid, buf, len, ((0xffffffffu)));
 }
-/*  37 "./gen/tmp_C_src.c" 2 */
+/*  36 "./gen/tmp_C_src.c" 2 */

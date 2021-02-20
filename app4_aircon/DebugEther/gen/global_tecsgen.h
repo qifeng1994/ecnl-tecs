@@ -28,6 +28,8 @@
  extern void tBannerMain_CB_initialize();
  extern void tPutLogSIOPort_CB_initialize();
  extern void tSIOPortNTShellMain_CB_initialize();
+ extern void tMainTask_CB_initialize();
+ extern void tAircon_CB_initialize();
 
 #define INITIALIZE_TECS() \
  	tTask_CB_initialize();\
@@ -42,6 +44,8 @@
  	tBannerMain_CB_initialize();\
  	tPutLogSIOPort_CB_initialize();\
  	tSIOPortNTShellMain_CB_initialize();\
+ 	tMainTask_CB_initialize();\
+ 	tAircon_CB_initialize();\
 /* INITIALIZE_TECS terminator */
 
 #define INITIALZE_TECSGEN() INITIALIZE_TECS()  /* for backward compatibility */
