@@ -568,7 +568,7 @@ Code.initLanguage = function() {
 
     ipData = analyzeFreeData(freeData1);
     uint8Array = createUint8ArrayFromFreeData(freeData1);
-    console.log('ipData = '+ ipData);
+    //console.log('ipData = '+ ipData);
 
     
 
@@ -618,7 +618,7 @@ function createUint8ArrayFromFreeData(freeData) {
 function analyzeFreeData(freeData){
   let ipAddress;
   const eoj = freeData.slice(21,26);
-  console.log('eoj ='+ eoj);
+  //console.log('eoj ='+ eoj);
   switch (eoj){
     //lighting class:0x0290
     case '02,90':
@@ -646,7 +646,7 @@ function analyzeFreeData(freeData){
 //   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
 //   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
 //   try {
-//     eval(code);
+//     eval(code); //eval()函数把javascript字符串作为脚本代码来执行
 //   } catch (e) {
 //     alert(MSG['badCode'].replace('%1', e));
 //   }

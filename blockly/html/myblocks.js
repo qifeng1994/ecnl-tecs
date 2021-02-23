@@ -72,5 +72,15 @@ Blockly.Blocks['setairconoff'] = {
   }
 };
 
-
+Blockly.Blocks['lightis'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("status of light is");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 

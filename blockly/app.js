@@ -121,7 +121,7 @@ var sock = dgram.createSocket(isIPv6 ? "udp6" : "udp4", function (msg, rinfo) {
     for (let i = 0; i < msg.length; i++) {
       uint8Array.push(msg.readUInt8(i));
     }
-    // websocket: push to client(web browser)
+    // websocket: push to client(web browser) 把数据传给客户端
     wss.clients.forEach((client) => {
         client.send(JSON.stringify({"ip":ip, "uint8Array":uint8Array}), (error) => {
             if(error) {

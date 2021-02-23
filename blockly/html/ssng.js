@@ -78,6 +78,12 @@ ws.onopen = function(event){
 ws.onmessage = function(event){
     console.log("server_to_client", event.data);
     const obj = JSON.parse(event.data);
+    //在控制台输出状态信息
+    console.log("ip =",obj.ip);
+    //解析数据包
+    //elFormat(obj.uint8Array);
+    console.log();
+    analyzeData(obj.uint8Array);
     if (obj.ip != vm.ipServer ) {
         const packet_id = 'packet-' + packetId++;
         const pkt = {
@@ -90,6 +96,7 @@ ws.onmessage = function(event){
         dataLogArray.push(pkt);
         displayLog();
     }
+
 };
 
 function displayLog() {
@@ -178,10 +185,15 @@ function analyzeData(uint8Array) {  // uint8Array: [UInt8]
     } else {
         return null;
     }
+    //输出分析值
+    //console.log("analyzedData = ",analyzedData);
     return analyzedData;  // analyzedData: string
+    
     function shouldDecodePropertyMap() {
       return ((esv == 0x72)&&((epc == 0x9D)||(epc == 0x9E)||(epc == 0x9F)));
     }
+    //打印edt的数值
+    //console.log("edt = ",edt);
 }
 
 function elFormat(uint8Array) {
@@ -189,6 +201,7 @@ function elFormat(uint8Array) {
     for (let value of uint8Array) {
       elString += toStringHex(value, 1);
     }
+    
     elString = strIns(elString, 4, " ");
     elString = strIns(elString, 9, " ");
     elString = strIns(elString, 16, " ");
@@ -197,7 +210,10 @@ function elFormat(uint8Array) {
     elString = strIns(elString, 29, " ");
     elString = strIns(elString, 32, " ");
     elString = strIns(elString, 35, " ");
+    //打印字符串
+    console.log("elString = ",elString);
     return elString;
+
 }
 
 // 数値(number)を16進数表記の文字列に変換する
