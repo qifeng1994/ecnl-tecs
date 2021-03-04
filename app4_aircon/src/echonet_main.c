@@ -51,6 +51,7 @@
 #include "echonet_cfg.h"
 #include "target_kernel_impl.h"
 #include "gpio_api.h"
+#include "rtc_api.h"
 #include "analogin_api.h"
 #include "adafruit_st7735.h"
 #include "draw_font.h"
@@ -182,8 +183,14 @@ struct ecn_cls0011_t temp_sensor_04_data = {
 	{ MAKER_CODE },	/* メーカーコード */
 };
 
-gpio_t relay_sw;
+/* 電源LED */
 gpio_t pow_led;
+/* リレー出力 */
+gpio_t relay_sw;
+/* カラーLED */
+gpio_t led_blue, led_green, led_red;
+/* ユーザースイッチ CN16-4 */
+gpio_t sw1, sw2;
 /*
  * 動作状態ON/OFF設定関数（0x30, 0x31のみ受け付け）
  */
@@ -201,16 +208,14 @@ int onoff_prop_set(const EPRPINIB *item, const void *src, int size, bool_t *anno
 	switch (*(uint8_t *)src) {
 	/* ONの場合 */
 	case 0x30:
-	//gpio_write(&relay_sw, 1);
-	//gpio_write(&pow_led, 1);
-	syslog(LOG_NOTICE, "led on");
+		gpio_write(&relay_sw, 1);
+		syslog(LOG_NOTICE, "set aircon on");
 	break;
 	/* OFFの場合 */
 	case 0x31:
 		*((uint8_t *)item->exinf) = *((uint8_t *)src);
-		//gpio_write(&relay_sw, 0);
-		//gpio_write(&pow_led, 0);
-		syslog(LOG_NOTICE, "led off");
+		gpio_write(&relay_sw, 0);
+		syslog(LOG_NOTICE, "set aircon off");
 		/* メインタスクに通知 */
 		data[0] = 0x80;
 		ret = ecn_brk_wai(data, sizeof(data));
@@ -1191,10 +1196,14 @@ static void main_rly_onoff(bool_t onoff)
 	if (onoff) {
 		/* リレー出力をON */
 		gpio_write(&relay_sw, 1);
+		syslog(LOG_NOTICE, "switch on");
+		// gpio_write(&pow_led, 1);
+		// syslog(LOG_NOTICE, "led on");
 	}
 	else {
 		/* リレー出力をOFF */
 		gpio_write(&relay_sw, 0);
+		syslog(LOG_NOTICE, "switch off");
 	}
 }
 

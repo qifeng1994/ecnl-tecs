@@ -92,8 +92,8 @@ echonet_main.o: ../src/echonet_main.c ../../asp3_dcre/include/kernel.h \
  ../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/gpio_object.h \
  ../../asp3_dcre/mbed/platform/mbed_assert.h \
  ../../asp3_dcre/mbed/platform/mbed_preprocessor.h \
- ../../asp3_dcre/mbed/hal/dma_api.h \
- ../../asp3_dcre/mbed/hal/analogin_api.h \
+ ../../asp3_dcre/mbed/hal/dma_api.h ../../asp3_dcre/mbed/hal/rtc_api.h \
+ ../../musl-1.1.18/include/time.h ../../asp3_dcre/mbed/hal/analogin_api.h \
  ../../asp3_dcre/gdic/adafruit_st7735/adafruit_st7735.h \
  ../../musl-1.1.18/include/stdbool.h ../../asp3_dcre/mbed/hal/pinmap.h \
  ../../asp3_dcre/mbed/hal/spi_api.h ../../asp3_dcre/mbed/hal/buffer.h \
@@ -323,6 +323,10 @@ echonet_cfg.h:
 ../../asp3_dcre/mbed/platform/mbed_preprocessor.h:
 
 ../../asp3_dcre/mbed/hal/dma_api.h:
+
+../../asp3_dcre/mbed/hal/rtc_api.h:
+
+../../musl-1.1.18/include/time.h:
 
 ../../asp3_dcre/mbed/hal/analogin_api.h:
 
