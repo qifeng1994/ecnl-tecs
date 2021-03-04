@@ -67,3 +67,15 @@ Blockly.Blocks['lightisoff'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['get_operation_status_of_light'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("get operation status of light");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

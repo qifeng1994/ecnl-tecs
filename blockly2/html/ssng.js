@@ -7,6 +7,8 @@ let packetId = 0;
 let active_packet_id = '';
 let dataLogArray = [];
 let analyzedData = "";
+//20210301新建全局变量
+let el8uintarray = ["el8uintarray"];
 
 var vm = new Vue({
     el: '#app',
@@ -75,8 +77,25 @@ ws.onopen = function(event){
 };
 
 ws.onmessage = function(event){
+    //通过blockly发送状态请求之后，来自设备的信息显示在浏览器的console里面
     console.log("server_to_client", event.data);
     const obj = JSON.parse(event.data);
+    //20210301在console打印ip地址和msg
+    console.log("obj.ip = ",obj.ip +"\nobj.uint8Array = ",obj.uint8Array);
+    //20210301解析msg并打印
+    let ecnlmsg = elFormat(obj.uint8Array);
+    console.log("ecnlmsg = ",ecnlmsg);
+    //20210301尝试用其他方法解析msg并打印,返回值是null
+    // let anadata = analyzeData(obj.uint8Array);
+    // console.log("anadata = ",anadata);
+    //20210301解析edt并打印
+    let edt = elAnalyzeEdt(obj.uint8Array);
+    console.log("edt = ",edt);
+    //20210301把uinit8array保存到一个全局变量中，并删除第一个数组
+    el8uintarray.push(obj.uint8Array);
+    el8uintarray.shift();
+    // let eledt = elAnalyzeEdt(el8uintarray);
+    // console.log("el8uintarray.edt = ",eledt);
     if (obj.ip != vm.ipServer ) {
         const packet_id = 'packet-' + packetId++;
         const pkt = {
@@ -89,6 +108,7 @@ ws.onmessage = function(event){
         dataLogArray.push(pkt);
         displayLog();
     }
+
 };
 
 function displayLog() {
@@ -199,6 +219,20 @@ function elFormat(uint8Array) {
     return elString;
 }
 
+//20210301添加解析edt的函数：用于在浏览器终端测试用
+function elAnalyzeEdt(uint8Array){
+    let elEdt = "";
+    elEdt = toStringHex(uint8Array[14],1);
+    return elEdt;
+}
+//20210301提取全局变量el8uintarray中的edt
+function parseEl8uintarray(elobj){
+    let edt = elFormat(elobj);
+    edt = edt.slice(47);
+    edt = toStringHex(Number(edt),1);
+    return edt;
+
+}
 // 数値(number)を16進数表記の文字列に変換する
 // 数値のbyte数は(bytes)
 // example: toStringHex(10, 1) => "0A"

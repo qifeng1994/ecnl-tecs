@@ -1,0 +1,7 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="LightClass">
+    <block type="set">
+      <field name="NAME">on</field>
+    </block>
+  </category>
+</xml>
