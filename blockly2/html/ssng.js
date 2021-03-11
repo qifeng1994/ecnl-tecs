@@ -5,10 +5,11 @@ const serverURL = "/ssng/";
 let tid = 0;
 let packetId = 0;
 let active_packet_id = '';
-let dataLogArray = [];
+let dataLogArray = []; //typeof是object
 let analyzedData = "";
 //20210301新建全局变量
-let el8uintarray = ["el8uintarray"];
+let el8uintarray = ["el8uintarray"]; //typeof是object
+let operationStatus = 0;
 
 var vm = new Vue({
     el: '#app',
@@ -81,21 +82,14 @@ ws.onmessage = function(event){
     console.log("server_to_client", event.data);
     const obj = JSON.parse(event.data);
     //20210301在console打印ip地址和msg
-    console.log("obj.ip = ",obj.ip +"\nobj.uint8Array = ",obj.uint8Array);
+    //console.log("obj.ip = ",obj.ip +"\nobj.uint8Array = ",obj.uint8Array);
     //20210301解析msg并打印
-    let ecnlmsg = elFormat(obj.uint8Array);
-    console.log("ecnlmsg = ",ecnlmsg);
-    //20210301尝试用其他方法解析msg并打印,返回值是null
-    // let anadata = analyzeData(obj.uint8Array);
-    // console.log("anadata = ",anadata);
+    //let ecnlmsg = elFormat(obj.uint8Array);
+    //console.log("ecnlmsg = ",ecnlmsg);
     //20210301解析edt并打印
-    let edt = elAnalyzeEdt(obj.uint8Array);
-    console.log("edt = ",edt);
-    //20210301把uinit8array保存到一个全局变量中，并删除第一个数组
-    el8uintarray.push(obj.uint8Array);
-    el8uintarray.shift();
-    // let eledt = elAnalyzeEdt(el8uintarray);
-    // console.log("el8uintarray.edt = ",eledt);
+    //let edt = elAnalyzeEdt(obj.uint8Array);
+    //console.log("edt = ",edt);
+
     if (obj.ip != vm.ipServer ) {
         const packet_id = 'packet-' + packetId++;
         const pkt = {
@@ -108,6 +102,13 @@ ws.onmessage = function(event){
         dataLogArray.push(pkt);
         displayLog();
     }
+
+    //20210301把uinit8array保存到一个全局变量中，并删除第一个数组
+    // el8uintarray.push(obj.uint8Array);
+    // el8uintarray.shift();
+    el8uintarray = JSON.parse(event.data);
+    console.log("el8uintarray.ip = ",el8uintarray.ip +"\nel8uintarray.uint8Array = ",el8uintarray.uint8Array);
+    operationStatus = parseEl8uintarray(el8uintarray.uint8Array);
 
 };
 
@@ -228,8 +229,7 @@ function elAnalyzeEdt(uint8Array){
 //20210301提取全局变量el8uintarray中的edt
 function parseEl8uintarray(elobj){
     let edt = elFormat(elobj);
-    edt = edt.slice(47);
-    edt = toStringHex(Number(edt),1);
+    edt = edt.slice(36);
     return edt;
 
 }

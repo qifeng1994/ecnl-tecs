@@ -614,11 +614,10 @@ function send(ipData, freeData){
     }
 }
 
-function analyzeReceiveData(uint8Array){
-  const obj = JSON.parse(event.data);
-  analyzeData(obj.uint8Array);
-
-
-
-  return edtData;
+//2021/03/04 设置延迟函数
+function sleep(delay) {
+    var start = (new Date()).getTime();
+    while((new Date()).getTime() - start < delay) {
+        continue;
+    }
 }

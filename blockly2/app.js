@@ -145,7 +145,7 @@ const instanceList = [0x10, 0x81, 0x00, 0x0a, 0x0e, 0xf0, 0x01, 0x0e, 0xf0, 0x01
 sendUdp(multicastAddress, instanceList);
 
 function sendUdp(ip, byteArray) {   // string:ip, array:byteArray
-  const buffer = new Buffer(byteArray);
+  const buffer = Buffer.from(byteArray);
 	let client = dgram.createSocket(isIPv6 ? "udp6" : "udp4");
 	client.send( buffer, EL_port, ip, function(err, bytes) {
 		client.close();
@@ -167,7 +167,7 @@ function saveLog(data) {  // string:data
   second = (second.length == 1) ? ("0" + second) : second;
   filename = "ssngLog_" + year + month + day + hour + minute + second  + ".txt";
   
-  const buffer = new Buffer(data);
+  const buffer = Buffer.from(data);
   fs.writeFile("log/"+filename, buffer, (err) => {
     if (err) console.log("Error: Can not save a log file.");
     console.log('The file has been saved!');
