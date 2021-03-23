@@ -52,7 +52,6 @@ end
 
 # Echonet Lite Device Description in JSON
 devdesc_json_fname = "appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
-#devdesc_json_fname = "demo.json"
 
 # Read Device Description (String)
 devdesc_json = File.read(devdesc_json_fname)
@@ -96,17 +95,34 @@ Devices.each{ |id, val|
     end
 }
 
-#sort function name in cfg files
+
+
 # devices_config_fname = "../app2_light/src/echonet_main.cfg"
-# devices_config = File.open(devices_config_fname)
+# devices_config = File.read(devices_config_fname)
 
-# devices_config.each_line do |line|
+# devices_target_fname = "../app2_light/src/echonet_main.c"
+# File.open(devices_target_fname,"r+") do |f|
+#     devices_config_fname.each_line do |line|
+#         if /ECN_DEF_EPRP/ =~ line
+#             parameter = line.split
+#                 className = parameter[0]
+#                 edt = parameter[1]
+#                 function_name = parameter[5]
+#             Devices.each {|id,val|
+#                 if val['className'] = className
+#                     val.each{|prop_id,val2|
+#                         if val2['data']['enum']['edt'] = edt
+#                             state = val2['data']['enum']['state']
+#                         end
+#                     }
+#                 end
+#             }
 
-#     next if /^ECN_CRE_EOBJ/ =~ line
-#         line.split
-#     next if /^ECN_DEF_EPRP/ =~ line
-#         line.split
-#     else 
-#         print("no such state")
+#         end
 #     end
+#     devices_target_fname.each_line do |line|
+#         if function_name =~ line
+#             f.write state
+#         end
 # end
+
