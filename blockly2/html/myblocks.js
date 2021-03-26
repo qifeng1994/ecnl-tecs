@@ -1,26 +1,49 @@
-Blockly.Blocks['setlighton'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("set light on");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+//通过json来定义block
+Blockly.defineBlocksWithJsonArray([
+{
+  "type": "setlighton",
+  "message0": "set light on",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
-Blockly.Blocks['setlightoff'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("set light off");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+{
+  "type": "setlightoff",
+  "message0": "set light off",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}
+]);
+
+// Blockly.Blocks['setlighton'] = {
+//   init: function() {
+//     this.appendDummyInput()
+//         .appendField("set light on");
+//     this.setPreviousStatement(true, null);
+//     this.setNextStatement(true, null);
+//     this.setColour(230);
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
+
+// Blockly.Blocks['setlightoff'] = {
+//   init: function() {
+//     this.appendDummyInput()
+//         .appendField("set light off");
+//     this.setPreviousStatement(true, null);
+//     this.setNextStatement(true, null);
+//     this.setColour(230);
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
 
 Blockly.Blocks['setairconon'] = {
   init: function() {
