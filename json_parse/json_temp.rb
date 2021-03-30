@@ -27,6 +27,7 @@ def print_properties(val,indent="  ")
             # else
             #     print ("#{indent}  data or ref not defined\n")
             # end
+
     end
     }
 end
@@ -54,7 +55,7 @@ def property_data_type (size)
 end
 
 def print_function (indent,size,type,val,val2)
-    print("int #{val['propertyName']['en']}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    print("void #{val['propertyName']['en']}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
