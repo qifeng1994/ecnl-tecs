@@ -6,8 +6,7 @@ Blockly.defineBlocksWithJsonArray([
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
+  "tooltip": "0x30"
 },
 
 {
@@ -16,34 +15,11 @@ Blockly.defineBlocksWithJsonArray([
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
+  "tooltip": "0x31"
 }
 ]);
 
-// Blockly.Blocks['setlighton'] = {
-//   init: function() {
-//     this.appendDummyInput()
-//         .appendField("set light on");
-//     this.setPreviousStatement(true, null);
-//     this.setNextStatement(true, null);
-//     this.setColour(230);
-//  this.setTooltip("");
-//  this.setHelpUrl("");
-//   }
-// };
 
-// Blockly.Blocks['setlightoff'] = {
-//   init: function() {
-//     this.appendDummyInput()
-//         .appendField("set light off");
-//     this.setPreviousStatement(true, null);
-//     this.setNextStatement(true, null);
-//     this.setColour(230);
-//  this.setTooltip("");
-//  this.setHelpUrl("");
-//   }
-// };
 
 Blockly.Blocks['setairconon'] = {
   init: function() {
@@ -102,3 +78,27 @@ Blockly.Blocks['get_operation_status_of_light'] = {
  this.setHelpUrl("");
   }
 };
+
+// Blockly.Blocks['setlighton'] = {
+//   init: function() {
+//     this.appendDummyInput()
+//         .appendField("set light on");
+//     this.setPreviousStatement(true, null);
+//     this.setNextStatement(true, null);
+//     this.setColour(230);
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
+
+// Blockly.Blocks['setlightoff'] = {
+//   init: function() {
+//     this.appendDummyInput()
+//         .appendField("set light off");
+//     this.setPreviousStatement(true, null);
+//     this.setNextStatement(true, null);
+//     this.setColour(230);
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
