@@ -13,6 +13,25 @@
 // }
 
 // "0x0260" "0x0263" "0x027E" "0x0288" : {"oneOf":[value]}
+
+// Block.json: { {keys:values},{keys:values} }
+// {
+//     "type": "setlighton",
+//     "message0": "set light on",
+//     "previousStatement": null,
+//     "nextStatement": null,
+//     "colour": 230,
+//     "tooltip": "0x30"
+// }
+let statementBlock = {
+    type : null,
+    message0 : null,
+    previousStatement : null,
+    nextStatement : null,
+    colour : null,
+    tooltip : null,
+}
+
 window.onload = function (){
     var url = "../../json_parse/appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
     var request = new XMLHttpRequest();
@@ -20,19 +39,55 @@ window.onload = function (){
     request.send(null);
     request.onload = function(){
         var json = JSON.parse(request.responseText);
-        var devices = json.devices
+        var devices = json.devices;
+
         // 遍历对象
         for(let deviceId in devices){ //deviceId: 0x0EF0
             var deviceContent = devices[deviceId]
-            for (let x in deviceContent){
-                if (x == 'oneOf'){
-                    console.log(deviceId);
+            for (let key in deviceContent){
+                //第一次为devices对象分类
+                // if (key == 'oneOf'){
+                //     console.log(deviceId + ' is oneOf');
+                // }else if (! key == 'className') {
+                //     console.log(deviceId + ' has no class name');
+                // }else {
+
+                // }
+
+                //一般照明
+                if (deviceContent[key]['en'] == 'General lighting'){
+                    //console.log(deviceId + ' is '+ deviceContent[key]['en']);
+                    var propertiesContent = deviceContent['elProperties']
+                    parseProperties(propertiesContent)
                 }
             }
         }
         
     }
 }
+
+function parseProperties (value){
+    for(let key in value){
+        if (value[key]['oneOf']){
+           console.log(key + ' is oneOf')
+        }else {
+            console.log(key + ' is ' + value[key]['propertyName']['en'])
+        }
+    }
+}
+
+//把javascript对象转换为JSON：
+//JSON.stringify()
+function convertJson (block){
+    var myJson = JSON.stringify(block)
+    console.log(myJson)
+}
+
+
+
+
+
+
 
 
 // 在node.js中解析JSON的方法
