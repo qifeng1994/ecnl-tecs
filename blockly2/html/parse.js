@@ -29,7 +29,15 @@ let statementBlock = {
     previousStatement : null,
     nextStatement : null,
     colour : null,
-    tooltip : null,
+    tooltip : null
+}
+
+let statusBlock = {
+    type : null,
+    message0 : null,
+    output :null,
+    colour : null,
+    tooltip : null
 }
 
 window.onload = function (){
@@ -39,8 +47,8 @@ window.onload = function (){
     request.send(null);
     request.onload = function(){
         var json = JSON.parse(request.responseText);
-        var devices = json.devices;
-
+        var devices = json.devices
+        var definitions = json.definitions
         // 遍历对象
         for(let deviceId in devices){ //deviceId: 0x0EF0
             var deviceContent = devices[deviceId]
@@ -59,6 +67,8 @@ window.onload = function (){
                     //console.log(deviceId + ' is '+ deviceContent[key]['en']);
                     var propertiesContent = deviceContent['elProperties']
                     parseProperties(propertiesContent)
+                    
+                    
                 }
             }
         }
@@ -69,7 +79,15 @@ window.onload = function (){
 function parseProperties (value){
     for(let key in value){
         if (value[key]['oneOf']){
-           console.log(key + ' is oneOf')
+            for(i in value[key]['oneOf']){
+                var str = value[key]['oneOf'][i].data.$ref
+                var ref = str.replace("#/definitions/","")
+                console.log(key + ' oneOf is ' + value[key]['oneOf'][i].propertyName.en)
+                console.log(ref)
+                // var definition = definitions.ref
+                // console.log(definition)
+            }
+  
         }else {
             console.log(key + ' is ' + value[key]['propertyName']['en'])
         }
@@ -83,10 +101,17 @@ function convertJson (block){
     console.log(myJson)
 }
 
+//把propertyName和data转换为Block的message0
+function convertBlockMessage (value){
+    
+}
 
+//把className定义为Block的type?
 
+//解析definitions
+function parseDefinitions(){
 
-
+}
 
 
 
@@ -107,3 +132,5 @@ function convertJson (block){
 // for (var i=0;i<oldData.length;i++){ //提取所需值组成新数组
 //     dataTank.push({"name":income[i].name,"value":income[i].value});
 // }
+
+//参考：https://www.jb51.net/article/200389.htm JSON的使用方法
