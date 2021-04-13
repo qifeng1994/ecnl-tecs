@@ -29,3 +29,10 @@ case 0x42;
 default:
     break;
 }
+
+
+
+propertyName()
+{
+    eClassName_stateName()
+}

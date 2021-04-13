@@ -16,14 +16,23 @@ def parse_properties (val,className)
             
         else
             if val2['accessRule']['set'] == 'required' then
-                functionName = val2['propertyName']['en']
+                propertyName = val2['propertyName']['en']
                 if val2['data']['$ref'] then
                 ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
                 val3 = Definitions[ref]
-                parse_definitions(val3,functionName,className)
+                parse_definitions(val3,propertyName,className)
                 elsif val2['data']['type'] == 'state' then
                 val3 = val2['data']
-                parse_definitions(val3,functionName,className)
+                parse_definitions(val3,propertyName,className)
+                elsif val2['data']['oneOf'] then
+                val2['data']['oneOf'].each{ |val3|
+                    if val3['$ref'] then
+                    ref = val3['$ref'].sub( /#\/definitions\//, "" )
+                    val4 = Definitions[ref]
+                    parse_definitions(val4,propertyName,className)
+                    else
+                    end
+                }
                 else
                 end
             else
@@ -32,15 +41,19 @@ def parse_properties (val,className)
     }
 end
 
-def parse_definitions(val,functionName,className)
-    
-        if val['type'] == 'state' then
+def parse_definitions(val,propertyName,className)
+        if val['type'] == 'number' then
+            type = val['format']
+            size = property_format_size(type)
+            min = val['minimum']
+            max = val['maximum']
+            print_function_number("  ",size,type,propertyName,className,min,max)
+        elsif val['type'] == 'state' then
             size = val['size']
             type = property_data_type(size)
-            name = font_change(functionName)
-            print_function_state("  ",size,type,name,val,className)
+            propertyName = font_change(propertyName)
+            print_function_state("  ",size,type,propertyName,val,className)
         else
-            # print_function
         end
     
 end
@@ -55,8 +68,18 @@ def property_data_type (size)
     end
 end
 
-def print_function_state(indent,size,type,name,val,className)
-    print("void #{name}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+def property_format_size (type)
+    if type == 'unint8_t'
+        return 1
+    elsif type == 'unint16_t'
+        return 2
+    elsif type == 'unint32_t'
+        return 4
+    end
+end
+
+def print_function_state(indent,size,type,propertyName,val,className)
+    print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
@@ -66,6 +89,20 @@ def print_function_state(indent,size,type,name,val,className)
         return 0;\n}\n")
 end
 
+def print_function_number(indent,size,type,propertyName,className,min,max)
+    print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    if(size! = #{size})
+    #{indent}return 0;
+    if((*(#{type}*)src >= #{min}) && (*(#{type}*)src <= #{max})){
+        *((#{type}*)item->exinf) != *((#{type}*)src);
+        e#{className}_Set#{propertyName}( );
+    }
+    else{
+        return 0;
+    }
+    return 1;\n"
+    )
+end
 def print_state_type (indent,val,className)
     val['enum'].each{ |edt|
         print("#{indent}case #{edt['edt']}: e#{className}_Set#{edt['state']['en']}( )
