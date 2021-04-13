@@ -44,6 +44,7 @@ end
 def parse_definitions(val,propertyName,className)
         if val['type'] == 'number' then
             type = val['format']
+            propertyName = font_change(propertyName)
             size = property_format_size(type)
             min = val['minimum']
             max = val['maximum']
@@ -60,20 +61,20 @@ end
 
 def property_data_type (size)
     if size == 1 then
-        return 'unint8_t'
+        return 'uint8_t'
     elsif size == 2 then
-        return 'unint16_t'
+        return 'uint16_t'
     elsif size == 4 then
-        return 'unint32_t'
+        return 'uint32_t'
     end
 end
 
 def property_format_size (type)
-    if type == 'unint8_t'
+    if type == 'uint8'
         return 1
-    elsif type == 'unint16_t'
+    elsif type == 'uint16'
         return 2
-    elsif type == 'unint32_t'
+    elsif type == 'uint32'
         return 4
     end
 end
@@ -93,8 +94,8 @@ def print_function_number(indent,size,type,propertyName,className,min,max)
     print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
-    if((*(#{type}*)src >= #{min}) && (*(#{type}*)src <= #{max})){
-        *((#{type}*)item->exinf) != *((#{type}*)src);
+    if((*(#{type}_t*)src >= #{min}) && (*(#{type}_t*)src <= #{max})){
+        *((#{type}_t*)item->exinf) != *((#{type}_t*)src);
         e#{className}_Set#{propertyName}( );
     }
     else{
@@ -103,6 +104,7 @@ def print_function_number(indent,size,type,propertyName,className,min,max)
     return 1;\n"
     )
 end
+
 def print_state_type (indent,val,className)
     val['enum'].each{ |edt|
         print("#{indent}case #{edt['edt']}: e#{className}_Set#{edt['state']['en']}( )
@@ -113,6 +115,7 @@ end
 def font_change(name)
     return name.split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
+
 Devices.each{ |id, val|
     if val['oneOf'] then
         # print( "#{id} oneOf\n" )
