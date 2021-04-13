@@ -1,0 +1,31 @@
+{"edt":"0x41", "state":{"ja":"電球色", "en":"Incandescent lamp color"}}
+{"edt":"0x42", "state":{"ja":"白色", "en":"White"}}
+↓
+"Incandescent lamp color"
+↓
+case 0x41:
+    sLight_IncandescentLampColor();
+case 0x42;
+    sLight_White();
+
+
+"propertyName":{"ja":"光色設定", "en":"Light color setting"},
+"data":{
+    {"edt":"0x41", "state":{"ja":"電球色", "en":"Incandescent lamp color"}}
+    {"edt":"0x42", "state":{"ja":"白色", "en":"White"}}
+↓
+関数名を作成："Incandescent lamp color"→SetIncandescentLampColor
+関数名を作成："White"→SetWhite
+↓
+void LightColorSetting_prop_set(const EPRPINIB *item, ...)
+{
+switch(){
+case 0x41:
+    eLight_SetIncandescentLampColor();
+    break;
+case 0x42;
+    eLight_SetWhite();
+    break;
+default:
+    break;
+}

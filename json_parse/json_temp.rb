@@ -16,17 +16,18 @@ def print_properties(val,indent="  ")
             type = property_data_type(size)
             print_function("  ",size,type,val3,val4)
             }
+        elsif val2['data']['$ref'] then
+            ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
+            val3 = Definitions[ref]
+            if val3['type'] == 'state' then # if val3['type'] == 'number'
+            size = val3['size']
+            type = property_data_type(size)
+            print_function("  ",size,type,val2,val3)
+            end
         else
             print("int #{val2['propertyName']['en']}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n")
-            # if val2['data'] && val2['data']['$ref'] then
-            #     ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
-            #     val3 = Definitions[ref]
-            #     size = val3['size']
-            #     type = property_data_type(size)
-            #     print_function("  ",size,type,val2,val3)
-            # else
-            #     print ("#{indent}  data or ref not defined\n")
-            # end
+            
+
 
     end
     }
@@ -55,7 +56,9 @@ def property_data_type (size)
 end
 
 def print_function (indent,size,type,val,val2)
-    print("void #{val['propertyName']['en']}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    #函数名不能有空格注意大小写，生成cfg,C
+    name = val['propertyName']['en'].split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
+    print("void #{name}PropSet (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
@@ -64,6 +67,7 @@ def print_function (indent,size,type,val,val2)
     print("default:
         return 0;\n}\n")
 end
+
 # Echonet Lite Device Description in JSON
 devdesc_json_fname = "appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
 
@@ -82,3 +86,8 @@ Devices.each{ |id,val|
         print_properties( val['elProperties'] )
     end
 }
+
+# name.capitalize 首字母大写而其余字母小写
+# name.downcase 将字符串所有字母转换为小写
+# name.upcase 将字符串所有字母转换为大写
+# 删除字符串中的分隔符 str.gsub(/\s+/, '')
