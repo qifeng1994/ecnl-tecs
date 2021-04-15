@@ -1,0 +1,5 @@
+signature sElectricLeakSensor {
+    setYES( );
+    setNO( );
+    setReset( );
+};

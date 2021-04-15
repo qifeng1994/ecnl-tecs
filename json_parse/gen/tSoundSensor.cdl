@@ -1,0 +1,5 @@
+signature sSoundSensor {
+    setYES( );
+    setNO( );
+    setSoundDetectionHoldingTime( );
+};

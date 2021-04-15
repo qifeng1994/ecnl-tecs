@@ -1,0 +1,5 @@
+signature sFirstAidSensor {
+    setYES( );
+    setNO( );
+    setReset( );
+};

@@ -1,0 +1,4 @@
+signature sHumanDetectionSensor {
+    setYES( );
+    setNO( );
+};

@@ -1,0 +1,5 @@
+signature sGasSensor {
+    setYES( );
+    setNO( );
+    setMeasuredValueOfGasConcentration( );
+};

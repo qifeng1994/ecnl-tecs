@@ -1,0 +1,10 @@
+signature sEarthquakeSensor {
+    setYES( );
+    setNO( );
+    setReset( );
+    setSiValue( );
+    setReset( );
+    setYES( );
+    setNO( );
+    setReset( );
+};

@@ -1,0 +1,4 @@
+signature sIlluminanceSensor {
+    setIlluminanceValue1( );
+    setIlluminanceValue2( );
+};

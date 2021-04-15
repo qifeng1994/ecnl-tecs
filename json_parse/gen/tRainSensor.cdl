@@ -1,0 +1,4 @@
+signature sRainSensor {
+    setYES( );
+    setNO( );
+};

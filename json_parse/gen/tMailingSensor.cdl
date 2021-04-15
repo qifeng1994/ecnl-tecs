@@ -1,0 +1,4 @@
+signature sMailingSensor {
+    setYES( );
+    setNO( );
+};

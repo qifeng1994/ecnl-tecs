@@ -1,0 +1,5 @@
+signature sFireSensor {
+    setYES( );
+    setNO( );
+    setReset( );
+};

@@ -1,0 +1,12 @@
+signature sSuperClass {
+    setON( );
+    setOFF( );
+    setMeasuredInstantaneousPowerConsumption( );
+    setMeasuredCumulativePowerConsumption( );
+    setCurrentLimitSetting( );
+    setFault( );
+    setNo Fault( );
+    setPower Saving( );
+    setNo Power Saving( );
+    setPowerLimitSetting( );
+};

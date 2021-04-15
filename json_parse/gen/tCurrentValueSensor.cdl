@@ -1,0 +1,5 @@
+signature sCurrentValueSensor {
+    setMeasuredCurrentValue1( );
+    setRatedVoltageToBeMeasured( );
+    setMeasuredCurrentValue2( );
+};

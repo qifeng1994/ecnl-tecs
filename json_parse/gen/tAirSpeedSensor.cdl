@@ -1,0 +1,4 @@
+signature sAirSpeedSensor {
+    setMeasuredValueOfAirSpeed( );
+    setMeasuredValueOfAirFlowDirection( );
+};

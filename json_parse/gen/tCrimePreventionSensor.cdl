@@ -1,0 +1,5 @@
+signature sCrimePreventionSensor {
+    setYES( );
+    setNO( );
+    setReset( );
+};

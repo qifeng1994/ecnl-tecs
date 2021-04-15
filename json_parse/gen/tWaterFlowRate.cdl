@@ -1,0 +1,4 @@
+signature sWaterFlowRate {
+    setCumulativeFlowRate( );
+    setFlowRate( );
+};

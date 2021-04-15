@@ -1,0 +1,6 @@
+signature sWaterLevelSensor {
+    setWaterLevelOverDetectionThresholdLevel( );
+    setYES( );
+    setNO( );
+    setMeasuredValueOfWaterLevel( );
+};

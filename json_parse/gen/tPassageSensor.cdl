@@ -1,0 +1,13 @@
+signature sPassageSensor {
+    setPassageDetectionHoldTime( );
+    setNo passage( );
+    setN( );
+    setNE( );
+    setE( );
+    setSE( );
+    setS( );
+    setSW( );
+    setW( );
+    setNW( );
+    setDirection unknown( );
+};

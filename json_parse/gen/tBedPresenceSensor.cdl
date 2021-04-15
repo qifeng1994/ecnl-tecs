@@ -1,0 +1,4 @@
+signature sBedPresenceSensor {
+    setYES( );
+    setNO( );
+};

@@ -1,0 +1,3 @@
+signature sCo2Sensor {
+    setMeasuredValueOfCo2Concentration( );
+};
