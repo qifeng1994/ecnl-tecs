@@ -1,0 +1,7 @@
+signature sCookingHeater {
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setStop all heating( );
+};

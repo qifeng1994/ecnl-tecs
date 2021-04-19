@@ -1,0 +1,26 @@
+signature sEvCharger {
+    void setRatedChargeCapacity( );
+    void setAC_CPLT( );
+    void setAC_HLC_Charge( );
+    void setDC_AA_Charge( );
+    void setDC_BB_Charge( );
+    void setDC_EE_Charge( );
+    void setDC_FF_Charge( );
+    void setConnection confirmation( );
+    void setChargeableCapacityOfVehicleMountedBattery( );
+    void setRemainingChargeableCapacityOfVehicleMountedBattery( );
+    void setUsedCapacityOfVehicleMountedBattery1( );
+    void setRatedVoltage( );
+    void setMeasuredInstantaneousChargingDischargingElectricEnergy( );
+    void setMeasuredCumulativeAmountOfChargingElectricEnergy( );
+    void setReset( );
+    void setCharge( );
+    void setstandby( );
+    void setIdle( );
+    void setOther( );
+    void setRemainingStoredElectricityOfVehicleMountedBattery1( );
+    void setRemainingStoredElectricityOfVehicleMountedBattery3( );
+    void setChargingAmountSetting( );
+    void setChargingElectricEnergySetting( );
+    void setChargingCurrentSetting( );
+};

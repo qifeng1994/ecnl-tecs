@@ -1,0 +1,6 @@
+signature sTelevision {
+    void setDisplaying enabled( );
+    void setDisplaying disabled( );
+    void setReady( );
+    void setBusy( );
+};

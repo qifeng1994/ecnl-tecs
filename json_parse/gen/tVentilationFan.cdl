@@ -1,0 +1,5 @@
+signature sVentilationFan {
+    void setAutomatic( );
+    void setON( );
+    void setOFF( );
+};

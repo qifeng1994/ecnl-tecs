@@ -1,0 +1,13 @@
+signature sWaterFlowMeter {
+    void setrunning water( );
+    void setrecycled water( );
+    void setsewage water( );
+    void setother water( );
+    void setNot specified( );
+    void setPublic waterworks company( );
+    void setPrivate sector company( );
+    void setIndividual( );
+    void setMeasuredCumulativeAmountOfFlowingWater( );
+    void setYES( );
+    void setNO( );
+};

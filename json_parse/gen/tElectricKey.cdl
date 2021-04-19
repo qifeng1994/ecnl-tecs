@@ -1,0 +1,21 @@
+signature sElectricKey {
+    void setLock( );
+    void setUnlock( );
+    void setLock( );
+    void setUnlock( );
+    void setLock( );
+    void setUnlock( );
+    void setOpen( );
+    void setClose( );
+    void setoccupant( );
+    void setnon-occupant( );
+    void setNormal(no alarm)( );
+    void setbreak open( );
+    void setdoor open( );
+    void setmanual unlocked( );
+    void settampered( );
+    void setON( );
+    void setOFF( );
+    void setOrdinary level( );
+    void setNotification of battery replacement( );
+};

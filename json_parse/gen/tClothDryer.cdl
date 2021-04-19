@@ -1,0 +1,12 @@
+signature sClothDryer {
+    void setON( );
+    void setOFF( );
+    void setOpen( );
+    void setClose( );
+    void set Start/restart drying( );
+    void set Suspend drying( );
+    void set Stop drying( );
+    void setDrying in progress( );
+    void setDrying suspended( );
+    void setDrying stopped/completed( );
+};

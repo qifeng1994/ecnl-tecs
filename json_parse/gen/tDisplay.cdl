@@ -1,0 +1,6 @@
+signature sDisplay {
+    void setDisplaying enabled( );
+    void setDisplaying disabled( );
+    void setReady( );
+    void setBusy( );
+};

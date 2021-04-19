@@ -1,0 +1,11 @@
+signature sExtendedLightingSystem {
+    void setIlluminanceLevelSetting( );
+    void setSceneControlSetting( );
+    void setNumberThatCanAssignSceneControlSetting( );
+    void setPowerConsumptionWhenFullyLighted( );
+    void setPossiblePowerSavings( );
+    void setPowerConsumptionLimitSetting( );
+    void setON( );
+    void setOFF( );
+    void setFadingControlChangeTimeSetting( );
+};

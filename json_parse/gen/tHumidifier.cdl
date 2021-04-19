@@ -1,0 +1,8 @@
+signature sHumidifier {
+    void setON( );
+    void setOFF( );
+    void setMeasuredValueOfRoomRelativeHumidity( );
+    void setHumidifyingSetting1( );
+    void setON( );
+    void setOFF( );
+};

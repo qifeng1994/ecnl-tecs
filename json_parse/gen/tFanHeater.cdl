@@ -1,0 +1,19 @@
+signature sFanHeater {
+    void setBoth the time- and relative time-based reservation functions are ON( );
+    void setBoth reservation functions are OFF( );
+    void setTime-based reservation functions is ON( );
+    void setRelative time-based reservation functions is ON( );
+    void setBoth the time- and relative time-based reservation functions are ON( );
+    void setBoth reservation functions are OFF( );
+    void setTime-based reservation functions is ON( );
+    void setRelative time-based reservation functions is ON( );
+    void setON( );
+    void setOFF( );
+    void setTemperatureSetValue( );
+    void setMeasuredTemperature( );
+    void setUndefined( );
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+};

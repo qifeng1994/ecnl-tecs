@@ -1,0 +1,9 @@
+signature sController {
+    void setNumberOfDevicesControlled( );
+    void setIndex( );
+    void setConnected( );
+    void setDisconnected( );
+    void setNot registered( );
+    void setDeleted( );
+    void setRegisterdInformationRenewalVersionInformationOfTheDeviceToBeControlled( );
+};

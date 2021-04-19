@@ -1,0 +1,19 @@
+signature sFuelCell {
+    void setON( );
+    void setOFF( );
+    void setMeasuredTemperatureOfWaterInWaterHeater( );
+    void setHeatingValueOfHotWaterStorageTank( );
+    void setMeasuredInstantaneousPowerGenerationOutput( );
+    void setMeasuredCumulativePowerGenerationOutput( );
+    void setReset( );
+    void setMeasuredInstantaneousGasConsumption( );
+    void setMeasuredCumulativeGasConsumption( );
+    void setReset( );
+    void setMeasuredInHouseInstantaneousPowerConsumption( );
+    void setMeasuredInHouseCumulativePowerConsumption( );
+    void setReset( );
+    void setPower generation at the max. rating( );
+    void setLoad following power generation( );
+    void setMeasuredRemainingHotWaterAmount( );
+    void setTankCapacity( );
+};

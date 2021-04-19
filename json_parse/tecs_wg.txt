@@ -1,3 +1,5 @@
+2021/04/12
+
 {"edt":"0x41", "state":{"ja":"電球色", "en":"Incandescent lamp color"}}
 {"edt":"0x42", "state":{"ja":"白色", "en":"White"}}
 ↓
@@ -40,3 +42,5 @@ propertyName()
 signature sClassName{
     void setStateName();
 };
+
+2021/05/17

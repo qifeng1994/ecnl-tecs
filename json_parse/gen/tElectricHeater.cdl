@@ -1,0 +1,13 @@
+signature sElectricHeater {
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+    void setAutomatic( );
+    void setON( );
+    void setOFF( );
+    void setSetTemperatureValue( );
+    void setUndefined( );
+    void setMeasuredValueOfRoomTemperature( );
+    void setSetTemperatureValueOfUserRemoteControl( );
+};

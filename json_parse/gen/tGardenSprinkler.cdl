@@ -1,0 +1,14 @@
+signature sGardenSprinkler {
+    void setautomatic ON( );
+    void setmanual ON( );
+    void setmanual OFF( );
+    void setOFF( );
+    void setdaily( );
+    void setevery other day( );
+    void setevery 3 days( );
+    void setonce a week( );
+    void setfirst ON( );
+    void setsecond ON( );
+    void setboth ON( );
+    void setSprinkleDurationSetting( );
+};

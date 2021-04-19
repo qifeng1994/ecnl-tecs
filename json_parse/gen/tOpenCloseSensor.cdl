@@ -1,0 +1,4 @@
+signature sOpenCloseSensor {
+    void setYES( );
+    void setNO( );
+};

@@ -1,0 +1,16 @@
+signature sElectricHotWaterPot {
+    void setOpen( );
+    void setClose( );
+    void setYES( );
+    void setNO( );
+    void setBoil-up start( );
+    void setBoil-up stop/warmer( );
+    void setCitric acid cleaning( );
+    void setnormal warmer( );
+    void setpower-saving warmer( );
+    void setSetValueOfWarmerTemperature( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+};

@@ -1,0 +1,4 @@
+signature sWeighingMachine {
+    void setMeasuredValueOfBodyWeight( );
+    void setMeasuredValueOfBodyFat( );
+};

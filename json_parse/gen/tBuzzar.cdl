@@ -1,0 +1,4 @@
+signature sBuzzar {
+    void setYES( );
+    void setNO( );
+};

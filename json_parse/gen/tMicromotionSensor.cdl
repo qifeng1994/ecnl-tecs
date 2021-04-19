@@ -1,7 +1,7 @@
 signature sMicromotionSensor {
-    setYES( );
-    setNO( );
-    setDetectionCounter( );
-    setSamplingCount( );
-    setSamplingCycle( );
+    void setYES( );
+    void setNO( );
+    void setDetectionCounter( );
+    void setSamplingCount( );
+    void setSamplingCycle( );
 };

@@ -1,0 +1,21 @@
+signature sHouseholdSmallWindTurbinePowerGeneration {
+    void setSystem-linked type( );
+    void setIndependent type( );
+    void setHybrid type( );
+    void setMeasuredInstantaneousAmountOfElectricityGenerated( );
+    void setMeasuredCumulativeAmountOfElectricityGenerated( );
+    void setReset( );
+    void setMeasuredCumulativeAmountOfElectricitySold( );
+    void setReset( );
+    void setPowerGenerationOutputLimitSetting1( );
+    void setPowerGenerationOutputLimitSetting2( );
+    void setLimitSettingForTheAmountOfElectricitySold( );
+    void setRatedPower( );
+    void setMeasuredWindSpeed( );
+    void setRatedWindSpeed( );
+    void setCutInWindSpeed( );
+    void setCutOutWindSpeed( );
+    void setExtremeWindSpeed( );
+    void setON( );
+    void setOFF( );
+};

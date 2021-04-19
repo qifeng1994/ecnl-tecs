@@ -1,7 +1,7 @@
 signature sNodeProfile {
-    setON( );
-    setOFF( );
-    setFault( );
-    setNo Fault( );
-    setNumberOfSelfNodeClasses( );
+    void setON( );
+    void setOFF( );
+    void setFault( );
+    void setNo Fault( );
+    void setNumberOfSelfNodeClasses( );
 };

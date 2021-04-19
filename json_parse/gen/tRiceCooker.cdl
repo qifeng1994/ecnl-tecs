@@ -1,0 +1,19 @@
+signature sRiceCooker {
+    void setON( );
+    void setOFF( );
+    void setOpen( );
+    void setClose( );
+    void setStop( );
+    void setPreheating( );
+    void setRice cooking( );
+    void setSteaming( );
+    void set( );
+    void setRice cooking start/restart( );
+    void setRice cooking suspension( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+};

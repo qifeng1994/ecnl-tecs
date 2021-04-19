@@ -1,5 +1,5 @@
 signature sOdorSensor {
-    setYES( );
-    setNO( );
-    setMeasuredOdorValue( );
+    void setYES( );
+    void setNO( );
+    void setMeasuredOdorValue( );
 };

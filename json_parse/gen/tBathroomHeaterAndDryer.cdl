@@ -1,0 +1,25 @@
+signature sBathroomHeaterAndDryer {
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+    void setAutomatic( );
+    void setStandard( );
+    void setAutomatic( );
+    void setStandard( );
+    void setAutomatic( );
+    void setStandard( );
+    void setAutomatic( );
+    void setStandard( );
+    void setAutomatic( );
+    void setStandard( );
+    void setAutomatic( );
+    void setStandard( );
+    void setMeasuredRelativeBathroomHumidity( );
+    void setMeasuredBathroomTemperature( );
+    void setAutomatic( );
+    void setLit( );
+    void setNot Lit( );
+    void setYES( );
+    void setNO( );
+};

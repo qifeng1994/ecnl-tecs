@@ -1,0 +1,22 @@
+signature sFloorHeater {
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+    void setMaximumAllowableSettingLevelForTemperatureSetting2( );
+    void setTemperature1( );
+    void setAutomatic( );
+    void setAutomatic( );
+    void setMeasuredRoomTemperature( );
+    void setUndefined( );
+    void setNormal operation( );
+    void setModerate Operation( );
+    void setHigh power operation( );
+    void setTimer off( );
+    void setTimer1( );
+    void setTimer2( );
+    void setRatedPowerConsumption( );
+    void setNode unit( );
+    void setClass unit( );
+    void setInstance unit( );
+};

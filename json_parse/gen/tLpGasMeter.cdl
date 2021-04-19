@@ -1,0 +1,28 @@
+signature sLpGasMeter {
+    void setMaximumValueOfSupplyPressureData( );
+    void setMinimumValueOfSupplyPressureData( );
+    void setCurrentValueOfSupplyPressureData( );
+    void setMaximumValueOfBlockPressureData( );
+    void setMinimumValueOfBlockPressureData( );
+    void setCurrentValueOfBlockPressureData( );
+    void setYES( );
+    void setNO( );
+    void setCumulativeAmountOfGasConsumptionOfMeteringData1( );
+    void setCumulativeAmountOfGasConsumptionOfMeteringData2( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setResidual volume control warning level 1( );
+    void setResidual volume control warning level 2( );
+    void setResidual volume control warning level 3( );
+    void setNo residual volume control warning( );
+    void setSlightLeakTimerValue(gasFlowRateContinuation)( );
+    void setSlightLeakTimerValue(withoutPressureIncrease)( );
+};

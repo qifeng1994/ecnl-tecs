@@ -1,0 +1,14 @@
+signature sWashingMachine {
+    void setON( );
+    void setOFF( );
+    void setOpen( );
+    void setClose( );
+    void set Start/restart the washing cycle( );
+    void set Suspend the washing cycle( );
+    void set Stop the washing cycle( );
+    void setWashing( );
+    void setRinsing( );
+    void setSpin drying( );
+    void setSuspended( );
+    void setThe washing cycle stopped/completed( );
+};

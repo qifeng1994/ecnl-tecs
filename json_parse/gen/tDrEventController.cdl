@@ -1,0 +1,14 @@
+signature sDrEventController {
+    void setBusinessId( );
+    void setCPP( );
+    void setPTR( );
+    void setPower use limit( );
+    void setPower generation limit( );
+    void setElectricity forecast( );
+    void setDLC( );
+    void setLevel designation( );
+    void setProgramId( );
+    void setNewestReceivedEventNotificationId( );
+    void setOldestReceivedEventNotificationId( );
+    void setNotificationIdDesignation( );
+};

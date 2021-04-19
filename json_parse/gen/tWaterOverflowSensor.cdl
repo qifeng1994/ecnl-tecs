@@ -1,4 +1,4 @@
 signature sWaterOverflowSensor {
-    setYES( );
-    setNO( );
+    void setYES( );
+    void setNO( );
 };

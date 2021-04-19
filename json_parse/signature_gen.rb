@@ -69,7 +69,7 @@ def print_signature_state(indent,val,fileName)
 end
 
 def print_signature_number(indent,propertyName,fileName)
-    fileName.print("#{indent}set#{propertyName}( );\n")
+    fileName.print("#{indent}void set#{propertyName}( );\n")
 end
 
 
@@ -94,7 +94,7 @@ def property_format_size (type)
 end
 
 def font_change(name)
-    return name.split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
+    return name.gsub("/"," ").split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
 
 if true then

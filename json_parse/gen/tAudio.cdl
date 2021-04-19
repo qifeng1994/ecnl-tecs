@@ -1,0 +1,5 @@
+signature sAudio {
+    void setVolumeSetting( );
+    void setON( );
+    void setOFF( );
+};

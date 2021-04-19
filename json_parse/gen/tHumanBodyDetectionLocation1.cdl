@@ -1,0 +1,3 @@
+signature sHumanBodyDetectionLocation1 {
+    void setMaximumNumberOfHumanBodyId’s( );
+};

@@ -1,0 +1,7 @@
+signature sLightingForSolidLightEmittingSource {
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setNumberOfLightSources( );
+};

@@ -1,0 +1,8 @@
+signature sMultipleInputPcs {
+    void setSystem-interconnected type(reverse power flow acceptable)( );
+    void setIndependent type( );
+    void setSystem-interconnected type(reverse power flow not acceptable)( );
+    void setMeasuredCumulativeAmountOfElectricEnergy(normalDirection)( );
+    void setMeasuredCumulativeAmountOfElectricEnergy(reverseDirection)( );
+    void setMeasuredInstantaneousElectricEnergy( );
+};

@@ -1,0 +1,22 @@
+signature sGasHeatPumpTypeCommercialAirConditioner(indoorUnit) {
+    void setYES( );
+    void setNO( );
+    void setOther( );
+    void setCooling( );
+    void setHeating( );
+    void setDehumidification( );
+    void setAir circulation( );
+    void setAutomatic( );
+    void setCooling( );
+    void setHeating( );
+    void setDehumidification( );
+    void setAir circulation( );
+    void setTemperatureSettingValue( );
+    void setMeasuredTemperatureValueOfIndoorUnit( );
+    void setUnknown( );
+    void setLess than 50W( );
+    void set50W-100W( );
+    void set100W-150W( );
+    void set150W-200W( );
+    void setEqual to or more than 200W( );
+};

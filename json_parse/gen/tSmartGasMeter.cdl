@@ -1,0 +1,19 @@
+signature sSmartGasMeter {
+    void setCity gas( );
+    void setLP gas( );
+    void setNatural gas( );
+    void setOther( );
+    void setNot specified( );
+    void setCity gas( );
+    void setLP gas( );
+    void setPrivate-sector company( );
+    void setIndivisual( );
+    void setMeasuredCumulativeGasConsumption( );
+    void setDaySettingForWhichTheHistoricalDataOfMeasuredCumulativeGasConsumptionIsToBeRetrieved( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setOpen( );
+    void setClose( );
+};

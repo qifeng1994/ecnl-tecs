@@ -1,0 +1,21 @@
+signature sBidetQuippedToilet(withElectricallyWarmedSeat) {
+    void setON( );
+    void setOFF( );
+    void setContinuous( );
+    void setOnce( );
+    void setNo setting( );
+    void setLow( );
+    void setMedium( );
+    void setHigh( );
+    void setON( );
+    void setOFF( );
+    void setTimer mode( );
+    void setYES( );
+    void setNO( );
+    void setNo setting( );
+    void setOver-cool prevention( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+};

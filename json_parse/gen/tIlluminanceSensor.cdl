@@ -1,4 +1,4 @@
 signature sIlluminanceSensor {
-    setIlluminanceValue1( );
-    setIlluminanceValue2( );
+    void setIlluminanceValue1( );
+    void setIlluminanceValue2( );
 };

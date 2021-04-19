@@ -1,0 +1,9 @@
+signature sCommercialShowCaseOutdoorUnit {
+    void setNormal( );
+    void setDefrosting( );
+    void setCooling( );
+    void setNon-cooling( );
+    void setMeasuredValueOfOutdoorAirTemperature( );
+    void setON( );
+    void setOFF( );
+};

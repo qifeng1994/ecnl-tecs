@@ -1,0 +1,21 @@
+signature sHybridWaterHeater {
+    void setAuto Heating( );
+    void setManual No Heating( );
+    void setManual Heating( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+    void setMode off( );
+    void setHousehold consumption( );
+    void setPrioritizing electricity sales( );
+    void setEconomic efficiency( );
+    void setYES( );
+    void setNO( );
+    void setMeasuredAmountOfHotWaterRemainingInTank( );
+    void setTankCapacity( );
+};

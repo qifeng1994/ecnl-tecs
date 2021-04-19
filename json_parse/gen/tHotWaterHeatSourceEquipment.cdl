@@ -1,0 +1,24 @@
+signature sHotWaterHeatSourceEquipment {
+    void setON( );
+    void setOFF( );
+    void setON( );
+    void setOFF( );
+    void setHeating( );
+    void setCooling( );
+    void setWaterTemperature1( );
+    void setAutomatic( );
+    void setAutomatic( );
+    void setMeasuredTemperatureOfOutwardWater(exitWaterTemperature)( );
+    void setUndefined( );
+    void setMeasuredTemperatureOfInwardWater(entranceWaterTemperature)( );
+    void setUndefined( );
+    void setNormal( );
+    void setModest( );
+    void setHigh power( );
+    void setTimer OFF( );
+    void settimer 1( );
+    void settimer 2( );
+    void setNode unit( );
+    void setClass unit( );
+    void setInstance unit( );
+};

@@ -1,0 +1,11 @@
+signature sAirCleaner {
+    void setAutomatic( );
+    void setYES( );
+    void setNO( );
+    void setYES( );
+    void setNO( );
+    void setON( );
+    void setOFF( );
+    void setYES( );
+    void setNO( );
+};

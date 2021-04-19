@@ -1,4 +1,4 @@
 signature sCondensationSensor {
-    setYES( );
-    setNO( );
+    void setYES( );
+    void setNO( );
 };
