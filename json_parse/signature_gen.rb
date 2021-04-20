@@ -97,27 +97,27 @@ def font_change(name)
     return name.gsub("/"," ").split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
 
+
+def file_output(val)
+    className = font_change(val['className']['en'])
+    cdl = File.open("gen/t#{className}.cdl","w+")
+    cdl.print("signature s#{className} {\n")
+    parse_properties(val['elProperties'],cdl)
+    cdl.print("};\n")
+    cdl.close
+end
+
 if true then
 Dir.mkdir("gen")
 Devices.each{ |id, val|
     if val['oneOf'] then
         val['oneOf'].each{|val2|
-            className = font_change(val2['className']['en'])
-            cdl = File.open("gen/t#{className}.cdl","w+")
-            cdl.print("signature s#{className} {\n")
-            parse_properties(val2['elProperties'],cdl)
-            cdl.print("};\n")
-            cdl.close
+            file_output(val2)
         }
     elsif val['className'] == nil then
         #print "*** #{id} has no class name ***\n"
-    elsif val['className']['en'] then
-        className = font_change(val['className']['en'])
-        cdl = File.open("gen/t#{className}.cdl","w+")
-        cdl.print("signature s#{className} {\n")
-        parse_properties(val['elProperties'],cdl)
-        cdl.print("};\n")
-        cdl.close
+    elsif val['className']['en'] then   
+        file_output(val)
         #print( "#{val['className']['en']} = #{id}\n" )
     elsif val['className']['ja'] then
         #print( "#{val['className']['ja']} = #{id}\n" )

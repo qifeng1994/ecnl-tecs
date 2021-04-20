@@ -40,7 +40,7 @@ propertyName()
 }
 
 signature sClassName{
-    void setStateName();
+    void setPropertyName_StateName();
 };
 
 2021/05/17

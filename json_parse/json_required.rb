@@ -96,7 +96,7 @@ def print_function_number(indent,size,type,propertyName,className,min,max)
     #{indent}return 0;
     if((*(#{type}_t*)src >= #{min}) && (*(#{type}_t*)src <= #{max})){
         *((#{type}_t*)item->exinf) != *((#{type}_t*)src);
-        e#{className}_Set#{propertyName}( );
+        c#{className}_Set#{propertyName}( );
     }
     else{
         return 0;
@@ -107,7 +107,7 @@ end
 
 def print_state_type (indent,val,className)
     val['enum'].each{ |edt|
-        print("#{indent}case #{edt['edt']}: e#{className}_Set#{edt['state']['en']}( )
+        print("#{indent}case #{edt['edt']}: c#{className}_Set#{edt['state']['en']}( )
         break;\n")
     }
 end
@@ -139,3 +139,5 @@ Devices.each{ |id, val|
         #print "### #{id} has class name but has neither 'ja' nor 'en' ***\n"
     end
 }
+
+# propertyName[0].downcase+className[1..-1] 首字母小写
