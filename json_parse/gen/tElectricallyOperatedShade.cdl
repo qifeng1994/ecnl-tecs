@@ -1,8 +1,8 @@
 signature sElectricallyOperatedShade {
-    void setOpen( );
-    void setClose( );
+    void setOpenCloseSetting_Open( );
+    void setOpenCloseSetting_Close( );
     void setShadeAngleSetting( );
-    void setLow( );
-    void setMiddle( );
-    void setHigh( );
+    void setBlindOpenCloseSpeedSetting_Low( );
+    void setBlindOpenCloseSpeedSetting_Middle( );
+    void setBlindOpenCloseSpeedSetting_High( );
 };

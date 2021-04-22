@@ -5,7 +5,7 @@ signature sExtendedLightingSystem {
     void setPowerConsumptionWhenFullyLighted( );
     void setPossiblePowerSavings( );
     void setPowerConsumptionLimitSetting( );
-    void setON( );
-    void setOFF( );
+    void setAutomaticOperationControllingSetting_On( );
+    void setAutomaticOperationControllingSetting_Off( );
     void setFadingControlChangeTimeSetting( );
 };

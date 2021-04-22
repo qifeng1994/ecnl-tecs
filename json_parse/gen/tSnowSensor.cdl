@@ -1,4 +1,4 @@
 signature sSnowSensor {
-    void setYES( );
-    void setNO( );
+    void setSnowDetectionStatus_Yes( );
+    void setSnowDetectionStatus_No( );
 };

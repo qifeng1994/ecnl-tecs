@@ -1,14 +1,14 @@
 signature sGardenSprinkler {
-    void setautomatic ON( );
-    void setmanual ON( );
-    void setmanual OFF( );
-    void setOFF( );
-    void setdaily( );
-    void setevery other day( );
-    void setevery 3 days( );
-    void setonce a week( );
-    void setfirst ON( );
-    void setsecond ON( );
-    void setboth ON( );
+    void setSprinkleValveOpenCloseSetting_AutomaticOn( );
+    void setSprinkleValveOpenCloseSetting_ManualOn( );
+    void setSprinkleValveOpenCloseSetting_ManualOff( );
+    void setSprinkleIntervalSetting_Off( );
+    void setSprinkleIntervalSetting_Daily( );
+    void setSprinkleIntervalSetting_EveryOtherDay( );
+    void setSprinkleIntervalSetting_Every3Days( );
+    void setSprinkleIntervalSetting_OnceAWeek( );
+    void setNumberOfSprinklesSetting_FirstOn( );
+    void setNumberOfSprinklesSetting_SecondOn( );
+    void setNumberOfSprinklesSetting_BothOn( );
     void setSprinkleDurationSetting( );
 };

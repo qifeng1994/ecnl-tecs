@@ -114,37 +114,45 @@ def font_change(name)
     return name.gsub("/"," ").split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
 
-def temp_method (val)
+def temp_method (val,array)
     className = font_change(val['className']['en'])
     blocks = Hash.new
     args0 = []
     options =[]
     
-    blocks = {"type" => "#{className}", "message0" => "#{className} %1", "output" => "null", "colour" => 230}
+    blocks = {"type" => "#{className}", "message0" => "#{className} %1", "output" => nil, "colour" => 230}
     blocks.store("args0" , args0)
     arguements = {"type" => "field_dropdown", "name" => "NAME", "options" => options}
     args0.push(arguements)
 
-    parse_properties(val['elProperties'],options)
+    if arguements["options"].empty? then 
+    else
+        parse_properties(val['elProperties'],options)
+        array.push(blocks)
+    end
 
-    json = JSON.pretty_generate(blocks)
+    
+    #json = JSON.pretty_generate(blocks)
     #puts(json)
-    blockly = File.open("block.json","a+")
-    blockly.puts(json)
-    blockly.close
+    #blockly = File.open("block.json","a+")
+    #blockly.puts json
+    # blockly.puts("#{json},")
+    #blockly.close
+
+    #puts ("<block type=\"#{className}\"></block>")
 end
 
-if true then 
-
+# if true then 
+array = Array.new
 Devices.each{ |id, val|
     if val['oneOf'] then
         val['oneOf'].each{|val2|
-        temp_method (val2)
+        temp_method(val2,array)
         }
     elsif val['className'] == nil then
         #print "*** #{id} has no class name ***\n"
     elsif val['className']['en'] then   
-        temp_method (val)
+        temp_method(val,array)
         #print( "#{val['className']['en']} = #{id}\n" )
     elsif val['className']['ja'] then
         #print( "#{val['className']['ja']} = #{id}\n" )
@@ -153,6 +161,11 @@ Devices.each{ |id, val|
     end
 }
 
-else
-File.delete("block.json")
-end
+json = JSON.pretty_generate(array)
+blockly = File.open("block.json","w+")
+blockly.puts json
+blockly.close
+
+# else
+# File.delete("block.json")
+# end

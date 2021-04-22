@@ -1,4 +1,4 @@
 signature sWeightSensor {
-    void setYES( );
-    void setNO( );
+    void setWeightDetectionStatus_Yes( );
+    void setWeightDetectionStatus_No( );
 };

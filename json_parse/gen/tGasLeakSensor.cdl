@@ -1,5 +1,5 @@
 signature sGasLeakSensor {
-    void setYES( );
-    void setNO( );
-    void setReset( );
+    void setGasLeakOccurrenceStatus_Yes( );
+    void setGasLeakOccurrenceStatus_No( );
+    void setGasLeakOccurrenceStatusResetting_Reset( );
 };

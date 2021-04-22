@@ -1,5 +1,5 @@
 signature sVentilationFan {
-    void setAutomatic( );
-    void setON( );
-    void setOFF( );
+    void setAirFlowRateSetting_Automatic( );
+    void setVentilationAutoSetting_On( );
+    void setVentilationAutoSetting_Off( );
 };

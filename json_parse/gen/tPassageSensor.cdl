@@ -1,13 +1,13 @@
 signature sPassageSensor {
     void setPassageDetectionHoldTime( );
-    void setNo passage( );
-    void setN( );
-    void setNE( );
-    void setE( );
-    void setSE( );
-    void setS( );
-    void setSW( );
-    void setW( );
-    void setNW( );
-    void setDirection unknown( );
+    void setPassageDetectionDirection_NoPassage( );
+    void setPassageDetectionDirection_N( );
+    void setPassageDetectionDirection_Ne( );
+    void setPassageDetectionDirection_E( );
+    void setPassageDetectionDirection_Se( );
+    void setPassageDetectionDirection_S( );
+    void setPassageDetectionDirection_Sw( );
+    void setPassageDetectionDirection_W( );
+    void setPassageDetectionDirection_Nw( );
+    void setPassageDetectionDirection_DirectionUnknown( );
 };

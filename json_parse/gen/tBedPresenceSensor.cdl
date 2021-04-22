@@ -1,4 +1,4 @@
 signature sBedPresenceSensor {
-    void setYES( );
-    void setNO( );
+    void setBedPresenceDetectionStatus_Yes( );
+    void setBedPresenceDetectionStatus_No( );
 };

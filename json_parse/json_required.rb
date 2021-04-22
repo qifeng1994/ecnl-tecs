@@ -80,7 +80,7 @@ def property_format_size (type)
 end
 
 def print_function_state(indent,size,type,propertyName,val,className)
-    print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
@@ -91,7 +91,7 @@ def print_function_state(indent,size,type,propertyName,val,className)
 end
 
 def print_function_number(indent,size,type,propertyName,className,min,max)
-    print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     if((*(#{type}_t*)src >= #{min}) && (*(#{type}_t*)src <= #{max})){

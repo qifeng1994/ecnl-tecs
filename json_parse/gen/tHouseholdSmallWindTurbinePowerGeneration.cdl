@@ -1,12 +1,12 @@
 signature sHouseholdSmallWindTurbinePowerGeneration {
-    void setSystem-linked type( );
-    void setIndependent type( );
-    void setHybrid type( );
+    void setSystemInterconnectionStatus_SystemLinkedType( );
+    void setSystemInterconnectionStatus_IndependentType( );
+    void setSystemInterconnectionStatus_HybridType( );
     void setMeasuredInstantaneousAmountOfElectricityGenerated( );
     void setMeasuredCumulativeAmountOfElectricityGenerated( );
-    void setReset( );
+    void setResettingCumulativeAmountOfElectricityGenerated_Reset( );
     void setMeasuredCumulativeAmountOfElectricitySold( );
-    void setReset( );
+    void setResettingCumulativeAmountOfElectricitySold_Reset( );
     void setPowerGenerationOutputLimitSetting1( );
     void setPowerGenerationOutputLimitSetting2( );
     void setLimitSettingForTheAmountOfElectricitySold( );
@@ -16,6 +16,6 @@ signature sHouseholdSmallWindTurbinePowerGeneration {
     void setCutInWindSpeed( );
     void setCutOutWindSpeed( );
     void setExtremeWindSpeed( );
-    void setON( );
-    void setOFF( );
+    void setBrakingStatus_On( );
+    void setBrakingStatus_Off( );
 };

@@ -55,15 +55,16 @@ def parse_definitions(val,propertyName,fileName)
             size = val['size']
             type = property_data_type(size)
             propertyName = font_change(propertyName)
-            print_signature_state("    ",val,fileName)
+            print_signature_state("    ",val,propertyName,fileName)
         else
         end
     
 end
 
-def print_signature_state(indent,val,fileName)
+def print_signature_state(indent,val,propertyName,fileName)
     val['enum'].each{ |edt|
-        fileName.print("#{indent}void set#{edt['state']['en']}( );\n")
+        stateName = font_change(edt['state']['en'])
+        fileName.print("#{indent}void set#{propertyName}_#{stateName}( );\n")
     }
 
 end

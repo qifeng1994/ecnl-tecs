@@ -1,5 +1,5 @@
 signature sCrimePreventionSensor {
-    void setYES( );
-    void setNO( );
-    void setReset( );
+    void setInvasionOccurrenceStatus_Yes( );
+    void setInvasionOccurrenceStatus_No( );
+    void setInvasionOccurrenceStatusResetting_Reset( );
 };

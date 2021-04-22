@@ -1,5 +1,5 @@
 signature sSoundSensor {
-    void setYES( );
-    void setNO( );
+    void setSoundDetectionStatus_Yes( );
+    void setSoundDetectionStatus_No( );
     void setSoundDetectionHoldingTime( );
 };

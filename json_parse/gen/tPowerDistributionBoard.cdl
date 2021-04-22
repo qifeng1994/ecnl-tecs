@@ -1,9 +1,9 @@
 signature sPowerDistributionBoard {
     void setMasterRatedCapacity( );
     void setNumberOfMeasurementChannel(simplex)( );
-    void setUndefined( );
+    void setNumberOfMeasurementChannel(simplex)_Undefined( );
     void setNumberOfMeasurementChannels(duplex)( );
-    void setUndefined( );
+    void setNumberOfMeasurementChannels(duplex)_Undefined( );
     void setMeasuredCumulativeAmountOfElectricEnergy(normalDirection)( );
     void setMeasuredCumulativeAmountOfElectricEnergy(reverseDirection)( );
     void setDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved( );

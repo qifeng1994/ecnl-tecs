@@ -34,7 +34,7 @@ default:
 
 
 
-propertyName()
+void propertyName_prop_set()
 {
     cClassName_stateName()
 }

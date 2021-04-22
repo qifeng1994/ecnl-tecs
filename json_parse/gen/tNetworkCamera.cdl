@@ -1,5 +1,0 @@
-signature sNetworkCamera {
-    void setReady( );
-    void setBusy( );
-    void setShoot( );
-};

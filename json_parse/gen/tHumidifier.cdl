@@ -1,8 +1,8 @@
 signature sHumidifier {
-    void setON( );
-    void setOFF( );
+    void setReservationSetOfOffTimer_On( );
+    void setReservationSetOfOffTimer_Off( );
     void setMeasuredValueOfRoomRelativeHumidity( );
     void setHumidifyingSetting1( );
-    void setON( );
-    void setOFF( );
+    void setIonEmissionSetting_On( );
+    void setIonEmissionSetting_Off( );
 };

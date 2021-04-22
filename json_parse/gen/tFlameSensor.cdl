@@ -1,5 +1,5 @@
 signature sFlameSensor {
-    void setYES( );
-    void setNO( );
-    void setReset( );
+    void setFlameDetectionStatus_Yes( );
+    void setFlameDetectionStatus_No( );
+    void setFlameDetectionStatusResetting_Reset( );
 };

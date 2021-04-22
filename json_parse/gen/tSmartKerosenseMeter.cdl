@@ -1,15 +1,15 @@
 signature sSmartKerosenseMeter {
-    void setNot specified( );
-    void setKerosene sales( );
-    void setPrivate-sector company( );
-    void setIndivisual( );
+    void setOwnerCategorySetting_NotSpecified( );
+    void setOwnerCategorySetting_KeroseneSales( );
+    void setOwnerCategorySetting_PrivateSectorCompany( );
+    void setOwnerCategorySetting_Indivisual( );
     void setMeasuredCumulativeKeroseneConsumption( );
     void setCollectionDateSettingForHistoryOfCumulativeKeroseneConsumption( );
-    void setYES( );
-    void setNO( );
-    void setLevel 1( );
-    void setLevel 2( );
-    void setLevel 3( );
-    void setNone( );
+    void setMeterReadingDataAbnormalityDetectionStatus_Yes( );
+    void setMeterReadingDataAbnormalityDetectionStatus_No( );
+    void setResidualVolumeControlWarningLevel_Level1( );
+    void setResidualVolumeControlWarningLevel_Level2( );
+    void setResidualVolumeControlWarningLevel_Level3( );
+    void setResidualVolumeControlWarningLevel_None( );
     void setSlightLeakTimerValue(keroseneFlowRateContinuation)( );
 };

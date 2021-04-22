@@ -1,5 +1,5 @@
 signature sEmergencyButton {
-    void setYES( );
-    void setNO( );
-    void setReset( );
+    void setEmergencyOccurrenceStatus_Yes( );
+    void setEmergencyOccurrenceStatus_No( );
+    void setEmergencyOccurrenceStatusResetting_Reset( );
 };
