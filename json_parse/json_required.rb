@@ -1,4 +1,6 @@
+#　アプリケーション.cを生成するため
 require "json"
+require "fileutils"
 # Echonet Lite Device Description in JSON
 devdesc_json_fname = "appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
 
@@ -10,7 +12,7 @@ DevDesc = JSON[devdesc_json]
 Devices = DevDesc["devices"]
 Definitions = DevDesc["definitions"]
 
-def parse_properties (val,className)
+def parse_properties (val,className,fileName)
     val.each{ |prop_id,val2|
         if val2['oneOf'] then
             
@@ -20,16 +22,16 @@ def parse_properties (val,className)
                 if val2['data']['$ref'] then
                 ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
                 val3 = Definitions[ref]
-                parse_definitions(val3,propertyName,className)
+                parse_definitions(val3,propertyName,className,fileName)
                 elsif val2['data']['type'] == 'state' then
                 val3 = val2['data']
-                parse_definitions(val3,propertyName,className)
+                parse_definitions(val3,propertyName,className,fileName)
                 elsif val2['data']['oneOf'] then
                 val2['data']['oneOf'].each{ |val3|
                     if val3['$ref'] then
                     ref = val3['$ref'].sub( /#\/definitions\//, "" )
                     val4 = Definitions[ref]
-                    parse_definitions(val4,propertyName,className)
+                    parse_definitions(val4,propertyName,className,fileName)
                     else
                     end
                 }
@@ -41,19 +43,19 @@ def parse_properties (val,className)
     }
 end
 
-def parse_definitions(val,propertyName,className)
+def parse_definitions(val,propertyName,className,fileName)
         if val['type'] == 'number' then
             type = val['format']
             propertyName = font_change(propertyName)
             size = property_format_size(type)
             min = val['minimum']
             max = val['maximum']
-            print_function_number("  ",size,type,propertyName,className,min,max)
+            print_function_number("  ",size,type,propertyName,className,min,max,fileName)
         elsif val['type'] == 'state' then
             size = val['size']
             type = property_data_type(size)
             propertyName = font_change(propertyName)
-            print_function_state("  ",size,type,propertyName,val,className)
+            print_function_state("  ",size,type,propertyName,val,className,fileName)
         else
         end
     
@@ -79,19 +81,19 @@ def property_format_size (type)
     end
 end
 
-def print_function_state(indent,size,type,propertyName,val,className)
-    print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+def print_function_state(indent,size,type,propertyName,val,className,fileName)
+    fileName.print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
     switch (*(#{type}*)src) {\n")
-    print_state_type(indent + "    ", val,className)
-    print("default:
+    print_state_type(indent + "    ", val,className,fileName)
+    fileName.print("default:
         return 0;\n}\n")
 end
 
-def print_function_number(indent,size,type,propertyName,className,min,max)
-    print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+def print_function_number(indent,size,type,propertyName,className,min,max,fileName)
+    fileName.print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     if((*(#{type}_t*)src >= #{min}) && (*(#{type}_t*)src <= #{max})){
@@ -105,31 +107,39 @@ def print_function_number(indent,size,type,propertyName,className,min,max)
     )
 end
 
-def print_state_type (indent,val,className)
+def print_state_type (indent,val,className,fileName)
     val['enum'].each{ |edt|
-        print("#{indent}case #{edt['edt']}: c#{className}_Set#{edt['state']['en']}( )
+        stateName = font_change(edt['state']['en'])
+        fileName.print("#{indent}case #{edt['edt']}: c#{className}_set#{stateName}( )
         break;\n")
     }
 end
 
 def font_change(name)
-    return name.split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
+    # return name.split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
+    return name.gsub("/"," ").split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
 
+def file_output(val)
+    className = font_change(val['className']['en'])
+    app = File.open("src/#{className}.c","w+")
+    parse_properties(val['elProperties'],className,app)
+    app.close
+end
+
+# Dir.mkdir("src")
 Devices.each{ |id, val|
     if val['oneOf'] then
         # print( "#{id} oneOf\n" )
         val['oneOf'].each{|val2|
             # print( "  #{val2['className']['en']}\n" )
-            className = font_change(val2['className']['en'])
-            parse_properties(val2['elProperties'],className)
+            file_output(val2)
 
         }
     elsif val['className'] == nil then
         #print "*** #{id} has no class name ***\n"
     elsif val['className']['en'] then
-        className = font_change(val['className']['en'])
-        parse_properties(val['elProperties'],className)
+        file_output(val)        
         #print( "#{val['className']['en']} = #{id}\n" )
         #print_properties( val['elProperties'] )
     elsif val['className']['ja'] then

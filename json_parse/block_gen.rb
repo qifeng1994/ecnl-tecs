@@ -125,10 +125,11 @@ def temp_method (val,array)
     arguements = {"type" => "field_dropdown", "name" => "NAME", "options" => options}
     args0.push(arguements)
 
+    parse_properties(val['elProperties'],options)
     if arguements["options"].empty? then 
     else
-        parse_properties(val['elProperties'],options)
         array.push(blocks)
+        # puts ("<block type=\"#{className}\"></block>")
     end
 
     
@@ -139,10 +140,9 @@ def temp_method (val,array)
     # blockly.puts("#{json},")
     #blockly.close
 
-    #puts ("<block type=\"#{className}\"></block>")
+    
 end
 
-# if true then 
 array = Array.new
 Devices.each{ |id, val|
     if val['oneOf'] then
@@ -165,7 +165,3 @@ json = JSON.pretty_generate(array)
 blockly = File.open("block.json","w+")
 blockly.puts json
 blockly.close
-
-# else
-# File.delete("block.json")
-# end
