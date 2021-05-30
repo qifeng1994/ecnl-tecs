@@ -101,15 +101,16 @@ end
 
 def file_output(val)
     className = font_change(val['className']['en'])
-    cdl = File.open("gen/t#{className}.cdl","w+")
+    FileUtils.mkdir_p("lib/#{className}/src") # 建立多重路径
+    cdl = File.open("lib/#{className}/src/t#{className}.cdl","w+")
     cdl.print("signature s#{className} {\n")
     parse_properties(val['elProperties'],cdl)
     cdl.print("};\n")
     cdl.close
 end
 
-if true then
-Dir.mkdir("gen")
+
+
 Devices.each{ |id, val|
     if val['oneOf'] then
         val['oneOf'].each{|val2|
@@ -126,10 +127,6 @@ Devices.each{ |id, val|
         #print "### #{id} has class name but has neither 'ja' nor 'en' ***\n"
     end
 }
-
-else
-FileUtils.rm_r ("gen")
-end
 
 
 # if true then
