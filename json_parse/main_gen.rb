@@ -123,7 +123,7 @@ end
 def file_output(val)
     className = font_change(val['className']['en'])
     FileUtils.mkdir_p("lib/#{className}/src") # 建立多重路径
-    app = File.open("lib/#{className}/src/#{className}.c","w+")
+    app = File.open("lib/#{className}/src/echonet_main.c","w+")
     parse_properties(val['elProperties'],className,app)
     app.close
 end

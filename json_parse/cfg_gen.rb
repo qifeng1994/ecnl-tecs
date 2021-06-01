@@ -27,6 +27,26 @@ DevDesc = JSON[devdesc_json]
 Devices = DevDesc["devices"]
 Definitions = DevDesc["definitions"]
 
+def print_nodeprofile(fileName)
+    fileName.puts ("
+/*ECHONET Lite OSオブジェクト*/
+INCLUDE(\"echonet_asp.cfg\");\n
+/* ECHONET Lite UDP 通信端点 */
+INCLUDE(\"echonet_udp.cfg\");\n
+/*ノードプロファイルオブジェクト*/
+ECN_CRE_EOBJ (LOCAL_NODE_EOBJ, { EOBJ_LOCAL_NODE, EOBJ_NULL, 0, EOJ_X1_PROFILE, EOJ_X2_NODE_PROFILE, EOJ_X3_LOCAL_NODE });\n
+/* 動作状態 */
+ECN_DEF_EPRP (LOCAL_NODE_EOBJ, { 0x80, EPC_RULE_SET | EPC_RULE_GET, 1, (intptr_t)&local_node_data.operation_status, (EPRP_SETTER *)onoff_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* Ｖｅｒｓｉｏｎ情報 */
+ECN_DEF_EPRP (LOCAL_NODE_EOBJ, { 0x82, EPC_RULE_GET, 4, (intptr_t)&local_node_data.version_information, (EPRP_SETTER *)ecn_data_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* 識別番号 */
+ECN_DEF_EPRP (LOCAL_NODE_EOBJ, { 0x83, EPC_RULE_GET, 17, (intptr_t)&local_node_data.identification_number, (EPRP_SETTER *)ecn_data_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* メーカーコード */
+ECN_DEF_EPRP (LOCAL_NODE_EOBJ, { 0x8A, EPC_RULE_GET, 3, (intptr_t)&local_node_data.manufacturer_code, (EPRP_SETTER *)ecn_data_prop_set, (EPRP_GETTER *)ecn_data_prop_get });
+
+")
+end
+
 def font_change(name)
     return name.gsub("/"," ").split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
@@ -44,11 +64,13 @@ def folder_gen(val)
     FileUtils.mkdir_p("lib/#{className}/src") # 建立多重路径
     # [2] 各フォルダーの中 ファイルを生成する
     cfg = File.open("lib/#{className}/src/echonet_main.cfg","w+")
+    print_nodeprofile(cfg)
 
     objName_jp = val['className']['ja']
     cfg.puts ("/*#{objName_jp}*/")
     objNAME = font_NAME(val['className']['en'])
-    cfg.puts ("ECN_CRE_EOBJ(#{objNAME}_CLASS_EOBJ, {EOBJ_DEVICE, LOCAL_NODE_EOBJ, 0, EOJ_X1_AMENITY, EOJ_X2_#{objNAME}_CLASS, EOJ_X3_#{objNAME}_CLASS});")
+    cfg.puts ("ECN_CRE_EOBJ(#{objNAME}_CLASS_EOBJ, {EOBJ_DEVICE, LOCAL_NODE_EOBJ, 0, EOJ_X1_AMENITY, EOJ_X2_#{objNAME}_CLASS, EOJ_X3_#{objNAME}_CLASS});
+    ")
     objname = font_name(val['className']['en'])
 
     val['elProperties'].each{|prop_id,val2| 
@@ -81,7 +103,8 @@ def folder_gen(val)
 
                         end 
                     end   
-                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_SET | EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_SETTER *)#{propname_en}_prop_set, (EPRP_GETTER *)ecn_data_prop_get });")
+                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_SET | EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_SETTER *)#{propname_en}_prop_set, (EPRP_GETTER *)ecn_data_prop_get });
+                    ")
                 else
                     if val2['data']['$ref'] then
                         ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
@@ -94,7 +117,8 @@ def folder_gen(val)
 
                         end 
                     end
-                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_GETTER *)ecn_data_prop_get });")
+                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_GETTER *)ecn_data_prop_get });
+                    ")
                 end
          
             end
@@ -133,3 +157,5 @@ Devices.each{ |id, val|
 # Tempfile.open{ |t|
 #     t.method 
 # }
+
+
