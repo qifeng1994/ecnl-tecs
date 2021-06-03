@@ -1,8 +1,8 @@
 signature sMultipleInputPcs {
-    void setSystemInterconnectedType_SystemInterconnectedType(reversePowerFlowAcceptable)( );
-    void setSystemInterconnectedType_IndependentType( );
-    void setSystemInterconnectedType_SystemInterconnectedType(reversePowerFlowNotAcceptable)( );
-    void setMeasuredCumulativeAmountOfElectricEnergy(normalDirection)( );
-    void setMeasuredCumulativeAmountOfElectricEnergy(reverseDirection)( );
-    void setMeasuredInstantaneousElectricEnergy( );
+    void getSystemInterconnectedType_SystemInterconnectedType(reversePowerFlowAcceptable)( );
+    void getSystemInterconnectedType_IndependentType( );
+    void getSystemInterconnectedType_SystemInterconnectedType(reversePowerFlowNotAcceptable)( );
+    void getMeasuredCumulativeAmountOfElectricEnergy(normalDirection)( );
+    void getMeasuredCumulativeAmountOfElectricEnergy(reverseDirection)( );
+    void getMeasuredInstantaneousElectricEnergy( );
 };

@@ -1,11 +1,2 @@
 signature sAirCleaner {
-    void setAirFlowRateSetting_Automatic( );
-    void setAirPollutionDetectionStatus_Yes( );
-    void setAirPollutionDetectionStatus_No( );
-    void setSmokeDetectionStatus_Yes( );
-    void setSmokeDetectionStatus_No( );
-    void setOpticalCatalystOperationSetting_On( );
-    void setOpticalCatalystOperationSetting_Off( );
-    void setFilterChangeNotice_Yes( );
-    void setFilterChangeNotice_No( );
 };

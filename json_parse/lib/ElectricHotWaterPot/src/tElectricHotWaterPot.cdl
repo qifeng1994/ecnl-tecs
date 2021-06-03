@@ -1,16 +1,2 @@
 signature sElectricHotWaterPot {
-    void setCoverOpenCloseStatus_Open( );
-    void setCoverOpenCloseStatus_Close( );
-    void setNoWaterwarning_Yes( );
-    void setNoWaterwarning_No( );
-    void setBoilUpSetting_BoilUpStart( );
-    void setBoilUpSetting_BoilUpStopWarmer( );
-    void setBoilUpWarmerModeSetting_CitricAcidCleaning( );
-    void setBoilUpWarmerModeSetting_NormalWarmer( );
-    void setBoilUpWarmerModeSetting_PowerSavingWarmer( );
-    void setSetValueOfWarmerTemperature( );
-    void setHotWaterDischargeStatus_Yes( );
-    void setHotWaterDischargeStatus_No( );
-    void setLockStatus_Yes( );
-    void setLockStatus_No( );
 };

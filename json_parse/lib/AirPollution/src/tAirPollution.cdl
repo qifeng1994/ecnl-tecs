@@ -1,4 +1,4 @@
 signature sAirPollution {
-    void setAirPollutionDetectionStatus_Yes( );
-    void setAirPollutionDetectionStatus_No( );
+    void getAirPollutionDetectionStatus_Yes( );
+    void getAirPollutionDetectionStatus_No( );
 };

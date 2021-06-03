@@ -1,11 +1,9 @@
 signature sExtendedLightingSystem {
-    void setIlluminanceLevelSetting( );
     void setSceneControlSetting( );
-    void setNumberThatCanAssignSceneControlSetting( );
-    void setPowerConsumptionWhenFullyLighted( );
-    void setPossiblePowerSavings( );
+    void getSceneControlSetting( );
+    void getNumberThatCanAssignSceneControlSetting( );
+    void getPowerConsumptionWhenFullyLighted( );
+    void getPossiblePowerSavings( );
     void setPowerConsumptionLimitSetting( );
-    void setAutomaticOperationControllingSetting_On( );
-    void setAutomaticOperationControllingSetting_Off( );
-    void setFadingControlChangeTimeSetting( );
+    void getPowerConsumptionLimitSetting( );
 };

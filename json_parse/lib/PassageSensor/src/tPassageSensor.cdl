@@ -1,13 +1,12 @@
 signature sPassageSensor {
-    void setPassageDetectionHoldTime( );
-    void setPassageDetectionDirection_NoPassage( );
-    void setPassageDetectionDirection_N( );
-    void setPassageDetectionDirection_Ne( );
-    void setPassageDetectionDirection_E( );
-    void setPassageDetectionDirection_Se( );
-    void setPassageDetectionDirection_S( );
-    void setPassageDetectionDirection_Sw( );
-    void setPassageDetectionDirection_W( );
-    void setPassageDetectionDirection_Nw( );
-    void setPassageDetectionDirection_DirectionUnknown( );
+    void getPassageDetectionDirection_NoPassage( );
+    void getPassageDetectionDirection_N( );
+    void getPassageDetectionDirection_Ne( );
+    void getPassageDetectionDirection_E( );
+    void getPassageDetectionDirection_Se( );
+    void getPassageDetectionDirection_S( );
+    void getPassageDetectionDirection_Sw( );
+    void getPassageDetectionDirection_W( );
+    void getPassageDetectionDirection_Nw( );
+    void getPassageDetectionDirection_DirectionUnknown( );
 };

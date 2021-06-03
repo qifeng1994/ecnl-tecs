@@ -1,5 +1,3 @@
 signature sGasSensor {
-    void setGasDetectionStatus_Yes( );
-    void setGasDetectionStatus_No( );
-    void setMeasuredValueOfGasConcentration( );
+    void getMeasuredValueOfGasConcentration( );
 };

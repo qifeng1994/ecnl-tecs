@@ -1,0 +1,3 @@
+signature sDrEventController {
+    void setNotificationIdDesignation( );
+};

@@ -1,3 +1,2 @@
 signature sMonoFunctionalLighting {
-    void setIlluminanceLevel( );
 };

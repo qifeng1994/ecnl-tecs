@@ -1,4 +1,2 @@
 signature sOpenCloseSensor {
-    void setDegreeOfOpeningDetectionStatus2_Yes( );
-    void setDegreeOfOpeningDetectionStatus2_No( );
 };

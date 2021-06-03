@@ -1,12 +1,6 @@
 signature sSuperClass {
-    void setOperationStatus_On( );
-    void setOperationStatus_Off( );
-    void setMeasuredInstantaneousPowerConsumption( );
-    void setMeasuredCumulativePowerConsumption( );
-    void setCurrentLimitSetting( );
-    void setFaultStatus_Fault( );
-    void setFaultStatus_NoFault( );
-    void setPowerSavingOperationSetting_PowerSaving( );
-    void setPowerSavingOperationSetting_NoPowerSaving( );
-    void setPowerLimitSetting( );
+    void getOperationStatus_On( );
+    void getOperationStatus_Off( );
+    void getFaultStatus_Fault( );
+    void getFaultStatus_NoFault( );
 };

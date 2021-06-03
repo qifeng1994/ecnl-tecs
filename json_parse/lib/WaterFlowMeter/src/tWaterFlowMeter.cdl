@@ -1,13 +1,3 @@
 signature sWaterFlowMeter {
-    void setWaterFlowMeterClassification_RunningWater( );
-    void setWaterFlowMeterClassification_RecycledWater( );
-    void setWaterFlowMeterClassification_SewageWater( );
-    void setWaterFlowMeterClassification_OtherWater( );
-    void setOwnerClassification_NotSpecified( );
-    void setOwnerClassification_PublicWaterworksCompany( );
-    void setOwnerClassification_PrivateSectorCompany( );
-    void setOwnerClassification_Individual( );
-    void setMeasuredCumulativeAmountOfFlowingWater( );
-    void setDetectionOfAbnormalValueInMeteringData_Yes( );
-    void setDetectionOfAbnormalValueInMeteringData_No( );
+    void getMeasuredCumulativeAmountOfFlowingWater( );
 };

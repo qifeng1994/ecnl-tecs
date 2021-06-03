@@ -1,21 +1,10 @@
 signature sHybridWaterHeater {
-    void setAutomaticWaterHeatingSetting_AutoHeating( );
-    void setAutomaticWaterHeatingSetting_ManualNoHeating( );
-    void setAutomaticWaterHeatingSetting_ManualHeating( );
-    void setWaterHeatingStatus_Yes( );
-    void setWaterHeatingStatus_No( );
-    void setHeaterStatus_Yes( );
-    void setHeaterStatus_No( );
-    void setHotWaterSupplyModeSettingForAuxiliaryHeatSourceMachine_On( );
-    void setHotWaterSupplyModeSettingForAuxiliaryHeatSourceMachine_Off( );
-    void setHeaterModeSettingForAuxiliaryHeatSourceMachine_On( );
-    void setHeaterModeSettingForAuxiliaryHeatSourceMachine_Off( );
     void setLinkageModeSettingForSolarPowerGeneration_ModeOff( );
     void setLinkageModeSettingForSolarPowerGeneration_HouseholdConsumption( );
     void setLinkageModeSettingForSolarPowerGeneration_PrioritizingElectricitySales( );
     void setLinkageModeSettingForSolarPowerGeneration_EconomicEfficiency( );
-    void setHotWaterSupplyStatus_Yes( );
-    void setHotWaterSupplyStatus_No( );
-    void setMeasuredAmountOfHotWaterRemainingInTank( );
-    void setTankCapacity( );
+    void getLinkageModeSettingForSolarPowerGeneration_ModeOff( );
+    void getLinkageModeSettingForSolarPowerGeneration_HouseholdConsumption( );
+    void getLinkageModeSettingForSolarPowerGeneration_PrioritizingElectricitySales( );
+    void getLinkageModeSettingForSolarPowerGeneration_EconomicEfficiency( );
 };

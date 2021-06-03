@@ -1,5 +1,4 @@
 signature sFireSensor {
-    void setFireOccurrenceDetectionStatus_Yes( );
-    void setFireOccurrenceDetectionStatus_No( );
-    void setFireOccurrenceDetectionStatusResetting_Reset( );
+    void getFireOccurrenceDetectionStatus_Yes( );
+    void getFireOccurrenceDetectionStatus_No( );
 };

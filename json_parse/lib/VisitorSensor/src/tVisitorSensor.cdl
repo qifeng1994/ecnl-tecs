@@ -1,5 +1,4 @@
 signature sVisitorSensor {
-    void setVisitorDetectionStatus_Yes( );
-    void setVisitorDetectionStatus_No( );
-    void setVisitorDetectionHoldingTime( );
+    void getVisitorDetectionStatus_Yes( );
+    void getVisitorDetectionStatus_No( );
 };

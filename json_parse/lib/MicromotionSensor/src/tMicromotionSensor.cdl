@@ -1,7 +1,4 @@
 signature sMicromotionSensor {
-    void setMicromotionDetectionStatus_Yes( );
-    void setMicromotionDetectionStatus_No( );
-    void setDetectionCounter( );
-    void setSamplingCount( );
-    void setSamplingCycle( );
+    void getMicromotionDetectionStatus_Yes( );
+    void getMicromotionDetectionStatus_No( );
 };

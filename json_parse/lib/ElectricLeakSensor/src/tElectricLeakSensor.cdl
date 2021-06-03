@@ -1,5 +1,4 @@
 signature sElectricLeakSensor {
-    void setElectricLeakOccurrenceStatus_Yes( );
-    void setElectricLeakOccurrenceStatus_No( );
-    void setElectricLeakOccurrenceStatusResetting_Reset( );
+    void getElectricLeakOccurrenceStatus_Yes( );
+    void getElectricLeakOccurrenceStatus_No( );
 };

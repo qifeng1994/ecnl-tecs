@@ -1,4 +1,4 @@
 signature sCigaretteSmokeSensor {
-    void setSmoke(cigarette)DetectionStatus_Yes( );
-    void setSmoke(cigarette)DetectionStatus_No( );
+    void getSmoke(cigarette)DetectionStatus_Yes( );
+    void getSmoke(cigarette)DetectionStatus_No( );
 };

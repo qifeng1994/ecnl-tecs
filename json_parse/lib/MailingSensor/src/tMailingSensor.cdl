@@ -1,4 +1,4 @@
 signature sMailingSensor {
-    void setMailingDetectionStatus_Yes( );
-    void setMailingDetectionStatus_No( );
+    void getMailingDetectionStatus_Yes( );
+    void getMailingDetectionStatus_No( );
 };

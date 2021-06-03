@@ -1,4 +1,4 @@
 signature sWaterOverflowSensor {
-    void setWaterOverflowDetectionStatus_Yes( );
-    void setWaterOverflowDetectionStatus_No( );
+    void getWaterOverflowDetectionStatus_Yes( );
+    void getWaterOverflowDetectionStatus_No( );
 };

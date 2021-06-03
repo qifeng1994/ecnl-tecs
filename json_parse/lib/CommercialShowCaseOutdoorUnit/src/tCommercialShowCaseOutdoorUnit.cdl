@@ -1,0 +1,4 @@
+signature sCommercialShowCaseOutdoorUnit {
+    void setOperationModeSetting_Cooling( );
+    void setOperationModeSetting_NonCooling( );
+};

@@ -1,10 +1,9 @@
 signature sHighVoltageSmartElectricEnergyMeter {
-    void setMonthlyMaximumElectricPowerDemand( );
-    void setCumulativeElectricPowerDemand( );
-    void setNumberOfEffectiveDigitsOfElectricPowerDemand( );
-    void setNumberOfEffectiveDigitsForCumulativeAmountOfReactiveElectricPowerConsumption(lag)ForPowerFactorMeasurement( );
-    void setCoefficient( );
-    void setFixedDate( );
+    void getMonthlyMaximumElectricPowerDemand( );
+    void getNumberOfEffectiveDigitsOfElectricPowerDemand( );
+    void getCoefficient( );
+    void getFixedDate( );
     void setDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved( );
-    void setNumberOfEffectiveDigitsForCumulativeAmountOfActiveElectricEnergy( );
+    void getDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved( );
+    void getNumberOfEffectiveDigitsForCumulativeAmountOfActiveElectricEnergy( );
 };

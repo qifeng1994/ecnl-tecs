@@ -1,13 +1,6 @@
 signature sElectricHeater {
-    void setOnTimerSetting_On( );
-    void setOnTimerSetting_Off( );
-    void setOffTimerSetting_On( );
-    void setOffTimerSetting_Off( );
-    void setAirFlowRateSetting_Automatic( );
-    void setAutomaticTemperatureControlSetting_On( );
-    void setAutomaticTemperatureControlSetting_Off( );
     void setSetTemperatureValue( );
     void setSetTemperatureValue_Undefined( );
-    void setMeasuredValueOfRoomTemperature( );
-    void setSetTemperatureValueOfUserRemoteControl( );
+    void getSetTemperatureValue( );
+    void getSetTemperatureValue_Undefined( );
 };

@@ -1,24 +1,2 @@
 signature sHotWaterHeatSourceEquipment {
-    void setOnTimerSetting_On( );
-    void setOnTimerSetting_Off( );
-    void setOffTimerSetting_On( );
-    void setOffTimerSetting_Off( );
-    void setOperationModeSetting_Heating( );
-    void setOperationModeSetting_Cooling( );
-    void setWaterTemperature1( );
-    void setWaterTemperature1_Automatic( );
-    void setWaterTemperature2_Automatic( );
-    void setMeasuredTemperatureOfOutwardWater(exitWaterTemperature)( );
-    void setMeasuredTemperatureOfOutwardWater(exitWaterTemperature)_Undefined( );
-    void setMeasuredTemperatureOfInwardWater(entranceWaterTemperature)( );
-    void setMeasuredTemperatureOfInwardWater(entranceWaterTemperature)_Undefined( );
-    void setSpecialOperationSetting_Normal( );
-    void setSpecialOperationSetting_Modest( );
-    void setSpecialOperationSetting_HighPower( );
-    void setDailyTimerSetting_TimerOff( );
-    void setDailyTimerSetting_Timer1( );
-    void setDailyTimerSetting_Timer2( );
-    void setPowerConsumptionMeasurementMethod_NodeUnit( );
-    void setPowerConsumptionMeasurementMethod_ClassUnit( );
-    void setPowerConsumptionMeasurementMethod_InstanceUnit( );
 };

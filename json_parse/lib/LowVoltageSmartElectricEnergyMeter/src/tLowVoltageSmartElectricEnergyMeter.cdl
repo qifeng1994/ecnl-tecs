@@ -1,8 +1,8 @@
 signature sLowVoltageSmartElectricEnergyMeter {
-    void setCoefficient( );
-    void setNumberOfEffectiveDigitsForCumulativeAmountsOfElectricEnergy( );
-    void setMeasuredCumulativeAmountOfElectricEnergy(normalDirection)( );
-    void setMeasuredCumulativeAmountsOfElectricEnergy(reverseDirection)( );
+    void getNumberOfEffectiveDigitsForCumulativeAmountsOfElectricEnergy( );
+    void getMeasuredCumulativeAmountOfElectricEnergy(normalDirection)( );
+    void getMeasuredCumulativeAmountsOfElectricEnergy(reverseDirection)( );
     void setDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved1( );
-    void setMeasuredInstantaneousElectricEnergy( );
+    void getDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved1( );
+    void getMeasuredInstantaneousElectricEnergy( );
 };

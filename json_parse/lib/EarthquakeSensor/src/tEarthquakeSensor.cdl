@@ -1,10 +1,4 @@
 signature sEarthquakeSensor {
-    void setEarthquakeOccurrenceStatus_Yes( );
-    void setEarthquakeOccurrenceStatus_No( );
-    void setEarthquakeOccurrenceStatusResetting_Reset( );
-    void setSiValue( );
-    void setSiValueResetting_Reset( );
-    void setCollapseOccurrenceStatus_Yes( );
-    void setCollapseOccurrenceStatus_No( );
-    void setCollapseOccurrenceStatusResetting_Reset( );
+    void getEarthquakeOccurrenceStatus_Yes( );
+    void getEarthquakeOccurrenceStatus_No( );
 };

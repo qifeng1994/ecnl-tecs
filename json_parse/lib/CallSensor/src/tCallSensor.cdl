@@ -1,5 +1,4 @@
 signature sCallSensor {
-    void setCallStatus_Yes( );
-    void setCallStatus_No( );
-    void setCallHoldingTime( );
+    void getCallStatus_Yes( );
+    void getCallStatus_No( );
 };

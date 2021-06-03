@@ -96,4 +96,7 @@ prop_set prop_getの関数名を変える時　
 WSLでmrubyビルド,sudo apt install gcc-arm-none-eabi
 2021/05/30
 cfg的生成器先生成nodeprofile的部分，再遍历其他的设备名字
+2021/06/01
+todo: cdl 里面只生成required, 判断条件改为get是否是renquired
+
 2021/06/21

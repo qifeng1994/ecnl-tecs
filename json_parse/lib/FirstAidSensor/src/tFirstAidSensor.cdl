@@ -1,5 +1,4 @@
 signature sFirstAidSensor {
-    void setFirstAidOccurrenceStatus_Yes( );
-    void setFirstAidOccurrenceStatus_No( );
-    void setFirstAidOccurrenceStatusResetting_Reset( );
+    void getFirstAidOccurrenceStatus_Yes( );
+    void getFirstAidOccurrenceStatus_No( );
 };

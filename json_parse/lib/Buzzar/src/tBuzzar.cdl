@@ -1,4 +1,2 @@
 signature sBuzzar {
-    void setSoundGenerationSetting_Yes( );
-    void setSoundGenerationSetting_No( );
 };

@@ -1,9 +1,5 @@
 signature sRiceCooker {
-    void setRiceCookingReservationSetting_On( );
-    void setRiceCookingReservationSetting_Off( );
-    void setCoverOpenCloseStatus_Open( );
-    void setCoverOpenCloseStatus_Close( );
-    void setRiceCookingStatus_Stop( );
-    void setRiceCookingStatus_Preheating( );
-    void setRiceCookingStatus_RiceCooking( );
-    void setRiceCookingStatus_Steaming( );
+    void getRiceCookingStatus_Stop( );
+    void getRiceCookingStatus_Preheating( );
+    void getRiceCookingStatus_RiceCooking( );
+    void getRiceCookingStatus_Steaming( );

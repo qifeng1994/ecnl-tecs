@@ -1,5 +1,3 @@
 signature sOdorSensor {
-    void setOdorDetectionStatus_Yes( );
-    void setOdorDetectionStatus_No( );
-    void setMeasuredOdorValue( );
+    void getMeasuredOdorValue( );
 };

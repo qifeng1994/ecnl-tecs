@@ -1,21 +1,6 @@
 signature sElectricKey {
     void setLockSetting1_Lock( );
     void setLockSetting1_Unlock( );
-    void setLockSetting2_Lock( );
-    void setLockSetting2_Unlock( );
-    void setLockStatusOfDoorGuard_Lock( );
-    void setLockStatusOfDoorGuard_Unlock( );
-    void setDoorOpenCloseStatus_Open( );
-    void setDoorOpenCloseStatus_Close( );
-    void setOccupantNonOccupantStatus_Occupant( );
-    void setOccupantNonOccupantStatus_NonOccupant( );
-    void setAlarmStatus_Normal(noAlarm)( );
-    void setAlarmStatus_BreakOpen( );
-    void setAlarmStatus_DoorOpen( );
-    void setAlarmStatus_ManualUnlocked( );
-    void setAlarmStatus_Tampered( );
-    void setAutoLockModeSetting_On( );
-    void setAutoLockModeSetting_Off( );
-    void setBatteryLevel_OrdinaryLevel( );
-    void setBatteryLevel_NotificationOfBatteryReplacement( );
+    void getLockSetting1_Lock( );
+    void getLockSetting1_Unlock( );
 };

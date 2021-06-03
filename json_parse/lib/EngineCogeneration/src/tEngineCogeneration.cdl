@@ -1,22 +1,4 @@
 signature sEngineCogeneration {
-    void setMeasuredTemperatureOfWaterInWaterHeater( );
-    void setRatedPowerGenerationOutput( );
-    void setHeatingValueOfHotWaterStorageTank( );
-    void setMeasuredInstantaneousPowerGenerationOutput( );
-    void setMeasuredCumulativePowerGenerationOutput( );
-    void setCumulativePowerGenerationOutputResetSetting_Reset( );
-    void setMeasuredInstantaneousGasConsumption( );
-    void setMeasuredCumulativeGasConsumption( );
-    void setCumulativeGasConsumptionResetSetting_Reset( );
-    void setPowerGenerationStatus_Generating( );
-    void setPowerGenerationStatus_Stopped( );
-    void setPowerGenerationStatus_Idling( );
-    void setMeasuredInhouseInstantaneousPowerConsumption( );
-    void setMeasuredInhouseCumulativePowerConsumption( );
-    void setInHouseCumulativePowerConsumptionReset_Reset( );
-    void setSystemInterconnectedType_SystemInterconnectedType(reversePowerFlowAcceptable)( );
-    void setSystemInterconnectedType_IndependentType( );
-    void setSystemInterconnectedType_SystemInterconnectedType(reversePowerFlowNotAcceptable)( );
-    void setMeasuredRemainingHotWaterAmount( );
-    void setTankCapacity( );
+    void getMeasuredInstantaneousPowerGenerationOutput( );
+    void getMeasuredCumulativePowerGenerationOutput( );
 };

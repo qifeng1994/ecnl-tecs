@@ -1,5 +1,3 @@
 signature sVocSensor {
-    void setVocDetectionStatus_Yes( );
-    void setVocDetectionStatus_No( );
-    void setMeasuredValueOfVocConcentration( );
+    void getMeasuredValueOfVocConcentration( );
 };

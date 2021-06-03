@@ -1,5 +1,5 @@
 signature sLightingSystem {
-    void setIlluminanceLevelSetting( );
     void setSceneControlSetting( );
-    void setNumberThatCanAssignSceneControlSetting( );
+    void getSceneControlSetting( );
+    void getNumberThatCanAssignSceneControlSetting( );
 };

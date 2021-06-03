@@ -1,0 +1,3 @@
+signature sNetworkCamera {
+    void setStillImagePhotographySetting_Shoot( );
+};

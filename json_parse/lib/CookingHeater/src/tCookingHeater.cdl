@@ -1,7 +1,3 @@
 signature sCookingHeater {
-    void setChildLockSetting_Off( );
-    void setChildLockSetting_On( );
-    void setRadiantHeaterLockSetting_Off( );
-    void setRadiantHeaterLockSetting_On( );
     void setAllStopSetting_StopAllHeating( );
 };

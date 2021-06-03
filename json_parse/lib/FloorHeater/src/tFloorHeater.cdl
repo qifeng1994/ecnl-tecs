@@ -1,22 +1,2 @@
 signature sFloorHeater {
-    void setOnTimerSetting_On( );
-    void setOnTimerSetting_Off( );
-    void setOffTimerSetting_On( );
-    void setOffTimerSetting_Off( );
-    void setMaximumAllowableSettingLevelForTemperatureSetting2( );
-    void setTemperature1( );
-    void setTemperature1_Automatic( );
-    void setTemperature2_Automatic( );
-    void setMeasuredRoomTemperature( );
-    void setMeasuredRoomTemperature_Undefined( );
-    void setSpecialOperationSetting_NormalOperation( );
-    void setSpecialOperationSetting_ModerateOperation( );
-    void setSpecialOperationSetting_HighPowerOperation( );
-    void setDailyTimerSetting_TimerOff( );
-    void setDailyTimerSetting_Timer1( );
-    void setDailyTimerSetting_Timer2( );
-    void setRatedPowerConsumption( );
-    void setPowerConsumptionMeasurementMethod_NodeUnit( );
-    void setPowerConsumptionMeasurementMethod_ClassUnit( );
-    void setPowerConsumptionMeasurementMethod_InstanceUnit( );
 };

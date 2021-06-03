@@ -1,7 +1,3 @@
 signature sElectricEnergySensor {
-    void setCumulativeAmountsOfElectricEnergy( );
-    void setMediumCapacitySensorInstantaneousElectricEnergy( );
-    void setSmallCapacitySensorInstantaneousElectricEnergy( );
-    void setLargeCapacitySensorInstantaneousElectricEnergy( );
-    void setEffectiveVoltageValue( );
+    void getCumulativeAmountsOfElectricEnergy( );
 };

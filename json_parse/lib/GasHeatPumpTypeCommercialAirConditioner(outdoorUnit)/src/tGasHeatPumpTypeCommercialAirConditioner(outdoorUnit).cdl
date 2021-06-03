@@ -1,4 +1,2 @@
 signature sGasHeatPumpTypeCommercialAirConditioner(outdoorUnit) {
-    void setMeasuredTemperatureValueOfOutdoorUnit( );
-    void setMeasuredCumulativeGasConsumption( );
 };

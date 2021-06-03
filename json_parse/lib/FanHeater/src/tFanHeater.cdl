@@ -1,19 +1,4 @@
 signature sFanHeater {
-    void setOnTimerSetting_BothTheTimeAndRelativeTimeBasedReservationFunctionsAreOn( );
-    void setOnTimerSetting_BothReservationFunctionsAreOff( );
-    void setOnTimerSetting_TimeBasedReservationFunctionsIsOn( );
-    void setOnTimerSetting_RelativeTimeBasedReservationFunctionsIsOn( );
-    void setOffTimerSetting_BothTheTimeAndRelativeTimeBasedReservationFunctionsAreOn( );
-    void setOffTimerSetting_BothReservationFunctionsAreOff( );
-    void setOffTimerSetting_TimeBasedReservationFunctionsIsOn( );
-    void setOffTimerSetting_RelativeTimeBasedReservationFunctionsIsOn( );
-    void setAutomaticTemperatureControlSetting_On( );
-    void setAutomaticTemperatureControlSetting_Off( );
     void setTemperatureSetValue( );
-    void setMeasuredTemperature( );
-    void setMeasuredTemperature_Undefined( );
-    void setExtensionalOperationSetting_On( );
-    void setExtensionalOperationSetting_Off( );
-    void setIonEmissionSetting_On( );
-    void setIonEmissionSetting_Off( );
+    void getTemperatureSetValue( );
 };

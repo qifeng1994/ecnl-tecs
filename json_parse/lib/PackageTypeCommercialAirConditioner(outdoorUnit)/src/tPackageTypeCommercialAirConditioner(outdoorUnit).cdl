@@ -1,9 +1,6 @@
 signature sPackageTypeCommercialAirConditioner(outdoorUnit) {
-    void setSpecialState_Yes( );
-    void setSpecialState_No( );
-    void setMeasuredOutdoorUnitTemperature( );
-    void setMeasuredPowerConsumptionOfOutdoorUnit( );
-    void setPossiblePowerSavingsForOutdoorUnits( );
+    void getMeasuredPowerConsumptionOfOutdoorUnit( );
+    void getPossiblePowerSavingsForOutdoorUnits( );
     void setSettingsRestrictingPowerConsumptionOfOutdoorUnits( );
-    void setMinimumPowerConsumptionForRestrictedOutdoorUnit( );
+    void getSettingsRestrictingPowerConsumptionOfOutdoorUnits( );
 };

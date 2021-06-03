@@ -1,7 +1,3 @@
 signature sLightingForSolidLightEmittingSource {
-    void setOnTimerReservationSetting_Yes( );
-    void setOnTimerReservationSetting_No( );
-    void setOffTimerReservationSetting_Yes( );
-    void setOffTimerReservationSetting_No( );
-    void setNumberOfLightSources( );
+    void getNumberOfLightSources( );
 };

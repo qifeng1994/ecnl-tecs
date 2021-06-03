@@ -1,3 +1,3 @@
 signature sAirPressureSensor {
-    void setAirPressureMeasurement( );
+    void getAirPressureMeasurement( );
 };

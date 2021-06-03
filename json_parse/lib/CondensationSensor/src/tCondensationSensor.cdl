@@ -1,4 +1,4 @@
 signature sCondensationSensor {
-    void setCondensationDetectionStatus_Yes( );
-    void setCondensationDetectionStatus_No( );
+    void getCondensationDetectionStatus_Yes( );
+    void getCondensationDetectionStatus_No( );
 };

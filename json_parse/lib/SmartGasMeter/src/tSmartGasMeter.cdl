@@ -1,19 +1,2 @@
 signature sSmartGasMeter {
-    void setGasMeterClassificationSetting_CityGas( );
-    void setGasMeterClassificationSetting_LpGas( );
-    void setGasMeterClassificationSetting_NaturalGas( );
-    void setGasMeterClassificationSetting_Other( );
-    void setOwnerClassificationSetting_NotSpecified( );
-    void setOwnerClassificationSetting_CityGas( );
-    void setOwnerClassificationSetting_LpGas( );
-    void setOwnerClassificationSetting_PrivateSectorCompany( );
-    void setOwnerClassificationSetting_Indivisual( );
-    void setMeasuredCumulativeGasConsumption( );
-    void setDaySettingForWhichTheHistoricalDataOfMeasuredCumulativeGasConsumptionIsToBeRetrieved( );
-    void setPermissionFromTheCenterToReopenTheValveClosedByTheCenter_Yes( );
-    void setPermissionFromTheCenterToReopenTheValveClosedByTheCenter_No( );
-    void setEmergencyClosureOfShutoffValve_Yes( );
-    void setEmergencyClosureOfShutoffValve_No( );
-    void setShutoffValveStatus_Open( );
-    void setShutoffValveStatus_Close( );
 };

@@ -1,6 +1,3 @@
 signature sWaterLevelSensor {
-    void setWaterLevelOverDetectionThresholdLevel( );
-    void setWaterLevelOverDetectionStatus_Yes( );
-    void setWaterLevelOverDetectionStatus_No( );
-    void setMeasuredValueOfWaterLevel( );
+    void getMeasuredValueOfWaterLevel( );
 };

@@ -1,4 +1,4 @@
 signature sWaterLeakSensor {
-    void setWaterLeakDetectionStatus_Yes( );
-    void setWaterLeakDetectionStatus_No( );
+    void getWaterLeakDetectionStatus_Yes( );
+    void getWaterLeakDetectionStatus_No( );
 };

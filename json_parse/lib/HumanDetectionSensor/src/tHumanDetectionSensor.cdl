@@ -1,4 +1,4 @@
 signature sHumanDetectionSensor {
-    void setHumanDetectionStatus_Yes( );
-    void setHumanDetectionStatus_No( );
+    void getHumanDetectionStatus_Yes( );
+    void getHumanDetectionStatus_No( );
 };

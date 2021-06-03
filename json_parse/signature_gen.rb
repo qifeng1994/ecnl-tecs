@@ -17,60 +17,69 @@ def parse_properties (val,fileName)
         if val2['oneOf'] then
 
         else
-            #if val2['accessRule']['set'] == 'required' then
-                propertyName = val2['propertyName']['en']
-                if val2['data']['$ref'] then
-                ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
-                val3 = Definitions[ref]
-                parse_definitions(val3,propertyName,fileName)
-                elsif val2['data']['type'] == 'state' then
-                val3 = val2['data']
-                parse_definitions(val3,propertyName,fileName)
-                elsif val2['data']['oneOf'] then
-                val2['data']['oneOf'].each{ |val3|
-                    if val3['$ref'] then
-                    ref = val3['$ref'].sub( /#\/definitions\//, "" )
-                    val4 = Definitions[ref]
-                    parse_definitions(val4,propertyName,fileName)
-                    else
-                    end
-                }
-                else
-                end
-            #else
-            #end
+            if val2['accessRule']['set'] == 'required' then
+                accessRule = 'set'
+                parse_required(val2,fileName,accessRule)
+            end
+
+            if val2['accessRule']['get'] == 'required' then 
+                accessRule = 'get'
+                parse_required(val2,fileName,accessRule)
+            end
         end
     }
 end
 
-def parse_definitions(val,propertyName,fileName)
+def parse_required(val2,fileName,accessRule)
+    propertyName = val2['propertyName']['en']
+    if val2['data']['$ref'] then
+    ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
+    val3 = Definitions[ref]
+    parse_definitions(val3,propertyName,fileName,accessRule)
+    elsif val2['data']['type'] == 'state' then
+    val3 = val2['data']
+    parse_definitions(val3,propertyName,fileName,accessRule)
+    elsif val2['data']['oneOf'] then
+    val2['data']['oneOf'].each{ |val3|
+        if val3['$ref'] then
+        ref = val3['$ref'].sub( /#\/definitions\//, "" )
+        val4 = Definitions[ref]
+        parse_definitions(val4,propertyName,fileName,accessRule)
+        else
+        end
+    }
+    else
+    end
+end
+
+def parse_definitions(val,propertyName,fileName,accessRule)
         if val['type'] == 'number' then
             type = val['format']
             propertyName = font_change(propertyName)
             size = property_format_size(type)
             min = val['minimum']
             max = val['maximum']
-            print_signature_number("    ",propertyName,fileName)
+            print_signature_number("    ",propertyName,fileName,accessRule)
         elsif val['type'] == 'state' then
             size = val['size']
             type = property_data_type(size)
             propertyName = font_change(propertyName)
-            print_signature_state("    ",val,propertyName,fileName)
+            print_signature_state("    ",val,propertyName,fileName,accessRule)
         else
         end
     
 end
 
-def print_signature_state(indent,val,propertyName,fileName)
+def print_signature_state(indent,val,propertyName,fileName,accessRule)
     val['enum'].each{ |edt|
         stateName = font_change(edt['state']['en'])
-        fileName.print("#{indent}void set#{propertyName}_#{stateName}( );\n")
+        fileName.print("#{indent}void #{accessRule}#{propertyName}_#{stateName}( );\n")
     }
 
 end
 
-def print_signature_number(indent,propertyName,fileName)
-    fileName.print("#{indent}void set#{propertyName}( );\n")
+def print_signature_number(indent,propertyName,fileName,accessRule)
+    fileName.print("#{indent}void #{accessRule}#{propertyName}( );\n")
 end
 
 
