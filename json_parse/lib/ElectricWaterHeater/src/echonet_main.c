@@ -1,4 +1,4 @@
-void participationInEnergyShift_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
+void participation_in_energy_shift_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
 {
 
     if(size! = 1)
@@ -38,7 +38,7 @@ void daytimeHeatingShiftTime2_prop_set (const EPRPINIB *item, const void *src, i
         return 0;
     }
     return 1;
-void automaticBathWaterHeatingModeSetting_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
+void automatic_bath_water_heating_mode_setting_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
 {
 
     if(size! = 1)

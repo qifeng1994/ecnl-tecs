@@ -17,7 +17,8 @@ Devices = DevDesc["devices"]
 Definitions = DevDesc["definitions"]
 
 def print_default_struct(fileName)
-    return 0
+    fileName.puts("#include \"echonet.h\"")
+    # todo: 優先度、ノードオブジェクト定義
 end
 
 def font_change(name)
@@ -49,13 +50,17 @@ def folder_gen(val)
         if val2['oneOf'] then 
 
         else
-            if val2['accessRule']['get'] == 'required' then 
-                propName_jp = val2['propertyName']['ja']
-                propname_en = font_name(val2['propertyName']['en'])
+            propName_jp = val2['propertyName']['ja']
+            propname_en = font_name(val2['propertyName']['en'])
+
+            if ( val2['accessRule']['set'] == 'required' )then 
                 h.puts ("struct #{objname}_t {")
                 h.puts ("   /*#{propName_jp}*/\n    #{propname_en};\n};")
 
+                h.puts ("extern struct #{objname}_t #{objname}_class_data;")
+                h.puts ("EPRP_SETTER #{propname_en}_prop_set;")
             end
+
         end
 
     }

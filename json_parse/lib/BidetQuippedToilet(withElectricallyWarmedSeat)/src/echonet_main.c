@@ -1,4 +1,4 @@
-void heaterSettingOfToiletSeat_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
+void heater_setting_of_toilet_seat_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
 {
 
     if(size! = 1)

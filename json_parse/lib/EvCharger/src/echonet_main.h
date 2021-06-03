@@ -1,37 +1,14 @@
+#include "echonet.h"
 /*電気自動車充電器*/
 struct ev_charger_t {
-   /*定格充電能力*/
-    rated_charge_capacity;
+   /*車両接続確認*/
+    vehicle_connection_confirmation;
 };
-struct ev_charger_t {
-   /*充電器タイプ*/
-    charger/discharger_type;
-};
-struct ev_charger_t {
-   /*車載電池の充電可能容量値*/
-    chargeable_capacity_of_vehicle_mounted_battery;
-};
-struct ev_charger_t {
-   /*車載電池の充電可能残容量値*/
-    remaining_chargeable_capacity_of_vehicle_mounted_battery;
-};
-struct ev_charger_t {
-   /*車載電池の使用容量値1*/
-    used_capacity_of_vehicle_mounted_battery_1_;
-};
+extern struct ev_charger_t ev_charger_class_data;
+EPRP_SETTER vehicle_connection_confirmation_prop_set;
 struct ev_charger_t {
    /*運転モード設定*/
     operation_mode_setting;
 };
-struct ev_charger_t {
-   /*車載電池の電池残容量1*/
-    remaining_stored_electricity_of_vehicle_mounted_battery1;
-};
-struct ev_charger_t {
-   /*車載電池の電池残容量3*/
-    remaining_stored_electricity_of_vehicle_mounted_battery3;
-};
-struct ev_charger_t {
-   /*車両ID*/
-    vehcle_id;
-};
+extern struct ev_charger_t ev_charger_class_data;
+EPRP_SETTER operation_mode_setting_prop_set;

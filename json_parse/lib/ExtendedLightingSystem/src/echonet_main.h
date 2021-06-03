@@ -1,25 +1,14 @@
+#include "echonet.h"
 /*拡張照明システム*/
 struct extended_lighting_system_t {
    /*シーン制御設定*/
     scene_control_setting;
 };
-struct extended_lighting_system_t {
-   /*シーン制御設定可能数*/
-    number_that_can_assign_scene_control_setting;
-};
-struct extended_lighting_system_t {
-   /*電力消費率リスト*/
-    power_consumption_rate_list;
-};
-struct extended_lighting_system_t {
-   /*全灯時消費電力*/
-    power_consumption_when_fully_lighted;
-};
-struct extended_lighting_system_t {
-   /*節電可能消費電力*/
-    possible_power_savings;
-};
+extern struct extended_lighting_system_t extended_lighting_system_class_data;
+EPRP_SETTER scene_control_setting_prop_set;
 struct extended_lighting_system_t {
    /*消費電力制限設定*/
     power_consumption_limit_setting;
 };
+extern struct extended_lighting_system_t extended_lighting_system_class_data;
+EPRP_SETTER power_consumption_limit_setting_prop_set;

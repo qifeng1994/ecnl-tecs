@@ -1,4 +1,4 @@
-void riceCookingControlSetting_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
+void rice_cooking_control_setting_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
 {
 
     if(size! = 1)

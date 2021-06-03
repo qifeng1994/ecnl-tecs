@@ -1,4 +1,4 @@
-void vehicleConnectionConfirmation_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
+void vehicle_connection_confirmation_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
 {
 
     if(size! = 1)

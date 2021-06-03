@@ -54,7 +54,7 @@ def parse_definitions(val,propertyName,className,fileName)
         elsif val['type'] == 'state' then
             size = val['size']
             type = property_data_type(size)
-            propertyName = font_change(propertyName)
+            propertyName = font_name(propertyName)
             print_function_state("  ",size,type,propertyName,val,className,fileName)
         else
         end
@@ -82,7 +82,7 @@ def property_format_size (type)
 end
 
 def print_function_state(indent,size,type,propertyName,val,className,fileName)
-    fileName.print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    fileName.print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
@@ -120,6 +120,10 @@ def font_change(name)
     return name.gsub("/"," ").split(/ |\_|\-/).map(&:capitalize).join(" ").gsub(/\s+/, '')
 end
 
+def font_name(name)
+    return name.downcase.gsub(/\s+/,'_')
+end
+
 def file_output(val)
     className = font_change(val['className']['en'])
     FileUtils.mkdir_p("lib/#{className}/src") # 建立多重路径
@@ -151,4 +155,4 @@ Devices.each{ |id, val|
     end
 }
 
-# propertyName[0].downcase+className[1..-1] 首字母小写
+# propertyName[0].downcase+propertyName[1..-1] 首字母小写

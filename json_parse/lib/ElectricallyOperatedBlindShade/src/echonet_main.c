@@ -1,4 +1,4 @@
-void openClose(extensionRetraction)Setting_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
+void open/close(extension/retraction)_setting_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)
 {
 
     if(size! = 1)

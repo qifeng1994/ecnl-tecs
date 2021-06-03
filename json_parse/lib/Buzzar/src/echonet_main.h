@@ -1,1 +1,2 @@
+#include "echonet.h"
 /*ブザー*/
