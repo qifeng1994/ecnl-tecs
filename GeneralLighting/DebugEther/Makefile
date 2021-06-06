@@ -108,7 +108,7 @@ TECSGEN = ruby -Eutf-8 $(SRCDIR)/tecsgen/tecsgen.rb
 #
 #  オブジェクトファイル名の定義
 #
-OBJNAME = app7_buzzer
+OBJNAME = app2_light
 ifdef OBJEXT
 	OBJFILE = $(OBJNAME).$(OBJEXT)
 	CFG1_OUT = cfg1_out.$(OBJEXT)
@@ -192,7 +192,7 @@ APPL_COBJS := $(APPL_COBJS) netcmd.o fdtable.o stdio_stub.o io_stub.o socket_stu
 #
 #  アプリケーションプログラムに関する定義
 #
-APPLNAME = app7_buzzer
+APPLNAME = GeneralLighting
 APPLDIRS := $(APPLDIRS) ../src
 APPL_CFG = main.cfg
 APPL_CDL = main.cdl
