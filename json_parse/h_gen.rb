@@ -18,6 +18,9 @@ Definitions = DevDesc["definitions"]
 
 def print_default_struct(fileName)
     fileName.puts("#include \"echonet.h\"")
+    fileName.puts("#define MAIN_PRIORITY 5
+#define ECHONET_MAIN_STACK_SIZE	1024
+#define EOJ_X3_NODE_PROFILE 1")
     # todo: 優先度、ノードオブジェクト定義
 end
 
@@ -41,10 +44,13 @@ def folder_gen(val)
     h = File.open("lib/#{className}/src/echonet_main.h","w+")
     print_default_struct(h)
 
-
+    objNAME = font_NAME(val['className']['en'])
+    h.puts("#define EOJ_X3_#{objNAME}_CLASS 1")
     objName_jp = val['className']['ja']
     h.puts ("/*#{objName_jp}*/")
     objname = font_name(val['className']['en'])
+
+    
     # 只要get是required就生成结构体
     val['elProperties'].each{|prop_id,val2|
         if val2['oneOf'] then 
@@ -59,6 +65,8 @@ def folder_gen(val)
 
                 h.puts ("extern struct #{objname}_t #{objname}_class_data;")
                 h.puts ("EPRP_SETTER #{propname_en}_prop_set;")
+
+                h.puts("void echonet_main_task(intptr_t exinf);")
             end
 
         end
