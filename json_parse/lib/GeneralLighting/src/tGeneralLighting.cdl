@@ -7,4 +7,15 @@ signature sGeneralLighting {
     void getLightingModeSetting_NormalLighting( );
     void getLightingModeSetting_NightLighting( );
     void getLightingModeSetting_ColorLighting( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tGeneralLighting {
+    entry sGeneralLighting eGeneralLighting;
 };

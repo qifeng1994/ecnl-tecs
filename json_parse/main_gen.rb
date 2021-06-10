@@ -19,7 +19,7 @@ def parse_properties (val,className,fileName)
         else
             if val2['accessRule']['set'] == 'required' then
                 propertyName = val2['propertyName']['en']
-
+				propertyName_JP = val2['propertyName']['ja']
 
                 if val2['data']['$ref'] then
                 ref = val2['data']['$ref'].sub( /#\/definitions\//, "" )
@@ -43,6 +43,7 @@ def parse_properties (val,className,fileName)
             end
         end
     }
+
 end
 
 def parse_definitions(val,propertyName,className,fileName)
@@ -57,10 +58,11 @@ def parse_definitions(val,propertyName,className,fileName)
             size = val['size']
             type = property_data_type(size)
             propertyName = font_name(propertyName)
-            print_function_state("  ",size,type,propertyName,val,className,fileName)
+			signatureName = font_change(propertyName)
+            print_function_state("  ",size,type,propertyName,val,className,fileName,signatureName)
         else
+
         end
-    
 end
 
 def property_data_type (size)
@@ -83,19 +85,23 @@ def property_format_size (type)
     end
 end
 
-def print_function_state(indent,size,type,propertyName,val,className,fileName)
-    fileName.print("void #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+def print_function_state(indent,size,type,propertyName,val,className,fileName,signatureName)
+    fileName.print("int #{propertyName}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size != #{size})
     #{indent}return 0;
     *anno = *((#{type}*)item->exinf) != *((#{type}*)src);
     switch (*(#{type}*)src) {\n")
-    print_state_type(indent + "    ", val,className,fileName)
+    print_state_type(indent + "    ", val,className,fileName,signatureName)
     fileName.print("default:
-        return 0;\n}\n")
+        return 0;
+	}return 1;
+}
+	
+")
 end
 
 def print_function_number(indent,size,type,propertyName,className,min,max,fileName)
-    fileName.print("void #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
+    fileName.print("int #{propertyName[0].downcase+propertyName[1..-1]}_prop_set (const EPRPINIB *item, const void *src, int size, bool_t *anno)\n{\n
     if(size! = #{size})
     #{indent}return 0;
     if((*(#{type}_t*)src >= #{min}) && (*(#{type}_t*)src <= #{max})){
@@ -104,17 +110,19 @@ def print_function_number(indent,size,type,propertyName,className,min,max,fileNa
     }
     else{
         return 0;
-    }
-    return 1;\n"
-    )
+    }return 1;
+}
+	
+")
 end
 
-def print_state_type (indent,val,className,fileName)
+def print_state_type (indent,val,className,fileName,signatureName)
     val['enum'].each{ |edt|
         stateName = font_change(edt['state']['en'])
-        fileName.print("#{indent}case #{edt['edt']}: c#{className}_set#{stateName}( );
+        fileName.print("#{indent}case #{edt['edt']}: tECNL#{className}_c#{className}_set#{signatureName}_#{stateName}( );
         break;\n")
     }
+	return val['enum'][0]["edt"]
 end
 
 def font_change(name)
@@ -130,17 +138,18 @@ def file_output(val)
     className = font_change(val['className']['en'])
     FileUtils.mkdir_p("lib/#{className}/src") # 建立多重路径
     app = File.open("lib/#{className}/src/echonet_main.c","w+")
-    print_default_info(app)
+    print_default_info(app,className)
     objname = font_name(val['className']['en'])
     app.puts("struct #{objname}_t #{objname}_class_data = {\n};")
+	app.puts("struct node_profile_object_t local_node_data = {\n};")
     parse_properties(val['elProperties'],className,app)
+	print_default_functions(app,className)
     app.close
 end
 
 
-def print_default_info(fileName)
-    fileName.puts("
-#include <kernel.h>
+def print_default_info(fileName,className)
+    fileName.puts("#include <kernel.h>
 #include <t_syslog.h>
 #include <t_stdlib.h>
 #include <sil.h>
@@ -153,6 +162,9 @@ def print_default_info(fileName)
 #include \"target_kernel_impl.h\"
 #include \"gpio_api.h\"
 #include \"rtc_api.h\"
+#include \"tECNL#{className}_tecsgen.h\"
+
+#define MAKER_CODE	0x00, 0x00, 0xB3
 
 static void main_initialize();
 static int main_get_timer();
@@ -236,6 +248,12 @@ void echonet_main_task(intptr_t exinf)
 	}
 }
 
+enum main_state_t{
+	main_state_idle,
+};
+int main_timer = TMO_FEVR;
+enum main_state_t main_state = main_state_idle;
+
 static void main_initialize()
 {
 	/* メインタスクを起動 */
@@ -247,30 +265,17 @@ static void main_initialize()
 
 static int main_get_timer()
 {
-	int result = main_timer;
-
-	if ((result == TMO_FEVR)
-		|| ((main_btn_timer != TMO_FEVR) && (main_btn_timer < result))) {
-		result = main_btn_timer;
-	}
-
-	return result;
+	return main_timer;
 }
 
 static void main_progress(int interval)
 {
-	if (main_timer != TMO_FEVR) {
-		main_timer -= interval;
-		if (main_timer < 0) {
-			main_timer = 0;
-		}
-	}
+	if(main_timer == TMO_FEVR)
+		return;
 
-	if (main_btn_timer != TMO_FEVR) {
-		main_btn_timer -= interval;
-		if (main_btn_timer < 0) {
-			main_btn_timer = 0;
-		}
+	main_timer -= interval;
+	if(main_timer < 0){
+		main_timer = 0;
 	}
 }
 
@@ -298,7 +303,7 @@ static void main_recv_esv(T_EDATA *esv)
 	for (;;) {
 		while ((ret = ecn_itr_nxt(&enm, &epc, &pdc, p_edt)) == E_OK) {
 			switch (epc) {
-			case :
+			case 0x80:
                 break;
 			}
 		}
@@ -333,6 +338,40 @@ static void main_timeout()
 ")
 end
 
+def print_default_functions(fileName,className)
+	fileName.puts("int onoff_prop_set(const EPRPINIB *item, const void *src, int size, bool_t *anno)
+{
+	if(size != 1)
+		return 0;
+	*anno = *((uint8_t*)item->exinf) != *((uint8_t*)src);
+	switch(*(uint8_t *)src){
+	case 0x30: tECNL#{className}_c#{className}_setOperatingStatus_ON( );
+		break;
+	case 0x31: tECNL#{className}_c#{className}_setOperatingStatus_OFF( );
+		break;
+	default:
+		return 0;
+	}return 1;
+}
+
+int alarm_prop_set(const EPRPINIB *item, const void *src, int size, bool_t *anno)
+{
+	ER ret;
+	uint8_t data[1];
+	if(size != 1)
+		return 0;
+	*anno = *((uint8_t *)item->exinf) != *((uint8_t *)src);
+	switch(*(uint8_t *)src){
+	case 0x41: tECNL#{className}_c#{className}_setFaultStatus_Fault( );
+	case 0x42: tECNL#{className}_c#{className}_setFaultStatus_NoFault( );
+		*((uint8_t *)item->exinf) = *((uint8_t *)src);
+		break;
+	default:
+		return 0;
+	}return 1;
+}
+")
+end
 
 # Dir.mkdir("src")
 Devices.each{ |id, val|

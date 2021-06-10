@@ -25,4 +25,15 @@ signature sEvChargerAndDischarger {
     void getUsedCapacityOfVehicleMountedBattery1( );
     void getRemainingStoredElectricityOfVehicleMountedBattery1( );
     void getRemainingStoredElectricityOfVehicleMountedBattery3( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tEvChargerAndDischarger {
+    entry sEvChargerAndDischarger eEvChargerAndDischarger;
 };

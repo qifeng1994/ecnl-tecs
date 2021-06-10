@@ -114,7 +114,19 @@ def file_output(val)
     cdl = File.open("lib/#{className}/src/t#{className}.cdl","w+")
     cdl.print("signature s#{className} {\n")
     parse_properties(val['elProperties'],cdl)
-    cdl.print("};\n")
+    cdl.puts("    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+")
+    cdl.puts("celltype t#{className} {
+    entry s#{className} e#{className};
+};")
     cdl.close
 end
 

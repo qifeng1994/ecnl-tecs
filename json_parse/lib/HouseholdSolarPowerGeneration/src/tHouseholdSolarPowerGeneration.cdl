@@ -15,4 +15,15 @@ signature sHouseholdSolarPowerGeneration {
     void getOutputPowerRestraintStatus_Unknown( );
     void getMeasuredInstantaneousAmountOfElectricityGenerated( );
     void getMeasuredCumulativeAmountOfElectricEnergyGenerated( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tHouseholdSolarPowerGeneration {
+    entry sHouseholdSolarPowerGeneration eHouseholdSolarPowerGeneration;
 };

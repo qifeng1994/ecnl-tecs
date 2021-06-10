@@ -7,4 +7,15 @@ signature sElectricallyOperatedBlindShade {
     void getOpenClose(extensionRetraction)Setting_Stop( );
     void setDegreeOfOpeningLevel( );
     void getDegreeOfOpeningLevel( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tElectricallyOperatedBlindShade {
+    entry sElectricallyOperatedBlindShade eElectricallyOperatedBlindShade;
 };

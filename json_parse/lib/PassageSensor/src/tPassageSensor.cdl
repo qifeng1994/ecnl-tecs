@@ -9,4 +9,15 @@ signature sPassageSensor {
     void getPassageDetectionDirection_W( );
     void getPassageDetectionDirection_Nw( );
     void getPassageDetectionDirection_DirectionUnknown( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tPassageSensor {
+    entry sPassageSensor ePassageSensor;
 };

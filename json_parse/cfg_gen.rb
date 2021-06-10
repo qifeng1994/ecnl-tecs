@@ -29,12 +29,14 @@ Definitions = DevDesc["definitions"]
 
 def print_nodeprofile(fileName)
     fileName.puts ("
-/*ECHONET Lite OSオブジェクト*/
-INCLUDE(\"echonet_asp.cfg\");\n
-/* ECHONET Lite UDP 通信端点 */
-INCLUDE(\"echonet_udp.cfg\");\n
+#include \"main.h\"
+#include \"echonet.h\"
+#include \"echonet_main.h\"
+INCLUDE(\"echonet_asp.cfg\");
+INCLUDE(\"echonet_udp.cfg\");
+
 /*ノードプロファイルオブジェクト*/
-ECN_CRE_EOBJ (LOCAL_NODE_EOBJ, { EOBJ_LOCAL_NODE, EOBJ_NULL, 0, EOJ_X1_PROFILE, EOJ_X2_NODE_PROFILE, EOJ_X3_LOCAL_NODE });\n
+ECN_CRE_EOBJ (LOCAL_NODE_EOBJ, { EOBJ_LOCAL_NODE, EOBJ_NULL, 0, EOJ_X1_PROFILE, EOJ_X2_NODE_PROFILE, EOJ_X3_NODE_PROFILE });\n
 /* 動作状態 */
 ECN_DEF_EPRP (LOCAL_NODE_EOBJ, { 0x80, EPC_RULE_SET | EPC_RULE_GET, 1, (intptr_t)&local_node_data.operation_status, (EPRP_SETTER *)onoff_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
 /* Ｖｅｒｓｉｏｎ情報 */
@@ -69,9 +71,21 @@ def folder_gen(val)
     objName_jp = val['className']['ja']
     cfg.puts ("/*#{objName_jp}*/")
     objNAME = font_NAME(val['className']['en'])
-    cfg.puts ("ECN_CRE_EOBJ(#{objNAME}_CLASS_EOBJ, {EOBJ_DEVICE, LOCAL_NODE_EOBJ, 0, EOJ_X1_AMENITY, EOJ_X2_#{objNAME}_CLASS, EOJ_X3_#{objNAME}_CLASS});
+    cfg.puts ("ECN_CRE_EOBJ(#{objNAME}_CLASS_EOBJ, {EOBJ_DEVICE, LOCAL_NODE_EOBJ, 0, EOJ_X1_AMENITY, EOJ_X2_#{objNAME}_CLASS, EOJ_X3_#{objNAME}_CLASS});\n
     ")
     objname = font_name(val['className']['en'])
+    cfg.puts ("/* 動作状態 */
+ECN_DEF_EPRP (#{objNAME}_CLASS_EOBJ, { 0x80, EPC_RULE_SET | EPC_RULE_GET | EPC_ANNOUNCE, 1, (intptr_t)&#{objname}_class_data.operation_status, (EPRP_SETTER *)onoff_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* 設置場所 */
+ECN_DEF_EPRP (#{objNAME}_CLASS_EOBJ, { 0x81, EPC_RULE_SET | EPC_RULE_GET | EPC_ANNOUNCE, 1, (intptr_t)&#{objname}_class_data.installation_location, (EPRP_SETTER *)ecn_data_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* 規格Ｖｅｒｓｉｏｎ情報 */
+ECN_DEF_EPRP (#{objNAME}_CLASS_EOBJ, { 0x82, EPC_RULE_GET, 4, (intptr_t)&#{objname}_class_data.standard_version_information, (EPRP_SETTER *)ecn_data_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* 異常発生状態 */
+ECN_DEF_EPRP (#{objNAME}_CLASS_EOBJ, { 0x88, EPC_RULE_GET | EPC_ANNOUNCE, 1, (intptr_t)&#{objname}_class_data.fault_status, (EPRP_SETTER *)alarm_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
+/* メーカーコード */
+ECN_DEF_EPRP (#{objNAME}_CLASS_EOBJ, { 0x8A, EPC_RULE_GET, 3, (intptr_t)&#{objname}_class_data.manufacturer_code, (EPRP_SETTER *)ecn_data_prop_set, (EPRP_GETTER *)ecn_data_prop_get });
+
+")
 
     val['elProperties'].each{|prop_id,val2| 
         if val2['oneOf'] then
@@ -103,7 +117,7 @@ def folder_gen(val)
 
                         end 
                     end   
-                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_SET | EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_SETTER *)#{propname_en}_prop_set, (EPRP_GETTER *)ecn_data_prop_get });
+                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_SET | EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_SETTER *)#{propname_en}_prop_set, (EPRP_GETTER *)ecn_data_prop_get });\n
                     ")
                 else
                     if val2['data']['$ref'] then
@@ -117,7 +131,7 @@ def folder_gen(val)
 
                         end 
                     end
-                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_GETTER *)ecn_data_prop_get });
+                    cfg.puts ("ECN_DEF_EPRP(#{objNAME}_CLASS_EOBJ, {#{prop_id}, EPC_RULE_GET, #{size}, (intptr_t)&#{objname}_class_data.#{propname_en}, (EPRP_GETTER *)ecn_data_prop_get });\n
                     ")
                 end
          

@@ -18,4 +18,15 @@ signature sPackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilit
     void getOperationModeSetting_AirCirculation( );
     void setTemperatureSetting( );
     void getTemperatureSetting( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tPackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities) {
+    entry sPackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities) ePackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities);
 };

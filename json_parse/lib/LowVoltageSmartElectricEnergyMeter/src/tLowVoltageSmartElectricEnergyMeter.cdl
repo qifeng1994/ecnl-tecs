@@ -5,4 +5,15 @@ signature sLowVoltageSmartElectricEnergyMeter {
     void setDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved1( );
     void getDayForWhichTheHistoricalDataOfMeasuredCumulativeAmountsOfElectricEnergyIsToBeRetrieved1( );
     void getMeasuredInstantaneousElectricEnergy( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tLowVoltageSmartElectricEnergyMeter {
+    entry sLowVoltageSmartElectricEnergyMeter eLowVoltageSmartElectricEnergyMeter;
 };

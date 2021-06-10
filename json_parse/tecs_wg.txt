@@ -98,5 +98,6 @@ WSLでmrubyビルド,sudo apt install gcc-arm-none-eabi
 cfg的生成器先生成nodeprofile的部分，再遍历其他的设备名字
 2021/06/01
 todo: cdl 里面只生成required, 判断条件改为get是否是renquired
-
+2021/06/10
+todo: 再cdl中添加onoff和alarm,在echonet_main.c中添加onoff和alarm函数
 2021/06/21

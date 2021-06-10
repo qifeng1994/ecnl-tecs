@@ -14,4 +14,15 @@ signature sElectricWaterHeater {
     void setAutomaticBathWaterHeatingModeSetting_Off( );
     void getAutomaticBathWaterHeatingModeSetting_On( );
     void getAutomaticBathWaterHeatingModeSetting_Off( );
+    void setOperatingStatus_ON( );
+    void getOperatingStatus_ON( );
+    void setOperatingStatus_OFF( );
+    void getOperatingStatus_OFF( );
+    void setFaultStatus_Fault( );
+    void getFaultStatus_Fault( );
+    void setFaultStatus_NoFault( );
+    void getFaultStatus_NoFault( );
+};
+celltype tElectricWaterHeater {
+    entry sElectricWaterHeater eElectricWaterHeater;
 };
