@@ -11,7 +11,6 @@
 #include "target_kernel_impl.h"
 #include "gpio_api.h"
 #include "rtc_api.h"
-#include "tECNLGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_tecsgen.h"
 
 #define MAKER_CODE	0x00, 0x00, 0xB3
 
@@ -188,34 +187,3 @@ struct gas_heat_pump-type_commercial_air_conditioner_(outdoor_unit)_t gas_heat_p
 };
 struct node_profile_object_t local_node_data = {
 };
-int onoff_prop_set(const EPRPINIB *item, const void *src, int size, bool_t *anno)
-{
-	if(size != 1)
-		return 0;
-	*anno = *((uint8_t*)item->exinf) != *((uint8_t*)src);
-	switch(*(uint8_t *)src){
-	case 0x30: tECNLGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_cGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_setOperatingStatus_ON( );
-		break;
-	case 0x31: tECNLGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_cGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_setOperatingStatus_OFF( );
-		break;
-	default:
-		return 0;
-	}return 1;
-}
-
-int alarm_prop_set(const EPRPINIB *item, const void *src, int size, bool_t *anno)
-{
-	ER ret;
-	uint8_t data[1];
-	if(size != 1)
-		return 0;
-	*anno = *((uint8_t *)item->exinf) != *((uint8_t *)src);
-	switch(*(uint8_t *)src){
-	case 0x41: tECNLGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_cGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_setFaultStatus_Fault( );
-	case 0x42: tECNLGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_cGasHeatPumpTypeCommercialAirConditioner(outdoorUnit)_setFaultStatus_NoFault( );
-		*((uint8_t *)item->exinf) = *((uint8_t *)src);
-		break;
-	default:
-		return 0;
-	}return 1;
-}
