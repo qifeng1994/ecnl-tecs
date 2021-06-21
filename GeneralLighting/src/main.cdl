@@ -121,7 +121,15 @@ cell tBanner Banner {
 	copyrightNotice = BannerCopyrightNotice;
 };
 //---------------------------------------------------------
+/*
 
++-------+     +----------------------+                     +------------------+
+|       |     |                      |  sGeneralLighting   |                  |
+| tTask |---->| tECNLGeneralLighting |-------------------->| tGeneralLighting |
+|       |     |                      |                     |                  |  
++-------+     +----------------------+                     +------------------+ 
+
+*/
 
 celltype tECNLGeneralLighting{
 	entry sTaskBody eTaskBody;
