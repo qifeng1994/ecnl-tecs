@@ -13,7 +13,7 @@
 #include "rtc_api.h"
 #include "tECNLGeneralLighting_tecsgen.h"
 
-#define MAKER_CODE	0x00, 0x00, 0xB3
+#define MAKER_CODE	{0x00, 0x00, 0xB3}
 
 static void main_initialize();
 static int main_get_timer();
@@ -31,6 +31,8 @@ void echonet_main_task(intptr_t exinf)
 	uint8_t brkdat[64];
 	int32_t len;
 
+	syslog(LOG_NOTICE,"[echonet_main_task]:started");
+	syslog(LOG_NOTICE,"  exinf:%d",exinf);
 	/* アプリケーションの初期化 */
 	main_initialize();
 
@@ -94,6 +96,32 @@ void echonet_main_task(intptr_t exinf)
 
 		/* タイムアウト処理 */
 		main_timeout();
+	}
+}
+
+void echonet_change_netif_link(uint8_t link_up, uint8_t up)
+{
+	ER ret;
+
+	if (link_up == 0)
+		return;
+
+	if (up) {
+		/* インスタンスリスト通知の送信 */
+		ret = ecn_ntf_inl();
+		if (ret != E_OK) {
+			syslog(LOG_ERROR, "ecn_ntf_inl");
+		}
+	}
+
+	/* メインタスクに通知 */
+	uint8_t data[2];
+	data[0] = 0x01;
+	data[1] = up ? 0x01 : 0x02;
+	ret = ecn_brk_wai(data, sizeof(data));
+	if (ret != E_OK) {
+		syslog(LOG_ERROR, "ecn_brk_wai");
+		return;
 	}
 }
 
@@ -185,6 +213,21 @@ static void main_timeout()
 }
 
 struct general_lighting_t general_lighting_class_data = {
+	0x30,
+	0x00,
+	{ 0x00, 0x00, 'C', 0x00 },
+	0x42,
+	{MAKER_CODE},
+	0x41,
+
 };
 struct node_profile_object_t local_node_data = {
+	0x30,
+	{ 0x01, 0x0A, { 0x01, 0x00 } },
+	{
+		0xFE,
+		{ MAKER_CODE },
+		{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, },
+	},
+	{MAKER_CODE},
 };

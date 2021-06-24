@@ -67,7 +67,7 @@
  *  Task Management Functions
  */
 
-#define TNUM_STSKID	14
+#define TNUM_STSKID	15
 const ID _kernel_tmax_tskid = (TMIN_TSKID + TNUM_TSKID - 1);
 const ID _kernel_tmax_stskid = (TMIN_TSKID + TNUM_STSKID - 1);
 
@@ -84,6 +84,7 @@ const ID _kernel_tmax_stskid = (TMIN_TSKID + TNUM_STSKID - 1);
 /*static*/ STK_T _kernel_stack_NTSHELL_TASK[COUNT_STK_T(NTSHELL_STACK_SIZE)];
 /*static*/ STK_T _kernel_stack_ECHONET_SVC_TASK[COUNT_STK_T(ECHONET_TASK_STACK_SIZE)];
 /*static*/ STK_T _kernel_stack_ECHONET_UDP_TASK[COUNT_STK_T(ECHONET_UDP_TASK_STACK_SIZE)];
+/*static*/ STK_T _kernel_stack_ECHONET_MAIN_TASK[COUNT_STK_T(ECHONET_MAIN_STACK_SIZE)];
 /*static*/ STK_T _kernel_stack_MAIN_TASK[COUNT_STK_T(MAIN_STACK_SIZE)];
 const TINIB _kernel_tinib_table[TNUM_STSKID] = {
 	{ (TA_ACT), (intptr_t)(&tTask_INIB_tab[0]), (TASK)(tTask_start), INT_PRIORITY(10), ROUND_STK_T(1024), _kernel_stack_TSKID_tTask_Task, "tTask_start" },
@@ -99,6 +100,7 @@ const TINIB _kernel_tinib_table[TNUM_STSKID] = {
 	{ (TA_FPU), (intptr_t)(0), (TASK)(ntshell_task), INT_PRIORITY(NTSHELL_PRIORITY), ROUND_STK_T(NTSHELL_STACK_SIZE), _kernel_stack_NTSHELL_TASK, "ntshell_task" },
 	{ (TA_HLNG), (intptr_t)(0), (TASK)(echonet_task), INT_PRIORITY(ECHONET_TASK_PRIORITY), ROUND_STK_T(ECHONET_TASK_STACK_SIZE), _kernel_stack_ECHONET_SVC_TASK, "echonet_task" },
 	{ (TA_HLNG), (intptr_t)(0), (TASK)(echonet_udp_task), INT_PRIORITY(ECHONET_UDP_TASK_PRIORITY), ROUND_STK_T(ECHONET_UDP_TASK_STACK_SIZE), _kernel_stack_ECHONET_UDP_TASK, "echonet_udp_task" },
+	{ (TA_ACT), (intptr_t)(0), (TASK)(echonet_main_task), INT_PRIORITY(ECHONET_MAIN_PRIORITY), ROUND_STK_T(ECHONET_MAIN_STACK_SIZE), _kernel_stack_ECHONET_MAIN_TASK, "echonet_main_task" },
 	{ (TA_NULL), (intptr_t)(0), (TASK)(main_task), INT_PRIORITY(MAIN_PRIORITY), ROUND_STK_T(MAIN_STACK_SIZE), _kernel_stack_MAIN_TASK, "main_task" }
 };
 
@@ -107,7 +109,7 @@ TOPPERS_EMPTY_LABEL(TINIB, _kernel_atinib_table);
 TCB _kernel_tcb_table[TNUM_TSKID];
 
 const ID _kernel_torder_table[TNUM_STSKID] = { 
-	TSKID_tTask_Task, TSKID_tTask_LogTask_Task, IF_MBED_PHY_TASK, NET_TIMER_TASK, ETHER_OUTPUT_TASK, ETHER_INPUT_TASK, TCP_OUTPUT_TASK, UDP_OUTPUT_TASK, NET_MISC_TASK, FFARCH_TASK, NTSHELL_TASK, ECHONET_SVC_TASK, ECHONET_UDP_TASK, MAIN_TASK
+	TSKID_tTask_Task, TSKID_tTask_LogTask_Task, IF_MBED_PHY_TASK, NET_TIMER_TASK, ETHER_OUTPUT_TASK, ETHER_INPUT_TASK, TCP_OUTPUT_TASK, UDP_OUTPUT_TASK, NET_MISC_TASK, FFARCH_TASK, NTSHELL_TASK, ECHONET_SVC_TASK, ECHONET_UDP_TASK, ECHONET_MAIN_TASK, MAIN_TASK
 };
 
 /*

@@ -1510,135 +1510,145 @@ const unsigned_t TOPPERS_cfg_valueof_udp6_cepatr_115 = (unsigned_t)(TA_NULL);
 
 #endif
 
-#line 9 "../src/echonet_main.cfg"
+#line 8 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_116 = 116;
-#define LOCAL_NODE_EOBJ	(<>)
-#line 9 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eobjatr_116 = (unsigned_t)(EOBJ_LOCAL_NODE);
-#line 9 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eojx1_116 = (unsigned_t)(EOJ_X1_PROFILE);
-#line 9 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eojx2_116 = (unsigned_t)(EOJ_X2_NODE_PROFILE);
-#line 9 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eojx3_116 = (unsigned_t)(EOJ_X3_NODE_PROFILE);
+#define ECHONET_MAIN_TASK	(<>)
+#line 8 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_tskatr_116 = (unsigned_t)(TA_ACT);
+#line 8 "../src/echonet_main.cfg"
+const signed_t TOPPERS_cfg_valueof_itskpri_116 = (signed_t)(ECHONET_MAIN_PRIORITY);
+#line 8 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_stksz_116 = (unsigned_t)(ECHONET_MAIN_STACK_SIZE);
 
-#line 12 "../src/echonet_main.cfg"
+#line 11 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_117 = 117;
-#line 12 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_117 = (unsigned_t)(0x80);
-#line 12 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_117 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET);
-#line 12 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_117 = (unsigned_t)(1);
+#define LOCAL_NODE_EOBJ	(<>)
+#line 11 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eobjatr_117 = (unsigned_t)(EOBJ_LOCAL_NODE);
+#line 11 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eojx1_117 = (unsigned_t)(EOJ_X1_PROFILE);
+#line 11 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eojx2_117 = (unsigned_t)(EOJ_X2_NODE_PROFILE);
+#line 11 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eojx3_117 = (unsigned_t)(EOJ_X3_NODE_PROFILE);
 
-#line 15 "../src/echonet_main.cfg"
+#line 14 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_118 = 118;
-#line 15 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_118 = (unsigned_t)(0x82);
-#line 15 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_118 = (unsigned_t)(EPC_RULE_GET);
-#line 15 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_118 = (unsigned_t)(4);
+#line 14 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_118 = (unsigned_t)(0x80);
+#line 14 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_118 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET);
+#line 14 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_118 = (unsigned_t)(1);
 
-#line 18 "../src/echonet_main.cfg"
+#line 17 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_119 = 119;
-#line 18 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_119 = (unsigned_t)(0x83);
-#line 18 "../src/echonet_main.cfg"
+#line 17 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_119 = (unsigned_t)(0x82);
+#line 17 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_valueof_eprpatr_119 = (unsigned_t)(EPC_RULE_GET);
-#line 18 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_119 = (unsigned_t)(17);
+#line 17 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_119 = (unsigned_t)(4);
 
-#line 21 "../src/echonet_main.cfg"
+#line 20 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_120 = 120;
-#line 21 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_120 = (unsigned_t)(0x8A);
-#line 21 "../src/echonet_main.cfg"
+#line 20 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_120 = (unsigned_t)(0x83);
+#line 20 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_valueof_eprpatr_120 = (unsigned_t)(EPC_RULE_GET);
-#line 21 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_120 = (unsigned_t)(3);
+#line 20 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_120 = (unsigned_t)(17);
 
-#line 24 "../src/echonet_main.cfg"
+#line 23 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_121 = 121;
-#define GENERAL_LIGHTING_CLASS_EOBJ	(<>)
-#line 24 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eobjatr_121 = (unsigned_t)(EOBJ_DEVICE);
-#line 24 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eojx1_121 = (unsigned_t)(EOJ_X1_AMENITY);
-#line 24 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eojx2_121 = (unsigned_t)(EOJ_X2_GENERAL_LIGHTING_CLASS);
-#line 24 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eojx3_121 = (unsigned_t)(EOJ_X3_GENERAL_LIGHTING_CLASS);
+#line 23 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_121 = (unsigned_t)(0x8A);
+#line 23 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_121 = (unsigned_t)(EPC_RULE_GET);
+#line 23 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_121 = (unsigned_t)(3);
 
-#line 28 "../src/echonet_main.cfg"
+#line 26 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_122 = 122;
-#line 28 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_122 = (unsigned_t)(0x80);
-#line 28 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_122 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET | EPC_ANNOUNCE);
-#line 28 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_122 = (unsigned_t)(1);
+#define GENERAL_LIGHTING_CLASS_EOBJ	(<>)
+#line 26 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eobjatr_122 = (unsigned_t)(EOBJ_DEVICE);
+#line 26 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eojx1_122 = (unsigned_t)(EOJ_X1_AMENITY);
+#line 26 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eojx2_122 = (unsigned_t)(EOJ_X2_GENERAL_LIGHTING_CLASS);
+#line 26 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eojx3_122 = (unsigned_t)(EOJ_X3_GENERAL_LIGHTING_CLASS);
 
-#line 31 "../src/echonet_main.cfg"
+#line 30 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_123 = 123;
-#line 31 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_123 = (unsigned_t)(0x81);
-#line 31 "../src/echonet_main.cfg"
+#line 30 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_123 = (unsigned_t)(0x80);
+#line 30 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_valueof_eprpatr_123 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET | EPC_ANNOUNCE);
-#line 31 "../src/echonet_main.cfg"
+#line 30 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_valueof_eprpsz_123 = (unsigned_t)(1);
 
-#line 34 "../src/echonet_main.cfg"
+#line 33 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_124 = 124;
-#line 34 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_124 = (unsigned_t)(0x82);
-#line 34 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_124 = (unsigned_t)(EPC_RULE_GET);
-#line 34 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_124 = (unsigned_t)(4);
+#line 33 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_124 = (unsigned_t)(0x81);
+#line 33 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_124 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET | EPC_ANNOUNCE);
+#line 33 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_124 = (unsigned_t)(1);
 
-#line 37 "../src/echonet_main.cfg"
+#line 36 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_125 = 125;
-#line 37 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_125 = (unsigned_t)(0x88);
-#line 37 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_125 = (unsigned_t)(EPC_RULE_GET | EPC_ANNOUNCE);
-#line 37 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_125 = (unsigned_t)(1);
+#line 36 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_125 = (unsigned_t)(0x82);
+#line 36 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_125 = (unsigned_t)(EPC_RULE_GET);
+#line 36 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_125 = (unsigned_t)(4);
 
-#line 40 "../src/echonet_main.cfg"
+#line 39 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_126 = 126;
-#line 40 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_126 = (unsigned_t)(0x8A);
-#line 40 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_126 = (unsigned_t)(EPC_RULE_GET);
-#line 40 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_126 = (unsigned_t)(3);
+#line 39 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_126 = (unsigned_t)(0x88);
+#line 39 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_126 = (unsigned_t)(EPC_RULE_GET | EPC_ANNOUNCE);
+#line 39 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_126 = (unsigned_t)(1);
 
-#line 43 "../src/echonet_main.cfg"
+#line 42 "../src/echonet_main.cfg"
 const unsigned_t TOPPERS_cfg_static_api_127 = 127;
-#line 43 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpcd_127 = (unsigned_t)(0xB6);
-#line 43 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpatr_127 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET);
-#line 43 "../src/echonet_main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_eprpsz_127 = (unsigned_t)(1);
+#line 42 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_127 = (unsigned_t)(0x8A);
+#line 42 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_127 = (unsigned_t)(EPC_RULE_GET);
+#line 42 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_127 = (unsigned_t)(3);
+
+#line 45 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_static_api_128 = 128;
+#line 45 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpcd_128 = (unsigned_t)(0xB6);
+#line 45 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpatr_128 = (unsigned_t)(EPC_RULE_SET | EPC_RULE_GET);
+#line 45 "../src/echonet_main.cfg"
+const unsigned_t TOPPERS_cfg_valueof_eprpsz_128 = (unsigned_t)(1);
 
 #line 86 "../src/main.cfg"
-const unsigned_t TOPPERS_cfg_static_api_128 = 128;
+const unsigned_t TOPPERS_cfg_static_api_129 = 129;
 #define MAIN_TASK	(<>)
 #line 86 "../src/main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_tskatr_128 = (unsigned_t)(TA_NULL);
+const unsigned_t TOPPERS_cfg_valueof_tskatr_129 = (unsigned_t)(TA_NULL);
 #line 86 "../src/main.cfg"
-const signed_t TOPPERS_cfg_valueof_itskpri_128 = (signed_t)(MAIN_PRIORITY);
+const signed_t TOPPERS_cfg_valueof_itskpri_129 = (signed_t)(MAIN_PRIORITY);
 #line 86 "../src/main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_stksz_128 = (unsigned_t)(MAIN_STACK_SIZE);
+const unsigned_t TOPPERS_cfg_valueof_stksz_129 = (unsigned_t)(MAIN_STACK_SIZE);
 
 #line 87 "../src/main.cfg"
-const unsigned_t TOPPERS_cfg_static_api_129 = 129;
+const unsigned_t TOPPERS_cfg_static_api_130 = 130;
 #define MAIN_DATAQUEUE	(<>)
 #line 87 "../src/main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_dtqatr_129 = (unsigned_t)(TA_TFIFO);
+const unsigned_t TOPPERS_cfg_valueof_dtqatr_130 = (unsigned_t)(TA_TFIFO);
 #line 87 "../src/main.cfg"
-const unsigned_t TOPPERS_cfg_valueof_dtqcnt_129 = (unsigned_t)(NUM_MAIN_DATAQUEUE);
+const unsigned_t TOPPERS_cfg_valueof_dtqcnt_130 = (unsigned_t)(NUM_MAIN_DATAQUEUE);
 

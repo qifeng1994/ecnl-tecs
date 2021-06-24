@@ -160,6 +160,7 @@ ntshell_t ntshell;
  */
 void main_task(intptr_t exinf)
 {
+	syslog(LOG_NOTICE,"[main.c main_task_started]");
 #ifdef IF_ETHER_BTUSB
 	// PANU mode
 	bt_bnep_mode = 0;
@@ -278,31 +279,7 @@ void mbed_mac_address(char *mac)
 	memcpy(mac, mac_addr, 6);
 }
 
-void echonet_change_netif_link(uint8_t link_up, uint8_t up)
-{
-	ER ret;
-
-	if (link_up == 0)
-		return;
-
-	if (up) {
-		/* インスタンスリスト通知の送信 */
-		ret = ecn_ntf_inl();
-		if (ret != E_OK) {
-			syslog(LOG_ERROR, "ecn_ntf_inl");
-		}
-	}
-
-	/* メインタスクに通知 */
-	uint8_t data[2];
-	data[0] = 0x01;
-	data[1] = up ? 0x01 : 0x02;
-	ret = ecn_brk_wai(data, sizeof(data));
-	if (ret != E_OK) {
-		syslog(LOG_ERROR, "ecn_brk_wai");
-		return;
-	}
-}
+void echonet_change_netif_link(uint8_t link_up, uint8_t up);
 
 static void netif_link_callback(T_IFNET *ether)
 {

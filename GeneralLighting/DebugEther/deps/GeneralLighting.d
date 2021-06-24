@@ -1,5 +1,6 @@
-demo.o: ../src/demo.c gen/tECNLGeneralLighting_tecsgen.h \
- gen/global_tecsgen.h ../../asp3_dcre/tecs_kernel/tecs_kernel.h \
+GeneralLighting.o: ../src/GeneralLighting.c \
+ gen/tECNLGeneralLighting_tecsgen.h gen/global_tecsgen.h \
+ ../../asp3_dcre/tecs_kernel/tecs_kernel.h \
  ../../asp3_dcre/include/kernel.h ../../asp3_dcre/include/t_stddef.h \
  ../../asp3_dcre/target/gr_peach_gcc/target_stddef.h \
  ../../musl-1.1.18/include/stdint.h \
@@ -26,14 +27,7 @@ demo.o: ../src/demo.c gen/tECNLGeneralLighting_tecsgen.h \
  kernel_cfg.h ../src/echonet_main.h ../../ntshell/echonet/echonet.h \
  ../../ntshell/echonet/echonet_rename.h \
  ../../ntshell/echonet/echonet_class.h \
- ../../ntshell/src/echonet_app_config.h echonet_cfg.h \
- ../../asp3_dcre/target/gr_peach_gcc/target_kernel_impl.h \
- ../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel_impl.h \
- ../../asp3_dcre/arch/arm_gcc/rza1/rza1.h ../../asp3_dcre/include/sil.h \
- ../../asp3_dcre/target/gr_peach_gcc/target_sil.h \
- ../../asp3_dcre/arch/arm_gcc/common/core_sil.h \
- ../../asp3_dcre/arch/arm_gcc/common/gic_kernel_impl.h \
- ../../asp3_dcre/arch/arm_gcc/common/core_kernel_impl.h
+ ../../ntshell/src/echonet_app_config.h echonet_cfg.h
 
 gen/tECNLGeneralLighting_tecsgen.h:
 
@@ -110,19 +104,3 @@ kernel_cfg.h:
 ../../ntshell/src/echonet_app_config.h:
 
 echonet_cfg.h:
-
-../../asp3_dcre/target/gr_peach_gcc/target_kernel_impl.h:
-
-../../asp3_dcre/arch/arm_gcc/rza1/chip_kernel_impl.h:
-
-../../asp3_dcre/arch/arm_gcc/rza1/rza1.h:
-
-../../asp3_dcre/include/sil.h:
-
-../../asp3_dcre/target/gr_peach_gcc/target_sil.h:
-
-../../asp3_dcre/arch/arm_gcc/common/core_sil.h:
-
-../../asp3_dcre/arch/arm_gcc/common/gic_kernel_impl.h:
-
-../../asp3_dcre/arch/arm_gcc/common/core_kernel_impl.h:

@@ -2,7 +2,7 @@
 #ifndef TOPPERS_KERNEL_CFG_H
 #define TOPPERS_KERNEL_CFG_H
 
-#define TNUM_TSKID	14
+#define TNUM_TSKID	15
 #define TSKID_tTask_Task	1
 #define TSKID_tTask_LogTask_Task	2
 #define IF_MBED_PHY_TASK	3
@@ -16,7 +16,8 @@
 #define NTSHELL_TASK	11
 #define ECHONET_SVC_TASK	12
 #define ECHONET_UDP_TASK	13
-#define MAIN_TASK	14
+#define ECHONET_MAIN_TASK	14
+#define MAIN_TASK	15
 
 #define TNUM_SEMID	40
 #define SEMID_tSemaphore_SerialPort1_ReceiveSemaphore	1
