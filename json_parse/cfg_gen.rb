@@ -35,6 +35,7 @@ def print_nodeprofile(fileName)
 INCLUDE(\"echonet_asp.cfg\");
 INCLUDE(\"echonet_udp.cfg\");
 
+CRE_TSK(ECHONET_MAIN_TASK, { TA_ACT, 0, echonet_main_task, ECHONET_MAIN_PRIORITY, ECHONET_MAIN_STACK_SIZE, NULL });
 /*ノードプロファイルオブジェクト*/
 ECN_CRE_EOBJ (LOCAL_NODE_EOBJ, { EOBJ_LOCAL_NODE, EOBJ_NULL, 0, EOJ_X1_PROFILE, EOJ_X2_NODE_PROFILE, EOJ_X3_NODE_PROFILE });\n
 /* 動作状態 */

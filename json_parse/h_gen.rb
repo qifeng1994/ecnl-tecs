@@ -18,7 +18,7 @@ Definitions = DevDesc["definitions"]
 
 def print_default_struct(fileName)
     fileName.puts("#include \"echonet.h\"")
-    fileName.puts("#define MAIN_PRIORITY 5
+    fileName.puts("#define ECHONET_MAIN_PRIORITY 5
 #define ECHONET_MAIN_STACK_SIZE	1024
 #define EOJ_X3_NODE_PROFILE 1")
     # todo: 優先度、ノードオブジェクト定義

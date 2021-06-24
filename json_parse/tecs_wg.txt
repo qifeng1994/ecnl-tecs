@@ -103,3 +103,9 @@ todo: 再cdl中添加onoff和alarm,在echonet_main.c中添加onoff和alarm函数
 2021/06/11
 onoff_prop_set相当于是中间件的callback函数，如果把函数名改成TECS的格式，那么相当于修改cfg里面的函数名，
 2021/06/21
+可以尝试把callback函数放到tECNLGeneralLighting.c中build
+まずは動く
+tGeneralLighting pointerが必要なら、エラーが出るかもしれません
+cfg変更、exinf-->p_cellcb
+[別の話]
+tecs iotplatform/ base platform上でmrubyを動かす、tecsコンポーネントを作る
