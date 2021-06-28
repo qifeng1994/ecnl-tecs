@@ -12,11 +12,21 @@
 
 /* Put prototype declaration and/or variale definition here #_PAC_# */
 #include "tGeneralLighting_tecsgen.h"
+#include "gpio_api.h"
 
 #ifndef E_OK
 #define	E_OK	0		/* success */
 #define	E_ID	(-18)	/* illegal ID */
 #endif
+
+/* 電源LED */
+gpio_t pow_led;
+/* リレー出力 */
+gpio_t relay_sw;
+/* カラーLED */
+gpio_t led_blue, led_green, led_red;
+/* ユーザースイッチ CN16-4 */
+gpio_t sw1, sw2;
 
 /* entry port function #_TEPF_# */
 /* #[<ENTRY_PORT>]# eGeneralLighting
@@ -201,6 +211,7 @@ eGeneralLighting_setOperatingStatus_ON(CELLIDX idx)
 		/* Write error processing code here */
 	} /* end if VALID_IDX(idx) */
 
+	gpio_write(&pow_led, 1);
 	/* Put statements here #_TEFB_# */
 
 }
@@ -241,6 +252,7 @@ eGeneralLighting_setOperatingStatus_OFF(CELLIDX idx)
 		/* Write error processing code here */
 	} /* end if VALID_IDX(idx) */
 
+	gpio_write(&pow_led, 0);
 	/* Put statements here #_TEFB_# */
 
 }

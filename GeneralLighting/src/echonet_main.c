@@ -15,12 +15,41 @@
 
 #define MAKER_CODE	{0x00, 0x00, 0xB3}
 
+struct general_lighting_t general_lighting_class_data = {
+	0x30,
+	0x00,
+	{ 0x00, 0x00, 'C', 0x00 },
+	0x42,
+	{MAKER_CODE},
+	0x41,
+};
+struct node_profile_object_t local_node_data = {
+	0x30,
+	{ 0x01, 0x0A, { 0x01, 0x00 } },
+	{
+		0xFE,
+		{ MAKER_CODE },
+		{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, },
+	},
+	{MAKER_CODE},
+};
+
 static void main_initialize();
 static int main_get_timer();
 static void main_progress(int interval);
 static void main_recv_esv(T_EDATA *esv);
 static void main_break_wait(uint8_t *brkdat, int32_t len);
 static void main_timeout();
+
+
+/* 電源LED */
+gpio_t pow_led;
+/* リレー出力 */
+gpio_t relay_sw;
+/* カラーLED */
+gpio_t led_blue, led_green, led_red;
+/* ユーザースイッチ CN16-4 */
+gpio_t sw1, sw2;
 
 void echonet_main_task(intptr_t exinf)
 {
@@ -32,7 +61,7 @@ void echonet_main_task(intptr_t exinf)
 	int32_t len;
 
 	syslog(LOG_NOTICE,"[echonet_main_task]:started");
-	syslog(LOG_NOTICE,"  exinf:%d",exinf);
+	//syslog(LOG_NOTICE,"  exinf:%d",exinf);
 	/* アプリケーションの初期化 */
 	main_initialize();
 
@@ -125,14 +154,35 @@ void echonet_change_netif_link(uint8_t link_up, uint8_t up)
 	}
 }
 
-enum main_state_t{
+enum main_state_t {
+	main_state_start,
 	main_state_idle,
+	main_state_search,
 };
 int main_timer = TMO_FEVR;
-enum main_state_t main_state = main_state_idle;
+enum main_state_t main_state = main_state_start;
 
 static void main_initialize()
 {
+		/* LEDの初期化 */
+	gpio_init_out(&pow_led, LED_USER);
+	gpio_init_out(&relay_sw, P4_4);
+	gpio_init_out(&led_blue, LED_BLUE);
+	gpio_init_out(&led_green, LED_GREEN);
+	gpio_init_out(&led_red, LED_RED);
+
+	/* スイッチの初期化 */
+	gpio_init_in(&sw1, USER_BUTTON0);
+	gpio_init_in(&sw2, P1_12);
+
+	/* カラーLEDを消灯 */
+	gpio_write(&led_blue, 0);
+	gpio_write(&led_green, 0);
+	gpio_write(&led_red, 0);
+
+
+	main_state = main_state_start;
+	main_timer = 1000 * 1000;
 	/* メインタスクを起動 */
 	ER ret = act_tsk(MAIN_TASK);
 	if (ret != E_OK) {
@@ -147,12 +197,11 @@ static int main_get_timer()
 
 static void main_progress(int interval)
 {
-	if(main_timer == TMO_FEVR)
-		return;
-
-	main_timer -= interval;
-	if(main_timer < 0){
-		main_timer = 0;
+	if (main_timer != TMO_FEVR) {
+		main_timer -= interval;
+		if (main_timer < 0) {
+			main_timer = 0;
+		}
 	}
 }
 
@@ -197,37 +246,41 @@ static void main_break_wait(uint8_t *brkdat, int32_t len)
 {
 	switch(main_state){
 	case main_state_idle:
+			if (len < 2)
+			break;
 		break;
 	}
 }
+
+static void main_ontimer();
 
 static void main_timeout()
 {
-	if(main_timer != 0)
-		return;
-
-	switch(main_state){
-	case main_state_idle:
-		break;
+	if (main_timer == 0) {
+		main_ontimer();
 	}
 }
 
-struct general_lighting_t general_lighting_class_data = {
-	0x30,
-	0x00,
-	{ 0x00, 0x00, 'C', 0x00 },
-	0x42,
-	{MAKER_CODE},
-	0x41,
+static void main_ontimer()
+{
+	ER ret;
+	T_EDATA *esv;
 
-};
-struct node_profile_object_t local_node_data = {
-	0x30,
-	{ 0x01, 0x0A, { 0x01, 0x00 } },
-	{
-		0xFE,
-		{ MAKER_CODE },
-		{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, },
-	},
-	{MAKER_CODE},
-};
+	switch (main_state){
+		case main_state_start:
+		/* ECHONETミドルウェアを起動 */
+		ret = ecn_sta_svc();
+		if (ret != E_OK) {
+			syslog(LOG_ERROR, "ecn_sta_svc");
+		}
+
+		main_timer = 1000 * 1000;
+		break;
+	}
+
+		/* 電文送信 */
+	ret = ecn_snd_esv(esv);
+	if (ret != E_OK) {
+		syslog(LOG_ERROR, "ecn_snd_esv");
+	}
+}
