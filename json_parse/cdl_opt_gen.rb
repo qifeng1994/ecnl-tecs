@@ -202,57 +202,6 @@ class Cdl_gen
         }
     end
 
-    # def self.option_property(propertyName,deviceName,gen_dir)
-    #     className = font_change(deviceName)
-
-    #     Devices.each{|id, val|
-
-    #         if val['className'] then
-    #             if val['className']['en'] == deviceName then
-    #                 FileUtils.mkdir_p("#{gen_dir}lib/#{className}/src") # 建立多重路径
-    #                 cdl = File.open("#{gen_dir}lib/#{className}/src/t#{className}.cdl","w+")
-    #                 cdl.print("signature s#{className} {\n")
-                    
-    #                 cdl.puts("    void setOperatingStatus_ON( );
-    # void getOperatingStatus_ON( );
-    # void setOperatingStatus_OFF( );
-    # void getOperatingStatus_OFF( );
-    # void setFaultStatus_Fault( );
-    # void getFaultStatus_Fault( );
-    # void setFaultStatus_NoFault( );
-    # void getFaultStatus_NoFault( );")
-
-    #                 parse_properties(val['elProperties'],cdl)
-
-    #                 val['elProperties'].each{ |prop_id, val2|
-    #                     if val2['propertyName'] then
-    #                         if val2['propertyName']['en'] == propertyName.gsub("\"","").chomp then
-    #                             parse_required(val2,cdl,'set')
-    #                             parse_required(val2,cdl,'get')
-    #                         end
-    #                     else
-
-    #                     end
-
-    #                 }
-
-    #                 cdl.puts("};")
-    #                 cdl.puts("celltype t#{className} {
-    # entry s#{className} e#{className};\n};")
-                    
-    #                 cdl.close
-        
-    #                 else
-        
-    #                 end
-    #         else
-
-    #         end
-
-    #     }
-
-    # end
-
     def self.option_property(propertyName,deviceName,gen_dir)
         className = font_change(deviceName)
 
