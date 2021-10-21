@@ -6,21 +6,7 @@ require "json"
 require 'fileutils'
 require 'tempfile'
 require 'optparse'
-
-
-# Echonet Lite Device Description in JSON
-# devdesc_json_fname = "appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
-devdesc_json_fname = ARGV[0]
-gen_dir = ARGV[1]
-deviceNames = ARGV[2,ARGV.length]
-
-# Read Device Description (String)
-devdesc_json = File.read(devdesc_json_fname)
-
-# Convert JSON String to Hash
-DevDesc = JSON[devdesc_json]
-Devices = DevDesc["devices"]
-Definitions = DevDesc["definitions"]
+require './share'
 
 
 $node_profile_data = "/*Ｖｅｒｓｉｏｎ情報の型*/
@@ -98,7 +84,8 @@ class H_gen
     end
 
 
-    def self.folder_gen(val,gen_dir)
+    def self.folder_gen(val)
+        gen_dir = ARGV[1]
         className = font_change(val['className']['en'])
         FileUtils.mkdir_p("#{gen_dir}lib/#{className}/src") # 建立多重路径
         # [2] 各フォルダーの中 ファイルを生成する
@@ -145,7 +132,8 @@ class H_gen
         }
     end
 
-    def self.folder_gen_argv(val, dev,gen_dir)
+    def self.folder_gen_argv(val, dev)
+        gen_dir = ARGV[1]
         className = font_change(val['className']['en'])
         dev.each{|arg|
             if arg.gsub("\"","").chomp == val['className']['en'] then
@@ -198,24 +186,25 @@ class H_gen
         }
     end
 
-    def self.h_gen(deviceNames,gen_dir)
+    def self.h_gen
+        deviceNames = ARGV[2,ARGV.length]
         Devices.each{ |id, val|
             # [1] classNameを持っていく　フォルダーを作る
             if val['oneOf'] then
                 val['oneOf'].each{|val2|
                     if deviceNames.empty? then
-                        folder_gen(val2, gen_dir)
+                        folder_gen(val2)
                     else
-                        folder_gen_argv(val2, deviceNames,gen_dir)
+                        folder_gen_argv(val2, deviceNames)
                     end
                 }
             elsif val['className'] == nil then
                 #print "*** #{id} has no class name ***\n"
             elsif val['className']['en'] then
                 if deviceNames.empty? then
-                    folder_gen(val, gen_dir)
+                    folder_gen(val)
                 else
-                    folder_gen_argv(val, deviceNames,gen_dir)
+                    folder_gen_argv(val, deviceNames)
                 end
                 #print( "#{val['className']['en']} = #{id}\n" )
             elsif val['className']['ja'] then
@@ -226,8 +215,9 @@ class H_gen
         }
     end
 
-    def self.option_property(propertyName, deviceName,gen_dir)
-        # puts "generate #{propertyName} of #{deviceName}"
+    def self.option_property(propertyName)
+        deviceName = ARGV[2]
+        gen_dir = ARGV[1]
         Devices.each { |id, val|
             if val['className'] then
                 if val['className']['en'] == deviceName then
@@ -333,14 +323,13 @@ class H_gen
 
 end
 
-H_gen.h_gen(deviceNames,gen_dir)
+H_gen.h_gen
 
 opt = OptionParser.new
 
 opt.on('-p','--add property''add property name') do |propertyName|
-    deviceName = ARGV[2]
     propertyName = ARGV[4,ARGV.length]
-    H_gen.option_property(propertyName, deviceName,gen_dir)
+    H_gen.option_property(propertyName)
 end
 
 opt.parse(ARGV)

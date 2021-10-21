@@ -16,19 +16,7 @@
 require "json"
 require 'fileutils'
 require 'optparse'
-# require 'tempfile'
-
-
-devdesc_json_fname = ARGV[0]
-gen_dir = ARGV[1]
-deviceNames = ARGV[2,ARGV.length]
-
-
-devdesc_json = File.read(devdesc_json_fname)
-
-DevDesc = JSON[devdesc_json]
-Devices = DevDesc["devices"]
-Definitions = DevDesc["definitions"]
+require './share'
 
 class Cfg_gen
 
@@ -142,8 +130,8 @@ class Cfg_gen
         cfg.close
     end
 
-    def self.folder_gen_argv(val, dev,dir)
-        # puts "#{dev}"
+    def self.folder_gen_argv(val, dev)
+        dir =  ARGV[1]
         className = font_change(val['className']['en'])
         dev.each{|arg|
             if arg.gsub("\"","").chomp == val['className']['en'] then
@@ -224,7 +212,8 @@ class Cfg_gen
         }
     end
 
-    def self.cfg_gen(deviceNames,gen_dir)
+    def self.cfg_gen
+        deviceNames = ARGV[2,ARGV.length]
         Devices.each{ |id, val|
             # [1] classNameを持っていく　フォルダーを作る
             if val['oneOf'] then
@@ -232,7 +221,7 @@ class Cfg_gen
                     if deviceNames.empty? then
                         folder_gen(val2)
                     else
-                        folder_gen_argv(val2, deviceNames, gen_dir)
+                        folder_gen_argv(val2, deviceNames)
                     end        }
             elsif val['className'] == nil then
                 #print "*** #{id} has no class name ***\n"
@@ -240,7 +229,7 @@ class Cfg_gen
                 if deviceNames.empty? then
                     folder_gen(val)
                 else
-                    folder_gen_argv(val, deviceNames, gen_dir)
+                    folder_gen_argv(val, deviceNames)
                 end        #print( "#{val['className']['en']} = #{id}\n" )
             elsif val['className']['ja'] then
                 #print( "#{val['className']['ja']} = #{id}\n" )
@@ -250,10 +239,10 @@ class Cfg_gen
         }
     end
 
-    def self.option_property(propertyName,deviceName,gen_dir)
-        # 生成默认的
-    
-        # 生成指定的属性
+    def self.option_property(propertyName)
+        gen_dir = ARGV[1]
+        deviceName = ARGV[2]
+        
         className = font_change(deviceName)
         Devices.each{ |id,val|
             if val['className'] then
@@ -365,14 +354,13 @@ class Cfg_gen
     end
 end
 
-Cfg_gen.cfg_gen(deviceNames,gen_dir)
+Cfg_gen.cfg_gen
 
 opt = OptionParser.new
 
-opt.on('-p','--add property''add property name') do |propertyName|
-    deviceName = ARGV[2]
+opt.on('-p','--add property''add property name') do |propertyName|   
     propertyName = ARGV[4,ARGV.length]
-    Cfg_gen.option_property(propertyName, deviceName,gen_dir)
+    Cfg_gen.option_property(propertyName)
 end
 
 opt.parse(ARGV)

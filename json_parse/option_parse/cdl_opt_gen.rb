@@ -17,22 +17,7 @@
 require "json"
 require "fileutils"
 require 'optparse'
-
-
-# Echonet Lite Device Description in JSON
-# devdesc_json_fname = "appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
-devdesc_json_fname = ARGV[0]
-gen_dir = ARGV[1]
-deviceNames = ARGV[2,ARGV.length]
-
-# Read Device Description (String)
-devdesc_json = File.read(devdesc_json_fname)
-
-# Convert JSON String to Hash
-DevDesc = JSON[devdesc_json]
-Devices = DevDesc["devices"]
-Definitions = DevDesc["definitions"]
-
+require './share'
 
 
 class Cdl_gen
@@ -128,7 +113,8 @@ class Cdl_gen
     end
 
 
-    def self.file_output(val,gen_dir)
+    def self.file_output(val)
+        gen_dir = ARGV[1]
         className = font_change(val['className']['en'])
         FileUtils.mkdir_p("#{gen_dir}/lib/#{className}/src") # 建立多重路径
         cdl = File.open("#{gen_dir}/lib/#{className}/src/t#{className}.cdl","w+")
@@ -150,7 +136,8 @@ class Cdl_gen
         cdl.close
     end
 
-    def self.file_output_argv(val, dev, dir)
+    def self.file_output_argv(val, dev)
+        dir = ARGV[1]
         className = font_change(val['className']['en'])
         dev.each{|arg|
             if arg.gsub("\"","").chomp == val['className']['en'] then
@@ -175,23 +162,24 @@ class Cdl_gen
         }
     end
 
-    def self.cdl_gen(deviceNames,gen_dir)
+    def self.cdl_gen
+        deviceNames = ARGV[2,ARGV.length]
         Devices.each{ |id, val|
             if val['oneOf'] then
                 val['oneOf'].each{|val2|
                     if deviceNames.empty? then
                         file_output(val2)
                     else
-                        file_output_argv(val2, deviceNames, gen_dir)
+                        file_output_argv(val2, deviceNames)
                     end
                 }
             elsif val['className'] == nil then
                 #print "*** #{id} has no class name ***\n"
             elsif val['className']['en'] then   
                 if deviceNames.empty? then
-                    file_output(val, gen_dir)
+                    file_output(val)
                 else
-                    file_output_argv(val, deviceNames, gen_dir)
+                    file_output_argv(val, deviceNames)
                 end        
                 #print( "#{val['className']['en']} = #{id}\n" )
             elsif val['className']['ja'] then
@@ -202,7 +190,9 @@ class Cdl_gen
         }
     end
 
-    def self.option_property(propertyName,deviceName,gen_dir)
+    def self.option_property(propertyName)
+        gen_dir = ARGV[1]
+        deviceName = ARGV[2]
         className = font_change(deviceName)
 
         Devices.each{|id, val|
@@ -259,14 +249,14 @@ class Cdl_gen
 
 end
 
-Cdl_gen.cdl_gen(deviceNames,gen_dir)
+Cdl_gen.cdl_gen
 
 opt = OptionParser.new
 
 opt.on('-p','--add property''add property name') do |propertyName|
-    deviceName = ARGV[2]
+    
     propertyName = ARGV[4,ARGV.length]
-    Cdl_gen.option_property(propertyName, deviceName,gen_dir)
+    Cdl_gen.option_property(propertyName)
 end
 
 opt.parse(ARGV)
