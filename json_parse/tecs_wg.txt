@@ -102,10 +102,115 @@ todo: cdl 里面只生成required, 判断条件改为get是否是renquired
 todo: 再cdl中添加onoff和alarm,在echonet_main.c中添加onoff和alarm函数
 2021/06/11
 onoff_prop_set相当于是中间件的callback函数，如果把函数名改成TECS的格式，那么相当于修改cfg里面的函数名，
+
 2021/06/21
 可以尝试把callback函数放到tECNLGeneralLighting.c中build
 まずは動く
 tGeneralLighting pointerが必要なら、エラーが出るかもしれません
 cfg変更、exinf-->p_cellcb
-[別の話]
-tecs iotplatform/ base platform上でmrubyを動かす、tecsコンポーネントを作る
+
+2021/07/19
+サンプルプログラム: GeneralLighting 実装確認(on/off設定)
+CFGファイルを生成するスクリプトを修正しました
+
+
+2021/08/23
+ICESSに投稿する:(結果待ち　10月)
+ECHONET Lite Framework based on Embedded Component Systems with Visual Programming
+
+SWEST23に投稿する:(採用　09/02発表)
+ビジュアルプログラミング対応したECHONET Liteフレームワーク
+ポスターを作る
+
+ハンズオン: mruby+TECS on TOPPERS BASE PLATFORM
+sample1をROM化してビルド : b_sample1_rom
+mruby-3.0.0ビルド
+mruby VM を組み込む : /c_mruby
+(gr-peach)
+
+echonet-tecs
+rbスクリプト：デバイス名前でファイルを生成する --- プラグインにするか? option parser
+             $ ruby ○○_gen.rb　"General Lighting" (defaultはrequired, 他のコマンドでoptionalプロパティを生成する)
+             $ ruby ○○_gen.rb   ○○/○○.json "className"  
+                      
+             all_gen.rb
+             $ ruby all_gen.rb "General Lighting" (cannot)
+
+    (あった方がいい)$ ruby ○○_gen.rb　"General Lighting" optionalPropertyName
+
+    (実用性改善 : blocklyからデバイスがあるプロパティを示す)
+
+    デバイスを探す--->プロパティを選択する--->ファイルを生成する
+
+2021/09/27
+SWEST23 (09/02)
+    gather.town 
+M2中間発表 (09/21)
+rbスクリプト：
+    Usage: $ ruby ○○_gen.rb src_json gen_dir [className] [propertyName]
+
+    1.ディフォルト
+    $ ruby ○○_gen.rb src_json gen_dir
+    全てのデバイスを指定したディレクトリで生成する(生成したプロパティはrequiredのみ)
+
+    2. [className] デバイス名を指定する(生成したプロパティはrequiredのみ)
+    $ ruby ○○_gen.rb src_json gen_dir  -c "className1" "className2"
+
+    3. [propertyName] プロパティ名を指定する、前はclassNameが必要
+    $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"
+
+
+
+    できた：デバイス名を指定する
+    devdesc_json_fname = ARGV[0]
+    gen_dir = ARGV[1]
+    dev = ARGV[2,ARGV.length]
+
+    デバイス名でファイルを生成する(生成したプロパティはrequiredのみ)
+    $ ruby ○○_gen.rb src_json gen_dir  "className1" "className2"
+
+    optionalプロパティを指定する
+    $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"
+
+    TODO:
+    .cfg .c .h 対応
+    ecnl_gen.sh 
+    blockly : 
+    ターゲット　テスト用-->簡単なユースケース
+    GUI 二つパータン(プログラミング経験がある/なし)　
+    
+
+TECS WG の最新研究 2021/10/25(月) 14:40-15:40 
+
+
+
+关于blockly:
+
+有单独的块set用来连接操作
+
+有集合的块trigger-action用来组成一个大的函数，插入的块假设名字是[ON] [OFF]
+
+[ON] [OFF]默认是字符串变量（有应答，有操作指令）
+
+function setProperty(ipData,msg) 
+{
+    send (msg)
+}
+
+function getProperty(ipData,msg)
+{
+    msg1 = msg 去掉后面几位
+    msg2 = msg 后面几位
+    send(msg1)
+    msg3 = 接受的信息
+    msg4 = 接受的信息的后面几位
+    if ( msg4 = msg2 )
+        return true
+    else
+        return false
+}
+
+while ( getProperty ([ON])) 
+{
+   setProperty ([OFF]) 
+}

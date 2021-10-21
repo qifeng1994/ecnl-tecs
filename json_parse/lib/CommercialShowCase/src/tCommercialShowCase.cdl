@@ -1,7 +1,0 @@
-signature sCommercialShowCase {
-    void setOperationModeSetting_Cooling( );
-    void setOperationModeSetting_NonCooling( );
-    void setOperationModeSetting_Defrosting( );
-    void setOperationModeSetting_Other( );
-    void setTemperatureSettingOfInsideTheCase( );
-};
