@@ -24,6 +24,7 @@
 //     "tooltip": "0x30"
 // }
 
+// accessRule: "set":"required" "$ref":"state"
 let statementBlock = {
     type : null,
     message0 : null,
@@ -33,7 +34,24 @@ let statementBlock = {
     tooltip : null
 }
 
-let statusBlock = {
+// accessRule: "set":"required" "$ref":"number,level,raw"
+let setValueBlock = {
+    type: "messages",
+    message0: "messages %1",
+    args0: [
+      {
+        type: "input_value",
+        name: "number/level"
+      }
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: null,
+    tooltip: null
+  }
+
+// accessRule: "get":"required" "$ref":"state"
+let getStatusBlock = {
     type : null,
     message0 : null,
     output :null,
@@ -43,35 +61,35 @@ let statusBlock = {
 
 // 在node.js中解析JSON的方法
 var fs = require("fs");
+const { type } = require("os");
 var filePath = "../../json_parse/appendix_v3-1-6r5/EL_DeviceDescription_3_1_6r5.json"
 var fileContent = fs.readFileSync(filePath).toString();
 var fileJson = JSON.parse(fileContent);
 var devices = fileJson.devices
 var definitions = fileJson.definitions
 
-// 遍历对象
+//一般照明 demo
 for(let deviceId in devices){ //deviceId: 0x0EF0
     var deviceContent = devices[deviceId]
     for (let key in deviceContent){
-        //第一次为devices对象分类
-        // if (key == 'oneOf'){
-        //     console.log(deviceId + ' is oneOf');
-        // }else if (! key == 'className') {
-        //     console.log(deviceId + ' has no class name');
-        // }else {
-
-        // }
-
-        //一般照明
         if (deviceContent[key]['en'] == 'General lighting'){
-            //console.log(deviceId + ' is '+ deviceContent[key]['en']);
             var propertiesContent = deviceContent['elProperties']
-            parseProperties(propertiesContent)
-            
-            
+            parseProperties(propertiesContent)    
         }
     }
 }
+
+// 第一次遍历 "devices" 
+// for(deviceId in devices){ //deviceId: 0x0EF0
+//     if ('oneOf' in devices[deviceId] ){
+//     // "0x0260" "0x0263" "0x027E" "0x0288" : {"oneOf":[value]}
+//         for( key in devices[deviceId]['oneOf']){
+//             console.log(devices[deviceId]['oneOf'].className)
+//         }
+//     }else {
+
+//     }
+// }
 
 function parseProperties (value){
     for(let key in value){
@@ -79,11 +97,10 @@ function parseProperties (value){
             for(i in value[key]['oneOf']){
                 var str = value[key]['oneOf'][i].data.$ref
                 var ref = str.replace("#/definitions/","")
+                var propertyName = value[key]['oneOf'][i].propertyName.en
                 console.log(key + ' oneOf is ' + value[key]['oneOf'][i].propertyName.en)
-                // console.log(ref)
                 var definition = definitions[ref]
-                parseDefinitions(definition)
-
+                parseDefinitions(definition,propertyName)
             }
   
         }else {
@@ -92,25 +109,21 @@ function parseProperties (value){
     }
 }
 
-//把javascript对象转换为JSON：
-//JSON.stringify()
+//把javascript对象转换为JSON的方法，JSON.stringify()
 function convertJson (block){
     var myJson = JSON.stringify(block)
     console.log(myJson)
 }
 
-//把propertyName和data转换为Block的message0
-function convertBlockMessage (value){
-    
-}
-
-//把className定义为Block的type?
-
 //解析definitions
-function parseDefinitions(definition){
+function parseDefinitions(definition,propertyName){
     for (let i in definition['enum']){
         edt = definition['enum'][i].edt
-        state = definition['enum'][i].state.en
-        console.log(edt +" : " + state)
+        message = "set " + propertyName + ":" +definition['enum'][i].state.en
+        state = propertyName + " " +definition['enum'][i].state.en
+        statementBlock.tooltip = edt
+        statementBlock.type = state
+        statementBlock.message0 = message
+        convertJson(statementBlock)
     }
 }

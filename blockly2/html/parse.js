@@ -82,6 +82,8 @@ function parseProperties (value){
             for(i in value[key]['oneOf']){
                 var str = value[key]['oneOf'][i].data.$ref
                 var ref = str.replace("#/definitions/","")
+                var propertyName = value[key]['oneOf'][i].propertyName.en
+                convertBlockMessage(propertyName)
                 console.log(key + ' oneOf is ' + value[key]['oneOf'][i].propertyName.en)
                 console.log(ref)
                 // var definition = definitions.ref
@@ -103,7 +105,9 @@ function convertJson (block){
 
 //把propertyName和data转换为Block的message0
 function convertBlockMessage (value){
-    
+    statementBlock.type = value
+    statementBlock.message0 = value
+    convertJson(statementBlock)
 }
 
 //把className定义为Block的type?

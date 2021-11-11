@@ -460,6 +460,8 @@ Code.init = function() {
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runJS);
+  //20211104新建自定义的按钮
+  Code.bindClick('beginnerButton',Code.displayBlock);
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
@@ -621,3 +623,26 @@ function sleep(delay) {
         continue;
     }
 }
+
+
+// var logic = document.getElementById("testdemo");
+// var beginnerButton = document.getElementById("beginnerButton");
+// beginnerButton.onclick = function(){
+//   logic.style.display = "none";
+//   console.log("display logic block");
+// }
+
+//20211104切换按钮实现的方法，目前还不能正常工作
+// Code.displayBlock = function(){
+//   var logic = document.getElementById("testdemo");
+//   logic.style.display = 'none';
+//   console.log("display logic block");
+// }
+
+
+// var logic = toolbox.getToolboxItemById("testdemo");
+// var beginnerButton = document.getElementById("beginnerButton");
+// beginnerButton.onclick = function(){
+//   logic.style.display = 'none';
+//   console.log("display logic block");
+// }

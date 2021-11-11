@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" value="notranslate">
+  <title>Blockly Demo:</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/storage.js"></script>
+  <script src="../../blockly_compressed.js"></script>
+  <script src="../../blocks_compressed.js"></script>
+  <script src="../../javascript_compressed.js"></script>
+  <script src="../../python_compressed.js"></script>
+  <script src="../../php_compressed.js"></script>
+  <script src="../../lua_compressed.js"></script>
+  <script src="../../dart_compressed.js"></script>
+  <script src="mygenerators.js"></script>
+  <script src="myblocks.js"></script>
+  <script src="code.js"></script>
+</head>
+<body>
+  <table width="100%" height="100%">
+    <tr>
+      <td style="display:none">
+        <h1><a href="https://developers.google.com/blockly/">Blockly</a>&rlm; &gt;
+          <a href="../index.html">Demos</a>&rlm; &gt;
+          <span id="title">...</span>
+        </h1>
+      </td>
+      <td class="farSide">
+        <select id="languageMenu"></select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <table width="100%">
+          <tr id="tabRow" height="1em">
+            <td id="tab_blocks" class="tabon">...</td>
+            <td class="tabmin tab_collapse">&nbsp;</td>
+            <td id="tab_javascript" class="taboff tab_collapse">JavaScript</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_code" class="taboff">
+              <select id="code_menu"></select>
+            </td>
+            <td class="tabmax">
+                <button id = "beginnerButton" onclick="location.href='index.html'">pro</button>
+
+              <button id="trashButton" class="notext" title="...">
+                <img src='../../media/1x1.gif' class="trash icon21">
+              </button>
+              <button id="linkButton" class="notext" title="...">
+                <img src='../../media/1x1.gif' class="link icon21">
+              </button>
+              <button id="runButton" class="notext primary" title="...">
+                <img src='../../media/1x1.gif' class="run icon21">
+              </button>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="99%" colspan=2 id="content_area">
+      </td>
+    </tr>
+  </table>
+  <div id="content_blocks" class="content"></div>
+  <pre id="content_javascript" class="content prettyprint lang-js"></pre>
+  <pre id="content_python" class="content prettyprint lang-py"></pre>
+  <pre id="content_php" class="content prettyprint lang-php"></pre>
+  <pre id="content_lua" class="content prettyprint lang-lua"></pre>
+  <pre id="content_dart" class="content prettyprint lang-dart"></pre>
+  <textarea id="content_xml" class="content" wrap="off"></textarea>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+ 
+    <category name="Option" colour="%{BKY_TEXTS_HUE}">
+      <block type="set"></block>
+      <block type="trigger_action"></block>
+      <block type="time"></block>
+      <block type="period"></block>
+      <block type="timer"></block>
+      <block type="weeks"></block>
+      <block type="week"></block>
+    </category>
+
+    <category name="ECNL" colour="%{BKY_TEXTS_HUE}">
+      <block type="NodeProfile"></block>
+      <block type="SuperClass"></block>
+      <block type="GasLeakSensor"></block>
+      <block type="CrimePreventionSensor"></block>
+      <block type="EmergencyButton"></block>
+      <block type="FirstAidSensor"></block>
+      <block type="EarthquakeSensor"></block>
+      <block type="ElectricLeakSensor"></block>
+      <block type="HumanDetectionSensor"></block>
+      <block type="VisitorSensor"></block>
+      <block type="CallSensor"></block>
+      <block type="CondensationSensor"></block>
+      <block type="AirPollution"></block>
+      <block type="SoundSensor"></block>
+      <block type="MailingSensor"></block>
+      <block type="WeightSensor"></block>
+      <block type="RainSensor"></block>
+      <block type="WaterLevelSensor"></block>
+      <block type="BathWaterLevelSensor"></block>
+      <block type="BathHeatingStatusSensor"></block>
+      <block type="WaterLeakSensor"></block>
+      <block type="WaterOverflowSensor"></block>
+      <block type="FireSensor"></block>
+      <block type="CigaretteSmokeSensor"></block>
+      <block type="GasSensor"></block>
+      <block type="VocSensor"></block>
+      <block type="OdorSensor"></block>
+      <block type="FlameSensor"></block>
+      <block type="MicromotionSensor"></block>
+      <block type="PassageSensor"></block>
+      <block type="BedPresenceSensor"></block>
+      <block type="OpenCloseSensor"></block>
+      <block type="SnowSensor"></block>
+      <block type="HomeAirConditioner"></block>
+      <block type="VentilationFan"></block>
+      <block type="AirConditionerVentilationFan"></block>
+      <block type="AirCleaner"></block>
+      <block type="Humidifier"></block>
+      <block type="ElectricHeater"></block>
+      <block type="FanHeater"></block>
+      <block type="ElectricStorageHeater"></block>
+      <block type="PackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities)"></block>
+      <block type="PackageTypeCommercialAirConditioner(outdoorUnit)"></block>
+      <block type="GasHeatPumpTypeCommercialAirConditioner(indoorUnit)"></block>
+      <block type="RangeHood"></block>
+      <block type="ElectricallyOperatedShade"></block>
+      <block type="ElectricallyOperatedBlindShade"></block>
+      <block type="ElectricallyOperatedShutter"></block>
+      <block type="ElectricallyOperatedRainSlidingDoorShutter"></block>
+      <block type="ElectricallyOperatedRainSlidingDoorShutter"></block>
+      <block type="ElectricallyOperatedGate"></block>
+      <block type="ElectricallyOperatedWindow"></block>
+      <block type="AutomaticallyOperatedEntranceDoorSlidingDoor"></block>
+      <block type="GardenSprinkler"></block>
+      <block type="ElectricWaterHeater"></block>
+      <block type="BidetQuippedToilet(withElectricallyWarmedSeat)"></block>
+      <block type="ElectricKey"></block>
+      <block type="InstantaneousWaterHeater"></block>
+      <block type="BathroomHeaterAndDryer"></block>
+      <block type="HouseholdSolarPowerGeneration"></block>
+      <block type="HotWaterHeatSourceEquipment"></block>
+      <block type="FloorHeater"></block>
+      <block type="FuelCell"></block>
+      <block type="StorageBattery"></block>
+      <block type="EvChargerAndDischarger"></block>
+      <block type="EngineCogeneration"></block>
+      <block type="WaterFlowMeter"></block>
+      <block type="LpGasMeter"></block>
+      <block type="PowerDistributionBoard"></block>
+      <block type="SmartGasMeter"></block>
+      <block type="SmartKerosenseMeter"></block>
+      <block type="GeneralLighting"></block>
+      <block type="LightingForSolidLightEmittingSource"></block>
+      <block type="Buzzar"></block>
+      <block type="EvCharger"></block>
+      <block type="HouseholdSmallWindTurbinePowerGeneration"></block>
+      <block type="ExtendedLightingSystem"></block>
+      <block type="MultipleInputPcs"></block>
+      <block type="HybridWaterHeater"></block>
+      <block type="ElectricHotWaterPot"></block>
+      <block type="Refrigerator"></block>
+      <block type="CombinationMicrowaveOven"></block>
+      <block type="CookingHeater"></block>
+      <block type="RiceCooker"></block>
+      <block type="WashingMachine"></block>
+      <block type="ClothDryer"></block>
+      <block type="CommercialShowCase"></block>
+      <block type="WasherAndDryer"></block>
+      <block type="CommercialShowCaseOutdoorUnit"></block>
+      <block type="DishwasherAndDryer"></block>
+      <block type="DrEventController"></block>
+      <block type="Controller"></block>
+      <block type="Display"></block>
+      <block type="Television"></block>
+      <block type="Audio"></block>
+      <block type="NetworkCamera"></block>
+    </category>
+  </xml>
+  <script src="/lib/jquery-3.3.1.min.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/lib/vue.min.js"></script>
+  <script src="/lib/vue-router.min.js"></script>
+  <script src="ssng.js"></script>
+  <script>
+
+  </script>
+
+</body>
+</html>

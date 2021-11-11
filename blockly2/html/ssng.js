@@ -486,3 +486,35 @@ function packetMonitorUpDownList(event){
 	// 遷移したパケット行にフォーカスする
 	$('#packet-' + pno).focus();
 }
+
+//用于判断当前设备的状态，如果和msg一致则返回true
+function getProperty(ipData,freeData)
+{
+    let msg1;
+}
+
+function setProperty(ipData, freeData){
+
+    let uint8Array = [];
+    let binaryString = "";
+    uint8Array = createUint8ArrayFromFreeData(freeData);
+    if (uint8Array !== false) {
+      const message = {ip:ipData, uint8Array:uint8Array};
+      const request = new XMLHttpRequest();
+      request.open('PUT', serverURL + 'send');
+      request.setRequestHeader("Content-type", "application/json");
+      request.send(JSON.stringify(message));
+
+    // push "Sent Data" to LOG
+      const packet_id = 'packet-' + packetId++;
+      const pkt = {
+          id:packet_id,
+          timeStamp:timeStamp(),
+          direction:"T",
+          ip:ipData,
+          data:uint8Array
+      }
+      dataLogArray.push(pkt);
+      displayLog();
+  }
+}
