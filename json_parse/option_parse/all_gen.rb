@@ -32,3 +32,4 @@ opt.on('-p','--add property''add property name') do |propertyName|
 end
 
 opt.parse(ARGV)
+

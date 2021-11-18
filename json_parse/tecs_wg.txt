@@ -170,17 +170,17 @@ rbスクリプト：
     $ ruby ○○_gen.rb src_json gen_dir  "className1" "className2"
 
     optionalプロパティを指定する
-    $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"
-
-    TODO:
-    .cfg .c .h 対応
-    ecnl_gen.sh 
-    blockly : 
-    ターゲット　テスト用-->簡単なユースケース
-    GUI 二つパータン(プログラミング経験がある/なし)　
+    $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"　
     
 
 TECS WG の最新研究 2021/10/25(月) 14:40-15:40 
+
+TODO:
+.cfg .c .h 対応
+blockly : 
+    簡単なユースケース
+    実用性：UI 二つパータン(プログラミング経験がある/なし)、デバイス検索、プロパティ更新
+    評価方法：cognitive dimensions
 
 
 
@@ -194,7 +194,7 @@ TECS WG の最新研究 2021/10/25(月) 14:40-15:40
 
 function setProperty(ipData,msg) 
 {
-    send (msg)
+    send (ipData,msg)
 }
 
 function getProperty(ipData,msg)
@@ -210,7 +210,3 @@ function getProperty(ipData,msg)
         return false
 }
 
-while ( getProperty ([ON])) 
-{
-   setProperty ([OFF]) 
-}

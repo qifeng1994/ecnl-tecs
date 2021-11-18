@@ -12,11 +12,11 @@
 #       "options": [
 #         [
 #           "propertyName:stateName",
-#           "OPTIONNAME"
+#           "propertyName:stateName"
 #         ],
 #         [
 #           "propertyName:stateName",
-#           "OPTIONNAME"
+#           "propertyName:stateName"
 #         ]
 #       ]
 #     }
@@ -27,6 +27,9 @@
 
 # blockを生成するメソッド
 # Blockly.defineBlocksWithJsonArray([JSON]);
+
+# 数字がある場合は:
+
 
 # arrayメソッド：
 # 空のオブジェクトを定義する場合
@@ -105,7 +108,7 @@ def print_array(propertyName,val,options)
     val['enum'].each{|edt|
         option = Array.new
         option.push("#{propertyName}  #{edt['state']['en']}")
-        option.push("OPTIONNAME")
+        option.push("#{propertyName}  #{edt['state']['en']}")
         options.push(option)
     }  
 end
