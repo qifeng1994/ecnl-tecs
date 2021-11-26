@@ -173,17 +173,35 @@ rbスクリプト：
     $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"　
     
 
-TECS WG の最新研究 2021/10/25(月) 14:40-15:40 
+2021/10/25(月) TOPPERS開発者会議　TECS WG の最新研究  14:40-15:40 
 
-TODO:
-.cfg .c .h 対応
-blockly : 
-    簡単なユースケース
-    実用性：UI 二つパータン(プログラミング経験がある/なし)、デバイス検索、プロパティ更新
-    評価方法：cognitive dimensions
+2021/11/22
+
+コードジェネレータ　.cfg .c .h 対応した
+APRIS 論文採択 11/29　ポスターセッション発表
+修論：
+    blockly : 
+        簡単なユースケース:
+        実用性：UI 、デバイス検索、プロパティ更新
+        評価方法：cognitive dimensions
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
 关于blockly:
 
 有单独的块set用来连接操作
@@ -210,3 +228,61 @@ function getProperty(ipData,msg)
         return false
 }
 
+规则
+案例：
+
+逻辑：以向左滑动为例
+先找到最左边的cell（与之相连的左侧cell为null）
+    判断最左边的cell的fill是否是null
+        如果是null
+            cell = cell.right 重新判断是否为null
+        如果不是null
+            nextcell = cell.right
+                判断nextcell是否是null
+                    如果是null
+                        nextcell = nextcell.right 
+                        判断nextcell是否为null
+                    如果不是null
+                        if(cell == nextcell)
+                        {
+                            cell.fill += nextcell.fill;
+                            destory(nextcell.fill);
+                        }
+                        else
+                        {
+                            cell = nextcell;
+                            nextcell = nextcell.right;
+                            判断nextcell是否是null
+                        }
+
+function slideLeft()
+{
+    if(cell.left != null )
+        return;
+    nextcell = cell.right;
+    JudgeRightCell(nextcell);
+}
+
+function JudgeRightCell(nextcell)
+{
+    if(nextcell == null)
+    {
+        nextcell = nextcell.right;
+        JudgeRightCell(nextcell);
+    }
+    else
+    {
+        if(cell == nextcell)
+        {
+            cell.fill += nextcell.fill;
+            nextcell.fill = nextcell.right; //
+
+        }
+        else
+        {
+            cell = nextcell;
+            nextcell = nextcell.right;
+            JudgeRightCell(nextcell);
+        }
+    }
+}

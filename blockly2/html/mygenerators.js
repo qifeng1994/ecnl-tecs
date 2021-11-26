@@ -51,7 +51,6 @@ Blockly.JavaScript['set'] = function(block) {
   return code;
 };
 
-//////////////////////////////////////////////////////////////////////
 
 
 
@@ -130,6 +129,23 @@ Blockly.JavaScript['weeks'] = function(block) {
 
 Blockly.JavaScript['week'] = function(block) {
   var dropdown_week1 = block.getFieldValue('week1');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['general_lighting_number'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['illuminance_sensor'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.

@@ -105,6 +105,7 @@ def parse_definitions(val,propertyName,options)
 end
 
 def print_array(propertyName,val,options)
+
     val['enum'].each{|edt|
         option = Array.new
         option.push("#{propertyName}  #{edt['state']['en']}")
@@ -121,11 +122,11 @@ def temp_method (val,array)
     className = font_change(val['className']['en'])
     blocks = Hash.new
     args0 = []
-    options =[]
+    options =[["OperatingStatus  ON","OperatingStatus  ON"],["OperatingStatus  OFF","OperatingStatus  OFF"]]
     
     blocks = {"type" => "#{className}", "message0" => "#{className} %1", "output" => nil, "colour" => 230}
     blocks.store("args0" , args0)
-    arguements = {"type" => "field_dropdown", "name" => "NAME", "options" => options}
+    arguements = {"type" => "field_dropdown", "name" => "#{className}", "options" => options}
     args0.push(arguements)
 
     parse_properties(val['elProperties'],options)

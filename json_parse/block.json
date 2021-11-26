@@ -7,8 +7,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "NodeProfile",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OperatingStatus  ON",
             "OperatingStatus  ON"
@@ -37,8 +45,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "SuperClass",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OperationStatus  ON",
             "OperationStatus  ON"
@@ -75,8 +91,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "GasLeakSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "GasLeakOccurrenceStatus  YES",
             "GasLeakOccurrenceStatus  YES"
@@ -101,8 +125,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CrimePreventionSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "InvasionOccurrenceStatus  YES",
             "InvasionOccurrenceStatus  YES"
@@ -127,8 +159,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "EmergencyButton",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "EmergencyOccurrenceStatus  YES",
             "EmergencyOccurrenceStatus  YES"
@@ -153,8 +193,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "FirstAidSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "FirstAidOccurrenceStatus  YES",
             "FirstAidOccurrenceStatus  YES"
@@ -179,8 +227,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "EarthquakeSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "EarthquakeOccurrenceStatus  YES",
             "EarthquakeOccurrenceStatus  YES"
@@ -221,8 +277,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricLeakSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ElectricLeakOccurrenceStatus  YES",
             "ElectricLeakOccurrenceStatus  YES"
@@ -247,8 +311,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "HumanDetectionSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "HumanDetectionStatus  YES",
             "HumanDetectionStatus  YES"
@@ -269,8 +341,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "VisitorSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "VisitorDetectionStatus  YES",
             "VisitorDetectionStatus  YES"
@@ -291,8 +371,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CallSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "CallStatus  YES",
             "CallStatus  YES"
@@ -313,8 +401,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CondensationSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "CondensationDetectionStatus  YES",
             "CondensationDetectionStatus  YES"
@@ -335,8 +431,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "AirPollution",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "AirPollutionDetectionStatus  YES",
             "AirPollutionDetectionStatus  YES"
@@ -350,6 +454,50 @@
     ]
   },
   {
+    "type": "OxygenSensor",
+    "message0": "OxygenSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "OxygenSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "IlluminanceSensor",
+    "message0": "IlluminanceSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "IlluminanceSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "SoundSensor",
     "message0": "SoundSensor %1",
     "output": null,
@@ -357,8 +505,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "SoundSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SoundDetectionStatus  YES",
             "SoundDetectionStatus  YES"
@@ -379,8 +535,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "MailingSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "MailingDetectionStatus  YES",
             "MailingDetectionStatus  YES"
@@ -401,8 +565,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WeightSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "WeightDetectionStatus  YES",
             "WeightDetectionStatus  YES"
@@ -416,6 +588,50 @@
     ]
   },
   {
+    "type": "TemperatureSensor",
+    "message0": "TemperatureSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "TemperatureSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "HumiditySensor",
+    "message0": "HumiditySensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "HumiditySensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "RainSensor",
     "message0": "RainSensor %1",
     "output": null,
@@ -423,8 +639,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "RainSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "RainDetectionStatus  YES",
             "RainDetectionStatus  YES"
@@ -445,8 +669,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WaterLevelSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "WaterLevelOverDetectionStatus  YES",
             "WaterLevelOverDetectionStatus  YES"
@@ -467,8 +699,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "BathWaterLevelSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "BathWaterLevelOverDetectionStatus  YES",
             "BathWaterLevelOverDetectionStatus  YES"
@@ -489,8 +729,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "BathHeatingStatusSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "BathHeatingDetectionStatus  YES",
             "BathHeatingDetectionStatus  YES"
@@ -511,8 +759,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WaterLeakSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "WaterLeakDetectionStatus  YES",
             "WaterLeakDetectionStatus  YES"
@@ -533,8 +789,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WaterOverflowSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "WaterOverflowDetectionStatus  YES",
             "WaterOverflowDetectionStatus  YES"
@@ -555,8 +819,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "FireSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "FireOccurrenceDetectionStatus  YES",
             "FireOccurrenceDetectionStatus  YES"
@@ -581,8 +853,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CigaretteSmokeSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "Smoke(cigarette)DetectionStatus  YES",
             "Smoke(cigarette)DetectionStatus  YES"
@@ -596,6 +876,28 @@
     ]
   },
   {
+    "type": "Co2Sensor",
+    "message0": "Co2Sensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "Co2Sensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "GasSensor",
     "message0": "GasSensor %1",
     "output": null,
@@ -603,8 +905,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "GasSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "GasDetectionStatus  YES",
             "GasDetectionStatus  YES"
@@ -625,8 +935,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "VocSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "VocDetectionStatus  YES",
             "VocDetectionStatus  YES"
@@ -640,6 +958,50 @@
     ]
   },
   {
+    "type": "DifferentialPressureSensor",
+    "message0": "DifferentialPressureSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "DifferentialPressureSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "AirSpeedSensor",
+    "message0": "AirSpeedSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "AirSpeedSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "OdorSensor",
     "message0": "OdorSensor %1",
     "output": null,
@@ -647,8 +1009,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "OdorSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OdorDetectionStatus  YES",
             "OdorDetectionStatus  YES"
@@ -669,8 +1039,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "FlameSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "FlameDetectionStatus  YES",
             "FlameDetectionStatus  YES"
@@ -688,6 +1066,72 @@
     ]
   },
   {
+    "type": "ElectricEnergySensor",
+    "message0": "ElectricEnergySensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "ElectricEnergySensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "CurrentValueSensor",
+    "message0": "CurrentValueSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "CurrentValueSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "WaterFlowRate",
+    "message0": "WaterFlowRate %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "WaterFlowRate",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "MicromotionSensor",
     "message0": "MicromotionSensor %1",
     "output": null,
@@ -695,8 +1139,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "MicromotionSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "MicromotionDetectionStatus  YES",
             "MicromotionDetectionStatus  YES"
@@ -717,8 +1169,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "PassageSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "PassageDetectionDirection  No passage",
             "PassageDetectionDirection  No passage"
@@ -771,8 +1231,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "BedPresenceSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "BedPresenceDetectionStatus  YES",
             "BedPresenceDetectionStatus  YES"
@@ -793,8 +1261,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "OpenCloseSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "DegreeOfOpeningDetectionStatus2  YES",
             "DegreeOfOpeningDetectionStatus2  YES"
@@ -808,6 +1284,50 @@
     ]
   },
   {
+    "type": "ActivityAmountSensor",
+    "message0": "ActivityAmountSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "ActivityAmountSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "HumanBodyDetectionLocation1",
+    "message0": "HumanBodyDetectionLocation1 %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "HumanBodyDetectionLocation1",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "SnowSensor",
     "message0": "SnowSensor %1",
     "output": null,
@@ -815,8 +1335,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "SnowSensor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SnowDetectionStatus  YES",
             "SnowDetectionStatus  YES"
@@ -830,6 +1358,28 @@
     ]
   },
   {
+    "type": "AirPressureSensor",
+    "message0": "AirPressureSensor %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "AirPressureSensor",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "HomeAirConditioner",
     "message0": "HomeAirConditioner %1",
     "output": null,
@@ -837,8 +1387,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "HomeAirConditioner",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "PowerSavingOperationSetting  ON",
             "PowerSavingOperationSetting  ON"
@@ -1119,8 +1677,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "VentilationFan",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "AirFlowRateSetting  Automatic",
             "AirFlowRateSetting  Automatic"
@@ -1145,8 +1711,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "AirConditionerVentilationFan",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SetValueOfVentilationAirFlowRate  Automatic",
             "SetValueOfVentilationAirFlowRate  Automatic"
@@ -1239,8 +1813,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "AirCleaner",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "AirFlowRateSetting  Automatic",
             "AirFlowRateSetting  Automatic"
@@ -1289,8 +1871,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Humidifier",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ReservationSetOfOffTimer  ON",
             "ReservationSetOfOffTimer  ON"
@@ -1319,8 +1909,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -1365,8 +1963,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "FanHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  Both the time- and relative time-based reservation functions are ON",
             "OnTimerSetting  Both the time- and relative time-based reservation functions are ON"
@@ -1439,8 +2045,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricStorageHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "AirFlowRateSetting  OFF",
             "AirFlowRateSetting  OFF"
@@ -1537,8 +2151,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "PackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities)",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ThermostatState  YES",
             "ThermostatState  YES"
@@ -1623,8 +2245,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "PackageTypeCommercialAirConditioner(outdoorUnit)",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SpecialState  YES",
             "SpecialState  YES"
@@ -1645,8 +2275,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "GasHeatPumpTypeCommercialAirConditioner(indoorUnit)",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ThermoStatus  YES",
             "ThermoStatus  YES"
@@ -1724,6 +2362,28 @@
     ]
   },
   {
+    "type": "GasHeatPumpTypeCommercialAirConditioner(outdoorUnit)",
+    "message0": "GasHeatPumpTypeCommercialAirConditioner(outdoorUnit) %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "GasHeatPumpTypeCommercialAirConditioner(outdoorUnit)",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "RangeHood",
     "message0": "RangeHood %1",
     "output": null,
@@ -1731,8 +2391,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "RangeHood",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "VentilationAirFlowRateSetting  Automatic",
             "VentilationAirFlowRateSetting  Automatic"
@@ -1833,8 +2501,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedShade",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OpenCloseSetting  Open",
             "OpenCloseSetting  Open"
@@ -1867,8 +2543,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedBlindShade",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "TimerOperationSetting  ON",
             "TimerOperationSetting  ON"
@@ -2045,8 +2729,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedShutter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "TimerOperationSetting  ON",
             "TimerOperationSetting  ON"
@@ -2199,8 +2891,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedRainSlidingDoorShutter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OpenCloseSetting1  Open",
             "OpenCloseSetting1  Open"
@@ -2253,8 +2953,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedRainSlidingDoorShutter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "TimerOperationSetting  ON",
             "TimerOperationSetting  ON"
@@ -2411,8 +3119,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedGate",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OpeningSpeedSetting  Low",
             "OpeningSpeedSetting  Low"
@@ -2557,8 +3273,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricallyOperatedWindow",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "TimerOperationSetting  ON",
             "TimerOperationSetting  ON"
@@ -2735,8 +3459,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "AutomaticallyOperatedEntranceDoorSlidingDoor",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OpeningSpeedSetting  Low",
             "OpeningSpeedSetting  Low"
@@ -2873,8 +3605,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "GardenSprinkler",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SprinkleValveOpenCloseSetting  automatic ON",
             "SprinkleValveOpenCloseSetting  automatic ON"
@@ -2931,8 +3671,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricWaterHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -3037,8 +3785,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "BidetQuippedToilet(withElectricallyWarmedSeat)",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "HeaterSettingOfToiletSeat  ON",
             "HeaterSettingOfToiletSeat  ON"
@@ -3127,8 +3883,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricKey",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "LockSetting1  Lock",
             "LockSetting1  Lock"
@@ -3217,8 +3981,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "InstantaneousWaterHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -3339,8 +4111,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "BathroomHeaterAndDryer",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting1  ON",
             "OnTimerSetting1  ON"
@@ -3437,8 +4217,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "HouseholdSolarPowerGeneration",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "FunctionToControlPurchaseSurplusElectricitySetting  ON",
             "FunctionToControlPurchaseSurplusElectricitySetting  ON"
@@ -3519,8 +4307,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "HotWaterHeatSourceEquipment",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -3609,8 +4405,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "FloorHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -3687,8 +4491,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "FuelCell",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -3729,8 +4541,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "StorageBattery",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ChargingMethod  Maximum charging electric energy charting",
             "ChargingMethod  Maximum charging electric energy charting"
@@ -3836,6 +4656,28 @@
     ]
   },
   {
+    "type": "EvChargeAndDischargeSystem",
+    "message0": "EvChargeAndDischargeSystem %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "EvChargeAndDischargeSystem",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "EvChargerAndDischarger",
     "message0": "EvChargerAndDischarger %1",
     "output": null,
@@ -3843,8 +4685,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "EvChargerAndDischarger",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ChargerDischargerType  AC_CPLT",
             "ChargerDischargerType  AC_CPLT"
@@ -3941,8 +4791,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "EngineCogeneration",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "CumulativePowerGenerationOutputResetSetting  Reset",
             "CumulativePowerGenerationOutputResetSetting  Reset"
@@ -3984,6 +4842,28 @@
     ]
   },
   {
+    "type": "WattHourMeter",
+    "message0": "WattHourMeter %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "WattHourMeter",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "WaterFlowMeter",
     "message0": "WaterFlowMeter %1",
     "output": null,
@@ -3991,8 +4871,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WaterFlowMeter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "WaterFlowMeterClassification  running water",
             "WaterFlowMeterClassification  running water"
@@ -4038,6 +4926,28 @@
     ]
   },
   {
+    "type": "GasMeter",
+    "message0": "GasMeter %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "GasMeter",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "LpGasMeter",
     "message0": "LpGasMeter %1",
     "output": null,
@@ -4045,8 +4955,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "LpGasMeter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "TestCallSetting  YES",
             "TestCallSetting  YES"
@@ -4123,8 +5041,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "PowerDistributionBoard",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "NumberOfMeasurementChannel(simplex)  Undefined",
             "NumberOfMeasurementChannel(simplex)  Undefined"
@@ -4138,6 +5064,50 @@
     ]
   },
   {
+    "type": "SmartElectricEnergyMeter",
+    "message0": "SmartElectricEnergyMeter %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "SmartElectricEnergyMeter",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "LowVoltageSmartElectricEnergyMeter",
+    "message0": "LowVoltageSmartElectricEnergyMeter %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "LowVoltageSmartElectricEnergyMeter",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "SmartGasMeter",
     "message0": "SmartGasMeter %1",
     "output": null,
@@ -4145,8 +5115,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "SmartGasMeter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "GasMeterClassificationSetting  City gas",
             "GasMeterClassificationSetting  City gas"
@@ -4212,6 +5190,50 @@
     ]
   },
   {
+    "type": "HighVoltageSmartElectricEnergyMeter",
+    "message0": "HighVoltageSmartElectricEnergyMeter %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "HighVoltageSmartElectricEnergyMeter",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "KerosenseMeter",
+    "message0": "KerosenseMeter %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "KerosenseMeter",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "SmartKerosenseMeter",
     "message0": "SmartKerosenseMeter %1",
     "output": null,
@@ -4219,8 +5241,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "SmartKerosenseMeter",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OwnerCategorySetting  Not specified",
             "OwnerCategorySetting  Not specified"
@@ -4273,8 +5303,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "GeneralLighting",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -4368,6 +5406,28 @@
     ]
   },
   {
+    "type": "MonoFunctionalLighting",
+    "message0": "MonoFunctionalLighting %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "MonoFunctionalLighting",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "LightingForSolidLightEmittingSource",
     "message0": "LightingForSolidLightEmittingSource %1",
     "output": null,
@@ -4375,8 +5435,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "LightingForSolidLightEmittingSource",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerReservationSetting  YES",
             "OnTimerReservationSetting  YES"
@@ -4405,8 +5473,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Buzzar",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SoundGenerationSetting  YES",
             "SoundGenerationSetting  YES"
@@ -4427,8 +5503,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "EvCharger",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ChargerDischargerType  AC_CPLT",
             "ChargerDischargerType  AC_CPLT"
@@ -4489,8 +5573,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "HouseholdSmallWindTurbinePowerGeneration",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SystemInterconnectionStatus  System-linked type",
             "SystemInterconnectionStatus  System-linked type"
@@ -4524,6 +5616,28 @@
     ]
   },
   {
+    "type": "LightingSystem",
+    "message0": "LightingSystem %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "LightingSystem",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "ExtendedLightingSystem",
     "message0": "ExtendedLightingSystem %1",
     "output": null,
@@ -4531,8 +5645,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ExtendedLightingSystem",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "AutomaticOperationControllingSetting  ON",
             "AutomaticOperationControllingSetting  ON"
@@ -4553,8 +5675,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "MultipleInputPcs",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "SystemInterconnectedType  System-interconnected type(reverse power flow acceptable)",
             "SystemInterconnectedType  System-interconnected type(reverse power flow acceptable)"
@@ -4579,8 +5709,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "HybridWaterHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "AutomaticWaterHeatingSetting  Auto Heating",
             "AutomaticWaterHeatingSetting  Auto Heating"
@@ -4661,8 +5799,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ElectricHotWaterPot",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "CoverOpenCloseStatus  Open",
             "CoverOpenCloseStatus  Open"
@@ -4727,8 +5873,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Refrigerator",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "QuickFreezeFunctionSetting  normal operation",
             "QuickFreezeFunctionSetting  normal operation"
@@ -4873,8 +6027,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CombinationMicrowaveOven",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "DoorOpenCloseStatus  Open",
             "DoorOpenCloseStatus  Open"
@@ -5047,8 +6209,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CookingHeater",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ChildLockSetting  OFF",
             "ChildLockSetting  OFF"
@@ -5081,8 +6251,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "RiceCooker",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "RiceCookingReservationSetting  ON",
             "RiceCookingReservationSetting  ON"
@@ -5163,8 +6341,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WashingMachine",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -5225,8 +6411,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "ClothDryer",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -5279,8 +6473,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CommercialShowCase",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OperationModeSetting  Cooling",
             "OperationModeSetting  Cooling"
@@ -5453,8 +6655,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "WasherAndDryer",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -6007,8 +7217,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "CommercialShowCaseOutdoorUnit",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ExceptionalStatus  Normal",
             "ExceptionalStatus  Normal"
@@ -6045,8 +7263,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "DishwasherAndDryer",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "OnTimerSetting  ON",
             "OnTimerSetting  ON"
@@ -6400,6 +7626,50 @@
     ]
   },
   {
+    "type": "WeighingMachine",
+    "message0": "WeighingMachine %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "WeighingMachine",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "ParallelProcessingCombinationTypePowerControl",
+    "message0": "ParallelProcessingCombinationTypePowerControl %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "ParallelProcessingCombinationTypePowerControl",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "DrEventController",
     "message0": "DrEventController %1",
     "output": null,
@@ -6407,8 +7677,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "DrEventController",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "DrProgramType  CPP",
             "DrProgramType  CPP"
@@ -6442,6 +7720,28 @@
     ]
   },
   {
+    "type": "Switch(supportingJemAHaTerminals)",
+    "message0": "Switch(supportingJemAHaTerminals) %1",
+    "output": null,
+    "colour": 230,
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "Switch(supportingJemAHaTerminals)",
+        "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "type": "Controller",
     "message0": "Controller %1",
     "output": null,
@@ -6449,8 +7749,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Controller",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "ConnectionStatus  Connected",
             "ConnectionStatus  Connected"
@@ -6479,8 +7787,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Display",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "DisplayControlSetting  Displaying enabled",
             "DisplayControlSetting  Displaying enabled"
@@ -6509,8 +7825,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Television",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "DisplayControlSetting  Displaying enabled",
             "DisplayControlSetting  Displaying enabled"
@@ -6539,8 +7863,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "Audio",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "MuteSetting  ON",
             "MuteSetting  ON"
@@ -6561,8 +7893,16 @@
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "NetworkCamera",
         "options": [
+          [
+            "OperatingStatus  ON",
+            "OperatingStatus  ON"
+          ],
+          [
+            "OperatingStatus  OFF",
+            "OperatingStatus  OFF"
+          ],
           [
             "StillImagePhotographySettingAcceptanceStatus  Ready",
             "StillImagePhotographySettingAcceptanceStatus  Ready"
