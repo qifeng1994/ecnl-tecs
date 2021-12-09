@@ -79,7 +79,8 @@ ws.onopen = function(event){
 
 ws.onmessage = function(event){
     //通过blockly发送状态请求之后，来自设备的信息显示在浏览器的console里面
-    console.log("server_to_client", event.data);
+    //20211130暂时注释掉，用于在console中调试其他函数
+    //console.log("server_to_client", event.data);
     const obj = JSON.parse(event.data);
     //20210301在console打印ip地址和msg
     //console.log("obj.ip = ",obj.ip +"\nobj.uint8Array = ",obj.uint8Array);
@@ -106,9 +107,11 @@ ws.onmessage = function(event){
     //20210301把uinit8array保存到一个全局变量中，并删除第一个数组
     // el8uintarray.push(obj.uint8Array);
     // el8uintarray.shift();
-    el8uintarray = JSON.parse(event.data);
-    console.log("el8uintarray.ip = ",el8uintarray.ip +"\nel8uintarray.uint8Array = ",el8uintarray.uint8Array);
-    operationStatus = parseEl8uintarray(el8uintarray.uint8Array);
+
+    //20211130暂时注释掉，用于在console中调试其他函数
+    // el8uintarray = JSON.parse(event.data);
+    // console.log("el8uintarray.ip = ",el8uintarray.ip +"\nel8uintarray.uint8Array = ",el8uintarray.uint8Array);
+    // operationStatus = parseEl8uintarray(el8uintarray.uint8Array);
 
 };
 
@@ -121,7 +124,9 @@ function displayLog() {
             timeStamp: dataLog.timeStamp,
             direction: dataLog.direction,
             address: dataLog.ip,
-            hex: elFormat(dataLog.data)
+            hex: elFormat(dataLog.data),
+            device:deviceName(dataLog.data)
+            //添加device
         }
         if ((dataLog.direction == "T") || filterEsv(esv)) {
             log.push(pkt);
@@ -231,7 +236,40 @@ function parseEl8uintarray(elobj){
     let edt = elFormat(elobj);
     edt = edt.slice(36);
     return edt;
+}
 
+
+function deviceName(uint8Array){
+    let elString = "";
+    for (let value of uint8Array) {
+      elString += toStringHex(value, 1);
+    }
+
+    if(elString.length<29)
+    {
+        switch (elString) {
+            case "1081000105FF010EF0016201D600": elString = "multicast msg..."
+                
+                break;
+        }
+        return elString;
+    }
+    else if(elString.length>29)
+    {
+        var device = elString.slice(30,34);
+        switch (device) {
+            case "0290" : device = "GeneralLighting"
+                
+                break;
+            case "05FF" : device = "Controller"
+                break;
+        }
+        return device;
+        
+    }
+    
+
+    
 }
 // 数値(number)を16進数表記の文字列に変換する
 // 数値のbyte数は(bytes)
@@ -414,6 +452,8 @@ function buttonClickSearch() {
         };
     const freeData="10,81,00,04,05,FF,01,0E,F0,01,62,01,D6,00";
     buttonClickSend(ipData, el, freeData);
+
+    
 }
 
 function saveLog() {
@@ -451,6 +491,7 @@ function packetMonitorShowPacketDetail(event){
 	
     // packetの解析結果の表示
 	vm.packetDetail = analyzeData(dataLogArray[pno].data);
+    console.log("packetMonitorShowPacketDetail is called");
 }
 
 function packetMonitorUpDownList(event){

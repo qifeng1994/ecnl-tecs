@@ -900,7 +900,7 @@ Blockly.defineBlocksWithJsonArray(
     },
     {
       "type": "Co2Sensor",
-      "message0": "Co2Sensor %1",
+      "message0": "CO2Sensor %1",
       "output": null,
       "colour": 230,
       "args0": [
@@ -915,6 +915,10 @@ Blockly.defineBlocksWithJsonArray(
             [
               "OperatingStatus  OFF",
               "OperatingStatus  OFF"
+            ],
+            [
+              "Measured value of CO2 concentration",
+              "Measured value of CO2 concentration"
             ]
           ]
         }
@@ -945,6 +949,10 @@ Blockly.defineBlocksWithJsonArray(
             [
               "GasDetectionStatus  NO",
               "GasDetectionStatus  NO"
+            ],
+            [
+              "Measured value of gas concentration",
+              "Measured value of gas concentration"
             ]
           ]
         }

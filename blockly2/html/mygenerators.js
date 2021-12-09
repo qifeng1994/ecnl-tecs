@@ -47,7 +47,7 @@ Blockly.JavaScript['get_operation_status_of_light'] = function(block) {
 Blockly.JavaScript['set'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'setProperty(' + value_name + ')\n';
+  var code = 'setProperty' + value_name + ';\n';
   return code;
 };
 
@@ -59,10 +59,10 @@ Blockly.JavaScript['GeneralLighting'] = function(block){
   var code;
   switch (operator){
     case 'OperatingStatus  ON':
-      code = '"192.168.137.112","10,81,00,00,05,FF,01,02,90,01,60,01,80,01,30"';
+      code = '"192.168.137.112","10,81,00,00,05,FF,01,02,90,01,61,01,80,01,30"';
       break;
     case 'OperatingStatus  OFF':
-      code = '"192.168.137.112","10,81,00,00,05,FF,01,02,90,01,60,01,80,01,31"';
+      code = '"192.168.137.112","10,81,00,00,05,FF,01,02,90,01,61,01,80,01,31"';
       break;
   }
   return [code, Blockly.JavaScript.ORDER_NONE];

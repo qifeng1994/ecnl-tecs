@@ -646,3 +646,7 @@ function sleep(delay) {
 //   logic.style.display = 'none';
 //   console.log("display logic block");
 // }
+
+function setProperty(){
+  send();
+}

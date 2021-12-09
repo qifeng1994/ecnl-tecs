@@ -6,6 +6,7 @@
   <meta name="google" value="notranslate">
   <title>Blockly Demo:</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <script src="/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
@@ -17,9 +18,58 @@
   <script src="mygenerators.js"></script>
   <script src="myblocks.js"></script>
   <script src="code.js"></script>
+  <style>
+  #packet-monitor-body {
+    margin: 0;
+    padding: 0;
+  }
+  #packet-list-wrapper {
+    height: 3em;
+    overflow-y: scroll;
+  }
+  #packet-list li {
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+    font-size: 50%;
+    padding: 0.2em 1em;
+    cursor: pointer;
+  }
+  #packet-list li span {
+    display: inline-block;
+  }
+  #packet-list li span.col1 {
+    width: 5em;
+  }
+  #packet-list li span.col2 {
+    width: 5em;
+  }
+  </style>
 </head>
+
 <body>
+  <main>   
+      <div class="container" id="app">     
+        <div class="card">
+          <div class="card-body" id="packet-monitor-body">
+            <div id="packet-list-wrapper">
+              <ul class="list-group"  id="packet-list" v-on:keyup.stop v-on:keydown.stop>
+                <li class="list-group-item" id="packet-monitor-header" tabindex="0">
+                  <span class="col3">IP</span>
+                  <span class="col4">DATA</span>
+                </li>       
+                <li v-for="packet in packet_list" class="list-group-item" v-bind:id="packet.id" tabindex="0" v-on:focus="showPacketDetail" v-on:keydown="upDownList" >
+                  <span class="col3">{{ packet.address }}</span>
+                  <span class="col4">{{ packet.device }}</span>
+                </li>      
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button style="float:right" v-on:click="buttonClickSearch">SEARCH</button>
+    </div>
+  </main>
+
   <table width="100%" height="100%">
+
     <tr>
       <td style="display:none">
         <h1><a href="https://developers.google.com/blockly/">Blockly</a>&rlm; &gt;
@@ -27,10 +77,11 @@
           <span id="title">...</span>
         </h1>
       </td>
-      <td class="farSide">
+      <td class="farSide" style="display:none">
         <select id="languageMenu"></select>
       </td>
     </tr>
+
     <tr>
       <td colspan=2>
         <table width="100%">
@@ -43,6 +94,8 @@
               <select id="code_menu"></select>
             </td>
             <td class="tabmax">
+
+              <!-- <button v-on:click="buttonClickSearch">Search</button> -->
               <button id = "beginnerButton" onclick="location.href='beginner.html'">beginner</button>
 
               <button id="trashButton" class="notext" title="...">
@@ -408,6 +461,7 @@
     </category>
 
     <category name="ECNL" colour="%{BKY_TEXTS_HUE}">
+      <block type="Co2Sensor"></block>
       <block type="illuminance_sensor"></block>
       <block type="general_lighting_number"></block>
       <block type="GasLeakSensor"></block>
