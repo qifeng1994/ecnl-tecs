@@ -73,8 +73,49 @@
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
- 
-    <category name="Option" colour="%{BKY_TEXTS_HUE}">
+    <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <!-- <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block> -->
+      <block type="controls_if">
+        <mutation else="1"></mutation>
+      </block>
+      <block type="controls_if">
+        <mutation elseif="1"></mutation>
+      </block>
+    </category>
+
+    <category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+      <block type="math_number">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+
+    <category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
+      <block type="memo">
+        <field name="text">TEXT</field>
+      </block>
+      <block type="text"></block>
+      <block type="text_join"></block>
+    </category>
+
+    <category name="Option" colour="%{BKY_VARIABLES_HUE}">
       <block type="set"></block>
       <block type="trigger_action"></block>
       <block type="time"></block>
@@ -84,102 +125,169 @@
       <block type="week"></block>
     </category>
 
-    <category name="ECNL" colour="%{BKY_TEXTS_HUE}">
-      <block type="GasLeakSensor"></block>
-      <block type="CrimePreventionSensor"></block>
-      <block type="EmergencyButton"></block>
-      <block type="FirstAidSensor"></block>
-      <block type="EarthquakeSensor"></block>
-      <block type="ElectricLeakSensor"></block>
-      <block type="HumanDetectionSensor"></block>
-      <block type="VisitorSensor"></block>
-      <block type="CallSensor"></block>
-      <block type="CondensationSensor"></block>
-      <block type="AirPollution"></block>
-      <block type="SoundSensor"></block>
-      <block type="MailingSensor"></block>
-      <block type="WeightSensor"></block>
-      <block type="RainSensor"></block>
-      <block type="WaterLevelSensor"></block>
-      <block type="BathWaterLevelSensor"></block>
-      <block type="BathHeatingStatusSensor"></block>
-      <block type="WaterLeakSensor"></block>
-      <block type="WaterOverflowSensor"></block>
-      <block type="FireSensor"></block>
-      <block type="CigaretteSmokeSensor"></block>
-      <block type="GasSensor"></block>
-      <block type="VocSensor"></block>
-      <block type="OdorSensor"></block>
-      <block type="FlameSensor"></block>
-      <block type="MicromotionSensor"></block>
-      <block type="PassageSensor"></block>
-      <block type="BedPresenceSensor"></block>
-      <block type="OpenCloseSensor"></block>
-      <block type="SnowSensor"></block>
-      <block type="HomeAirConditioner"></block>
-      <block type="VentilationFan"></block>
-      <block type="AirConditionerVentilationFan"></block>
-      <block type="AirCleaner"></block>
-      <block type="Humidifier"></block>
-      <block type="ElectricHeater"></block>
-      <block type="FanHeater"></block>
-      <block type="ElectricStorageHeater"></block>
-      <block type="PackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities)"></block>
-      <block type="PackageTypeCommercialAirConditioner(outdoorUnit)"></block>
-      <block type="GasHeatPumpTypeCommercialAirConditioner(indoorUnit)"></block>
-      <block type="RangeHood"></block>
-      <block type="ElectricallyOperatedShade"></block>
-      <block type="ElectricallyOperatedBlindShade"></block>
-      <block type="ElectricallyOperatedShutter"></block>
-      <block type="ElectricallyOperatedRainSlidingDoorShutter"></block>
-      <block type="ElectricallyOperatedRainSlidingDoorShutter"></block>
-      <block type="ElectricallyOperatedGate"></block>
-      <block type="ElectricallyOperatedWindow"></block>
-      <block type="AutomaticallyOperatedEntranceDoorSlidingDoor"></block>
-      <block type="GardenSprinkler"></block>
-      <block type="ElectricWaterHeater"></block>
-      <block type="BidetQuippedToilet(withElectricallyWarmedSeat)"></block>
-      <block type="ElectricKey"></block>
-      <block type="InstantaneousWaterHeater"></block>
-      <block type="BathroomHeaterAndDryer"></block>
-      <block type="HouseholdSolarPowerGeneration"></block>
-      <block type="HotWaterHeatSourceEquipment"></block>
-      <block type="FloorHeater"></block>
-      <block type="FuelCell"></block>
-      <block type="StorageBattery"></block>
-      <block type="EvChargerAndDischarger"></block>
-      <block type="EngineCogeneration"></block>
-      <block type="WaterFlowMeter"></block>
-      <block type="LpGasMeter"></block>
-      <block type="PowerDistributionBoard"></block>
-      <block type="SmartGasMeter"></block>
-      <block type="SmartKerosenseMeter"></block>
-      <block type="GeneralLighting"></block>
-      <block type="LightingForSolidLightEmittingSource"></block>
-      <block type="Buzzar"></block>
-      <block type="EvCharger"></block>
-      <block type="HouseholdSmallWindTurbinePowerGeneration"></block>
-      <block type="ExtendedLightingSystem"></block>
-      <block type="MultipleInputPcs"></block>
-      <block type="HybridWaterHeater"></block>
-      <block type="ElectricHotWaterPot"></block>
-      <block type="Refrigerator"></block>
-      <block type="CombinationMicrowaveOven"></block>
-      <block type="CookingHeater"></block>
-      <block type="RiceCooker"></block>
-      <block type="WashingMachine"></block>
-      <block type="ClothDryer"></block>
-      <block type="CommercialShowCase"></block>
-      <block type="WasherAndDryer"></block>
-      <block type="CommercialShowCaseOutdoorUnit"></block>
-      <block type="DishwasherAndDryer"></block>
-      <block type="DrEventController"></block>
-      <block type="Controller"></block>
-      <block type="Display"></block>
-      <block type="Television"></block>
-      <block type="Audio"></block>
-      <block type="NetworkCamera"></block>
-    </category>
+    <category name="Template" colour="%{BKY_PROCEDURES_HUE}">
+      <block type="trigger_action">
+        <value name="trigger">
+          <shadow type="text">
+            <field name="TEXT">Device status or Sensor value</field>
+          </shadow>
+        </value>
+        <value name="action">
+          <shadow type="text">
+            <field name="TEXT">Operation to the device</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="memo">
+        <field name="text">The management plan of the device in a period of time</field>
+        <next>
+          <block type="period">
+            <value name="NAME">
+              <block type="weeks"></block>
+            </value>
+            <next>
+              <block type="controls_if">
+                <value name="DO0">
+                  <block type="set">
+                    <value name="NAME">
+                      <shadow type="text">
+                        <field name="TEXT">Operation to the device</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <mutation else="1"></mutation>
+                <value name="ELSE">
+                  <block type="set">
+                    <value name="NAME">
+                      <shadow type="text">
+                        <field name="TEXT">Operation to the device</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+  </category>
+
+  <category name="Sensor" colour="%{BKY_TEXTS_HUE}">
+    <block type="RainSensor"></block>     
+    <block type="GasSensor"></block>
+    <block type="Co2Sensor"></block>
+    <block type="illuminance_sensor"></block>     
+    <block type="GasLeakSensor"></block>
+    <block type="CrimePreventionSensor"></block>
+    <block type="EmergencyButton"></block>
+    <block type="FirstAidSensor"></block>
+    <block type="EarthquakeSensor"></block>
+    <block type="ElectricLeakSensor"></block>
+    <block type="HumanDetectionSensor"></block>
+    <block type="VisitorSensor"></block>
+    <block type="CallSensor"></block>
+    <block type="CondensationSensor"></block>
+    <block type="AirPollution"></block>
+    <block type="SoundSensor"></block>
+    <block type="MailingSensor"></block>
+    <block type="WeightSensor"></block>
+    <block type="general_lighting_number"></block>
+    <block type="WaterLevelSensor"></block>
+    <block type="BathWaterLevelSensor"></block>
+    <block type="BathHeatingStatusSensor"></block>
+    <block type="WaterLeakSensor"></block>
+    <block type="WaterOverflowSensor"></block>
+    <block type="FireSensor"></block>
+    <block type="CigaretteSmokeSensor"></block>     
+    <block type="VocSensor"></block>
+    <block type="OdorSensor"></block>
+    <block type="FlameSensor"></block>
+    <block type="MicromotionSensor"></block>
+    <block type="PassageSensor"></block>
+    <block type="BedPresenceSensor"></block>
+    <block type="OpenCloseSensor"></block>
+    <block type="SnowSensor"></block>
+  </category>
+
+  <category name="Air conditioner" colour="%{BKY_TEXTS_HUE}">
+    <block type="VentilationFan"></block>
+    <block type="HomeAirConditioner"></block>
+    <block type="AirConditionerVentilationFan"></block>
+    <block type="AirCleaner"></block>
+    <block type="Humidifier"></block>
+    <block type="ElectricHeater"></block>
+    <block type="FanHeater"></block>
+    <block type="ElectricStorageHeater"></block>
+    <block type="PackageTypeCommercialAirConditioner(indoorUnit)(exceptThoseForFacilities)"></block>
+    <block type="PackageTypeCommercialAirConditioner(outdoorUnit)"></block>
+    <block type="GasHeatPumpTypeCommercialAirConditioner(indoorUnit)"></block>
+    <block type="RangeHood"></block>
+  </category>
+
+  <category name="Facilities" colour="%{BKY_TEXTS_HUE}">
+    <block type="Buzzar"></block>
+    <block type="ElectricallyOperatedWindow"></block>
+    <block type="ElectricKey"></block>
+    <block type="ElectricallyOperatedShade"></block>
+    <block type="ElectricallyOperatedBlindShade"></block>
+    <block type="ElectricallyOperatedShutter"></block>
+    <block type="ElectricallyOperatedRainSlidingDoorShutter"></block>
+    <block type="ElectricallyOperatedRainSlidingDoorShutter"></block>
+    <block type="ElectricallyOperatedGate"></block>
+    <block type="AutomaticallyOperatedEntranceDoorSlidingDoor"></block>
+    <block type="GardenSprinkler"></block>
+    <block type="ElectricWaterHeater"></block>
+    <block type="BidetQuippedToilet(withElectricallyWarmedSeat)"></block>     
+    <block type="InstantaneousWaterHeater"></block>
+    <block type="BathroomHeaterAndDryer"></block>
+    <block type="HouseholdSolarPowerGeneration"></block>
+    <block type="HotWaterHeatSourceEquipment"></block>
+    <block type="FloorHeater"></block>
+    <block type="FuelCell"></block>
+    <block type="StorageBattery"></block>
+    <block type="EvChargerAndDischarger"></block>
+    <block type="EngineCogeneration"></block>
+    <block type="WaterFlowMeter"></block>
+    <block type="LpGasMeter"></block>
+    <block type="PowerDistributionBoard"></block>
+    <block type="SmartGasMeter"></block>
+    <block type="SmartKerosenseMeter"></block>
+    <block type="GeneralLighting"></block>
+    <block type="LightingForSolidLightEmittingSource"></block>      
+    <block type="EvCharger"></block>
+    <block type="HouseholdSmallWindTurbinePowerGeneration"></block>
+    <block type="ExtendedLightingSystem"></block>
+    <block type="MultipleInputPcs"></block>
+    <block type="HybridWaterHeater"></block>
+  </category>
+
+  <category name="Cooking" colour="%{BKY_TEXTS_HUE}">
+    <block type="ElectricHotWaterPot"></block>
+    <block type="Refrigerator"></block>
+    <block type="CombinationMicrowaveOven"></block>
+    <block type="CookingHeater"></block>
+    <block type="RiceCooker"></block>
+    <block type="WashingMachine"></block>
+    <block type="ClothDryer"></block>
+    <block type="CommercialShowCase"></block>
+    <block type="WasherAndDryer"></block>
+    <block type="CommercialShowCaseOutdoorUnit"></block>
+    <block type="DishwasherAndDryer"></block>
+  </category>
+
+  <category name="Management" colour="%{BKY_TEXTS_HUE}">
+    <block type="Display"></block>
+    <block type="Television"></block>
+    <block type="Audio"></block>
+    <block type="NetworkCamera"></block>
+  </category>
+
+  <category name="Others" colour="%{BKY_TEXTS_HUE}">
+    <block type="DrEventController"></block>
+    <block type="Controller"></block>
+  </category>
+    
   </xml>
   <script src="/lib/jquery-3.3.1.min.js"></script>
   <script src="/lib/bootstrap/js/bootstrap.min.js"></script>

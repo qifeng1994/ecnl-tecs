@@ -1,0 +1,78 @@
+13:15:32 **** プロジェクト asp3_dcre に対する構成 Debug の 逐次ビルド ****
+make -j8 all 
+make[1]: Entering directory 'C:/trunk_tecs+ecnl/trunk/asp3_dcre/Debug'
+arm-none-eabi-gcc -c -MD -MP -MF deps/tBannerMain.d -Og -Wall -g -std=gnu99 -ffunction-sections -fdata-sections  -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access  -DUSE_ARM_FPU -DTOPPERS_EXECUTE_ON_ROM -D__TARGET_ARCH_ARM=7 -DARM_MATH_CA9 -DDEVICE_ANALOGIN=1 -DDEVICE_CAN=1 -DDEVICE_EMAC=1 -DDEVICE_ETHERNET=1 -DDEVICE_FLASH=1 -DDEVICE_I2C=1 -DDEVICE_I2CSLAVE=1 -DDEVICE_I2C_ASYNCH=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_LPTICKER=1 -DDEVICE_PORTIN=1 -DDEVICE_PORTINOUT=1 -DDEVICE_PORTOUT=1 -DDEVICE_PWMOUT=1 -DDEVICE_RTC=1 -DDEVICE_SEMIHOST=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SLEEP=1 -DDEVICE_SPI=1 -DDEVICE_SPISLAVE=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DDEVICE_USTICKER=1 -DMBED_BUILD_TIMESTAMP=1550103323.92 -DTARGET_A9 -DTARGET_CORTEX -DTARGET_CORTEX_A -DTARGET_FF_ARDUINO -DTARGET_LIKE_CORTEX_A9 -DTARGET_LIKE_MBED -DTARGET_MBRZA1H -DTARGET_RELEASE -DTARGET_RENESAS -DTARGET_RZA1H -DTARGET_RZ_A1H -DTARGET_RZ_A1XX -DTARGET_RZ_A1_EMAC -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_object -D__CMSIS_RTOS -D__CORTEX_A9 -D__EVAL -D__FPU_PRESENT=1 -D__MBED_CMSIS_RTOS_CA9 -D__MBED__=1 -DIRQ_GIC_LINE_COUNT=587   -I. -I../include  -I../target/gr_peach_gcc -I../arch/arm_gcc/rza1 -I../arch/arm_gcc/common -I../arch/gcc -I../mbed -I../mbed/cmsis -I../mbed/cmsis/TARGET_CORTEX_A -I../mbed/hal -I../mbed/platform -I../mbed/targets/TARGET_RENESAS -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../mbed/rtos/TARGET_CORTEX -I.. -I../sample -I./gen -I../tecs_kernel -I../../musl-1.1.18/include  ../syssvc/tBannerMain.c
+arm-none-eabi-gcc -Og -Wall -g -std=gnu99 -ffunction-sections -fdata-sections  -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access  -DUSE_ARM_FPU -DTOPPERS_EXECUTE_ON_ROM -D__TARGET_ARCH_ARM=7 -DARM_MATH_CA9 -DDEVICE_ANALOGIN=1 -DDEVICE_CAN=1 -DDEVICE_EMAC=1 -DDEVICE_ETHERNET=1 -DDEVICE_FLASH=1 -DDEVICE_I2C=1 -DDEVICE_I2CSLAVE=1 -DDEVICE_I2C_ASYNCH=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_LPTICKER=1 -DDEVICE_PORTIN=1 -DDEVICE_PORTINOUT=1 -DDEVICE_PORTOUT=1 -DDEVICE_PWMOUT=1 -DDEVICE_RTC=1 -DDEVICE_SEMIHOST=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SLEEP=1 -DDEVICE_SPI=1 -DDEVICE_SPISLAVE=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DDEVICE_USTICKER=1 -DMBED_BUILD_TIMESTAMP=1550103323.92 -DTARGET_A9 -DTARGET_CORTEX -DTARGET_CORTEX_A -DTARGET_FF_ARDUINO -DTARGET_LIKE_CORTEX_A9 -DTARGET_LIKE_MBED -DTARGET_MBRZA1H -DTARGET_RELEASE -DTARGET_RENESAS -DTARGET_RZA1H -DTARGET_RZ_A1H -DTARGET_RZ_A1XX -DTARGET_RZ_A1_EMAC -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_object -D__CMSIS_RTOS -D__CORTEX_A9 -D__EVAL -D__FPU_PRESENT=1 -D__MBED_CMSIS_RTOS_CA9 -D__MBED__=1 -DIRQ_GIC_LINE_COUNT=587   -I. -I../include  -I../target/gr_peach_gcc -I../arch/arm_gcc/rza1 -I../arch/arm_gcc/common -I../arch/gcc -I../mbed -I../mbed/cmsis -I../mbed/cmsis/TARGET_CORTEX_A -I../mbed/hal -I../mbed/platform -I../mbed/targets/TARGET_RENESAS -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../mbed/rtos/TARGET_CORTEX -I.. -I../sample -I./gen -I../tecs_kernel -I../../musl-1.1.18/include -nodefaultlibs  -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access -L. -T ../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/TOOLCHAIN_GCC_ARM/RZA1H.ld  -L. -L. -o asp.elf -Wl,-Map=asp.map,--cref \
+		startup_RZ1AH.o  sample1.o log_output.o vasyslog.o t_perror.o strerror.o time.o mbed_stub.o    init_tecs.o tTask_tecsgen.o tSemaphore_tecsgen.o tInitializeRoutine_tecsgen.o tTerminateRoutine_tecsgen.o tSerialPortMain_tecsgen.o tSerialAdapter_tecsgen.o tSysLog_tecsgen.o tSysLogAdapter_tecsgen.o tLogTaskMain_tecsgen.o tBannerMain_tecsgen.o tPutLogSIOPort_tecsgen.o tMbedSerial_tecsgen.o tSIOPortGRPeachMain_tecsgen.o   tTask.o tInitializeRoutine.o tTerminateRoutine.o tSerialPortMain.o tSerialAdapter.o tSysLog.o tSysLogAdapter.o tLogTaskMain.o tBannerMain.o tPutLogSIOPort.o tMbedSerial.o   mbed_critical_section_api.o mbed_flash_api.o mbed_gpio.o mbed_lp_ticker_api.o mbed_lp_ticker_wrapper.o mbed_pinmap_common.o mbed_sleep_manager.o mbed_mktime.o mbed_ticker_api.o mbed_us_ticker_api.o mbed_assert.o mbed_board.o mbed_critical.o mbed_error.o mbed_error_hist.o mbed_interface.o mbed_rtc_time.o mbed_semihost_api.o mbed_stats.o PeripheralPins.o RZ_A1_Init.o mbed_sf_boot.o mmu_RZ_A1H.o system_RZ_A1H.o trng_api_esp32.o analogin_api.o can_api.o cmsis_nvic.o irq_ctrl_gic.o nvic_wrapper.o rza_io_regrw.o ethernet_api.o flash_api.o gpio_api.o gpio_irq_api.o i2c_api.o lp_ticker.o mtu2.o pinmap.o port_api.o pwmout_api.o rtc_api.o serial_api.o sleep.o spi_api.o trng_api.o us_ticker.o    kernel_cfg.o  \
+		-Wl,--start-group -lkernel ../../musl-1.1.18/Debug/libmusl.a -lgcc  -Wl,--end-group 
+arm-none-eabi-nm -n asp.elf > asp.syms
+arm-none-eabi-objcopy -O srec -S asp.elf asp.srec
+arm-none-eabi-objcopy -O binary -S asp.elf asp.bin
+arm-none-eabi-objdump -h asp.elf
+ruby -Eutf-8 ../cfg/cfg.rb --pass 3 --kernel asp -O -I. -I../include  -I../target/gr_peach_gcc -I../arch/arm_gcc/rza1 -I../arch/arm_gcc/common -I../arch/gcc -I../mbed -I../mbed/cmsis -I../mbed/cmsis/TARGET_CORTEX_A -I../mbed/hal -I../mbed/platform -I../mbed/targets/TARGET_RENESAS -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../mbed/rtos/TARGET_CORTEX -I.. -I../sample -I./gen -I../tecs_kernel -I../../musl-1.1.18/include -T ../target/gr_peach_gcc/target_check.trb \
+			--rom-symbol asp.syms --rom-image asp.srec
+
+asp.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .boot         00003100  18000000  18000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         00026644  18004000  18004000  00014000  2**8
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .vector       0000003c  1802a660  1802a660  0003a660  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .ARM.exidx    00000008  1802a69c  1802a69c  0003a69c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .copy.table   00000024  1802a6a4  1802a6a4  0003a6a4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .ram_code     00000ce8  20020000  1802a6d8  00040000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  6 .zero.table   00000010  1802a6c8  1802a6c8  0003a6c8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .ttb          00004000  20000000  20000000  00050000  2**0
+                  ALLOC
+  8 .data         00001298  20020ce8  1802b3c0  00040ce8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .jcr          00000004  20021f80  1802c658  00041f80  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .bss          0001dc1c  20021f90  1802c668  00041f84  2**14
+                  ALLOC
+ 11 .heap         00080000  2003fbb0  2003fbb0  00041f88  2**3
+                  CONTENTS, READONLY
+ 12 .stack_dummy  00014300  2003fbb0  2003fbb0  000c1f88  2**3
+                  CONTENTS, READONLY
+ 13 .nc_data      00000000  20900000  20900000  000d6288  2**0
+                  CONTENTS
+ 14 .nc_bss       00003280  20900000  20900000  00050000  2**4
+                  ALLOC
+ 15 .ARM.attributes 00000033  00000000  00000000  000d6288  2**0
+                  CONTENTS, READONLY
+ 16 .comment      0000007f  00000000  00000000  000d62bb  2**0
+                  CONTENTS, READONLY
+ 17 .debug_line   0001a39b  00000000  00000000  000d633a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .debug_info   00070bd2  00000000  00000000  000f06d5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 19 .debug_abbrev 000109cb  00000000  00000000  001612a7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 20 .debug_aranges 00002910  00000000  00000000  00171c78  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 21 .debug_loc    00024c9c  00000000  00000000  00174588  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 22 .debug_ranges 00003528  00000000  00000000  00199228  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 23 .debug_str    0002cde0  00000000  00000000  0019c750  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 24 .debug_frame  000060ac  00000000  00000000  001c9530  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 25 .debug_macro  0000ec7b  00000000  00000000  001cf5dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+arm-none-eabi-size asp.elf
+   text	   data	    bss	    dec	    hex	filename
+ 173168	   4816	 151196	 329180	  505dc	asp.elf
+"configuration check passed"
+make[1]: Leaving directory 'C:/trunk_tecs+ecnl/trunk/asp3_dcre/Debug'
+
+13:15:45 Build Finished. 0 errors, 0 warnings. (took 13s.418ms)
+

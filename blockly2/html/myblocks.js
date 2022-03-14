@@ -8068,6 +8068,22 @@ Blockly.defineBlocksWithJsonArray([
     "colour": 230,
     "tooltip": "",
     "helpUrl": ""
+  },
+  {
+    "type": "memo",
+    "message0": "Memo \" %1 \"",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "text",
+        "text": "Text"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_TEXTS_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
   }
 ]);
 
@@ -8341,3 +8357,4 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   }
 ]);
+

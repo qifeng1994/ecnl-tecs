@@ -188,6 +188,7 @@ typedef struct echonet_property_initialization_block EPRPINIB;
  * ECHONET Lite プロパティの設定関数
  */
 typedef int (EPRP_SETTER)(const EPRPINIB *item, const void *src, int size, bool_t *anno);
+
 //typedef在回调函数中为复杂的声明定义一个简单的别名
 
 /*

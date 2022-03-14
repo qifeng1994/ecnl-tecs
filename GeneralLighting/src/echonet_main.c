@@ -61,7 +61,7 @@ void echonet_main_task(intptr_t exinf)
 	int32_t len;
 
 	syslog(LOG_NOTICE,"[echonet_main_task]:started");
-	//syslog(LOG_NOTICE,"  exinf:%d",exinf);
+	//exinf初期值0
 	/* アプリケーションの初期化 */
 	main_initialize();
 

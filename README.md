@@ -5,5 +5,5 @@ node.jsをインストールしておく、blockly2/でnode app.js、サーバ�
 demo動画：https://youtu.be/5Y79WWEdqFA
 
 プラグイン：
-json_parse/block_gen.rb ECHONET Lite仕様のデバイスを対応するため block.json
-json_parse/signature.rb　デバイスの機能を記述するsignatureを作るため gen/
+
+json_parse/option_parse/ _gen.rbスクリプトはそれぞれのコードジェネレータです

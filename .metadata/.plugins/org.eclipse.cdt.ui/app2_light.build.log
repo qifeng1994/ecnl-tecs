@@ -1,0 +1,100 @@
+13:57:26 **** プロジェクト app2_light に対する構成 DebugEther の 逐次ビルド ****
+make -j8 all 
+make[1]: Entering directory 'C:/trunk_tecs+ecnl/trunk/app2_light/DebugEther'
+arm-none-eabi-gcc -c -MD -MP -MF deps/echonet_main.d -Og -Wall -g -std=gnu99 -ffunction-sections -fdata-sections  -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access  -DUSE_ARM_FPU -DTOPPERS_EXECUTE_ON_ROM -D__TARGET_ARCH_ARM=7 -DARM_MATH_CA9 -DDEVICE_ANALOGIN=1 -DDEVICE_CAN=1 -DDEVICE_EMAC=1 -DDEVICE_ETHERNET=1 -DDEVICE_FLASH=1 -DDEVICE_I2C=1 -DDEVICE_I2CSLAVE=1 -DDEVICE_I2C_ASYNCH=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_LPTICKER=1 -DDEVICE_PORTIN=1 -DDEVICE_PORTINOUT=1 -DDEVICE_PORTOUT=1 -DDEVICE_PWMOUT=1 -DDEVICE_RTC=1 -DDEVICE_SEMIHOST=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SLEEP=1 -DDEVICE_SPI=1 -DDEVICE_SPISLAVE=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DDEVICE_USTICKER=1 -DMBED_BUILD_TIMESTAMP=1550103323.92 -DTARGET_A9 -DTARGET_CORTEX -DTARGET_CORTEX_A -DTARGET_FF_ARDUINO -DTARGET_LIKE_CORTEX_A9 -DTARGET_LIKE_MBED -DTARGET_MBRZA1H -DTARGET_RELEASE -DTARGET_RENESAS -DTARGET_RZA1H -DTARGET_RZ_A1H -DTARGET_RZ_A1XX -DTARGET_RZ_A1_EMAC -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_object -D__CMSIS_RTOS -D__CORTEX_A9 -D__EVAL -D__FPU_PRESENT=1 -D__MBED_CMSIS_RTOS_CA9 -D__MBED__=1 -DIRQ_GIC_LINE_COUNT=587  -DDHCP4_CLI_CFG -DUSE_PING -DUSE_RESOLVER -DUSE_NETAPP_SUBR -DNOUSE_MPF_NET_BUF -DECHONET_USE_MALLOC -DRamDisk=_binary_______ntshell_src_rom_fs_bin_start  -DTARGET_KERNEL_ASP -DSUPPORT_INET4 -DSUPPORT_IGMP -DSUPPORT_ETHER -DSUPPORT_TCP -DSUPPORT_UDP -I. -I../../asp3_dcre/include -I../../asp3_dcre -I../../asp3_dcre/../btstack/include -I../../asp3_dcre/../btstack/src -I../../asp3_dcre/../btstack/chipset -I../../asp3_dcre/../btstack/platform/embedded -I../../asp3_dcre/../usbhost/src  -I../../asp3_dcre/target/gr_peach_gcc -I../../asp3_dcre/arch/arm_gcc/rza1 -I../../asp3_dcre/arch/arm_gcc/common -I../../asp3_dcre/arch/gcc -I../../asp3_dcre/mbed -I../../asp3_dcre/mbed/cmsis -I../../asp3_dcre/mbed/cmsis/TARGET_CORTEX_A -I../../asp3_dcre/mbed/hal -I../../asp3_dcre/mbed/platform -I../../asp3_dcre/mbed/targets/TARGET_RENESAS -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../../asp3_dcre/mbed/rtos/TARGET_CORTEX -I../../ntshell/echonet -I../../asp3_dcre/tinet/netapp -I../../ntshell/fatfs -I../../ntshell/ntshell -I../../ntshell/ntshell/core -I../../ntshell/ntshell/util -I../../ntshell/src -I../src -I../../asp3_dcre/tinet/netdev/if_mbed -I../../asp3_dcre/tinet -I./gen -I../../asp3_dcre/tecs_kernel -I../../musl-1.1.18/include  -nostdinc ../src/echonet_main.c
+../src/echonet_main.c: In function 'date_prop_set':
+../src/echonet_main.c:350:24: warning: operation on 'p_src' may be undefined [-Wsequence-point]
+  _tm.tm_year = (*(p_src++) * 100) + *p_src++;
+                  ~~~~~~^~~
+../src/echonet_main.c: In function 'main_recv_esv':
+../src/echonet_main.c:621:5: warning: enumeration value 'main_state_start' not handled in switch [-Wswitch]
+     switch (main_state) {
+     ^~~~~~
+../src/echonet_main.c:621:5: warning: enumeration value 'main_state_idle' not handled in switch [-Wswitch]
+../src/echonet_main.c: In function 'main_break_wait':
+../src/echonet_main.c:651:2: warning: enumeration value 'main_state_start' not handled in switch [-Wswitch]
+  switch (main_state) {
+  ^~~~~~
+../src/echonet_main.c:651:2: warning: enumeration value 'main_state_search' not handled in switch [-Wswitch]
+../src/echonet_main.c:649:5: warning: unused variable 'ret' [-Wunused-variable]
+  ER ret;
+     ^~~
+../src/echonet_main.c: In function 'main_ontimer':
+../src/echonet_main.c:690:2: warning: enumeration value 'main_state_idle' not handled in switch [-Wswitch]
+  switch (main_state) {
+  ^~~~~~
+arm-none-eabi-gcc -c -MD -MP -MF deps/tBannerMain.d -Og -Wall -g -std=gnu99 -ffunction-sections -fdata-sections  -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access  -DUSE_ARM_FPU -DTOPPERS_EXECUTE_ON_ROM -D__TARGET_ARCH_ARM=7 -DARM_MATH_CA9 -DDEVICE_ANALOGIN=1 -DDEVICE_CAN=1 -DDEVICE_EMAC=1 -DDEVICE_ETHERNET=1 -DDEVICE_FLASH=1 -DDEVICE_I2C=1 -DDEVICE_I2CSLAVE=1 -DDEVICE_I2C_ASYNCH=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_LPTICKER=1 -DDEVICE_PORTIN=1 -DDEVICE_PORTINOUT=1 -DDEVICE_PORTOUT=1 -DDEVICE_PWMOUT=1 -DDEVICE_RTC=1 -DDEVICE_SEMIHOST=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SLEEP=1 -DDEVICE_SPI=1 -DDEVICE_SPISLAVE=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DDEVICE_USTICKER=1 -DMBED_BUILD_TIMESTAMP=1550103323.92 -DTARGET_A9 -DTARGET_CORTEX -DTARGET_CORTEX_A -DTARGET_FF_ARDUINO -DTARGET_LIKE_CORTEX_A9 -DTARGET_LIKE_MBED -DTARGET_MBRZA1H -DTARGET_RELEASE -DTARGET_RENESAS -DTARGET_RZA1H -DTARGET_RZ_A1H -DTARGET_RZ_A1XX -DTARGET_RZ_A1_EMAC -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_object -D__CMSIS_RTOS -D__CORTEX_A9 -D__EVAL -D__FPU_PRESENT=1 -D__MBED_CMSIS_RTOS_CA9 -D__MBED__=1 -DIRQ_GIC_LINE_COUNT=587  -DDHCP4_CLI_CFG -DUSE_PING -DUSE_RESOLVER -DUSE_NETAPP_SUBR -DNOUSE_MPF_NET_BUF -DECHONET_USE_MALLOC -DRamDisk=_binary_______ntshell_src_rom_fs_bin_start  -DTARGET_KERNEL_ASP -DSUPPORT_INET4 -DSUPPORT_IGMP -DSUPPORT_ETHER -DSUPPORT_TCP -DSUPPORT_UDP -I. -I../../asp3_dcre/include -I../../asp3_dcre -I../../asp3_dcre/../btstack/include -I../../asp3_dcre/../btstack/src -I../../asp3_dcre/../btstack/chipset -I../../asp3_dcre/../btstack/platform/embedded -I../../asp3_dcre/../usbhost/src  -I../../asp3_dcre/target/gr_peach_gcc -I../../asp3_dcre/arch/arm_gcc/rza1 -I../../asp3_dcre/arch/arm_gcc/common -I../../asp3_dcre/arch/gcc -I../../asp3_dcre/mbed -I../../asp3_dcre/mbed/cmsis -I../../asp3_dcre/mbed/cmsis/TARGET_CORTEX_A -I../../asp3_dcre/mbed/hal -I../../asp3_dcre/mbed/platform -I../../asp3_dcre/mbed/targets/TARGET_RENESAS -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../../asp3_dcre/mbed/rtos/TARGET_CORTEX -I../../ntshell/echonet -I../../asp3_dcre/tinet/netapp -I../../ntshell/fatfs -I../../ntshell/ntshell -I../../ntshell/ntshell/core -I../../ntshell/ntshell/util -I../../ntshell/src -I../src -I../../asp3_dcre/tinet/netdev/if_mbed -I../../asp3_dcre/tinet -I./gen -I../../asp3_dcre/tecs_kernel -I../../musl-1.1.18/include   -fno-strict-aliasing ../../asp3_dcre/syssvc/tBannerMain.c
+arm-none-eabi-gcc -Og -Wall -g -std=gnu99 -ffunction-sections -fdata-sections  -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access  -DUSE_ARM_FPU -DTOPPERS_EXECUTE_ON_ROM -D__TARGET_ARCH_ARM=7 -DARM_MATH_CA9 -DDEVICE_ANALOGIN=1 -DDEVICE_CAN=1 -DDEVICE_EMAC=1 -DDEVICE_ETHERNET=1 -DDEVICE_FLASH=1 -DDEVICE_I2C=1 -DDEVICE_I2CSLAVE=1 -DDEVICE_I2C_ASYNCH=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_LPTICKER=1 -DDEVICE_PORTIN=1 -DDEVICE_PORTINOUT=1 -DDEVICE_PORTOUT=1 -DDEVICE_PWMOUT=1 -DDEVICE_RTC=1 -DDEVICE_SEMIHOST=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SLEEP=1 -DDEVICE_SPI=1 -DDEVICE_SPISLAVE=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DDEVICE_USTICKER=1 -DMBED_BUILD_TIMESTAMP=1550103323.92 -DTARGET_A9 -DTARGET_CORTEX -DTARGET_CORTEX_A -DTARGET_FF_ARDUINO -DTARGET_LIKE_CORTEX_A9 -DTARGET_LIKE_MBED -DTARGET_MBRZA1H -DTARGET_RELEASE -DTARGET_RENESAS -DTARGET_RZA1H -DTARGET_RZ_A1H -DTARGET_RZ_A1XX -DTARGET_RZ_A1_EMAC -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_object -D__CMSIS_RTOS -D__CORTEX_A9 -D__EVAL -D__FPU_PRESENT=1 -D__MBED_CMSIS_RTOS_CA9 -D__MBED__=1 -DIRQ_GIC_LINE_COUNT=587  -DDHCP4_CLI_CFG -DUSE_PING -DUSE_RESOLVER -DUSE_NETAPP_SUBR -DNOUSE_MPF_NET_BUF -DECHONET_USE_MALLOC -DRamDisk=_binary_______ntshell_src_rom_fs_bin_start  -DTARGET_KERNEL_ASP -DSUPPORT_INET4 -DSUPPORT_IGMP -DSUPPORT_ETHER -DSUPPORT_TCP -DSUPPORT_UDP -I. -I../../asp3_dcre/include -I../../asp3_dcre -I../../asp3_dcre/../btstack/include -I../../asp3_dcre/../btstack/src -I../../asp3_dcre/../btstack/chipset -I../../asp3_dcre/../btstack/platform/embedded -I../../asp3_dcre/../usbhost/src  -I../../asp3_dcre/target/gr_peach_gcc -I../../asp3_dcre/arch/arm_gcc/rza1 -I../../asp3_dcre/arch/arm_gcc/common -I../../asp3_dcre/arch/gcc -I../../asp3_dcre/mbed -I../../asp3_dcre/mbed/cmsis -I../../asp3_dcre/mbed/cmsis/TARGET_CORTEX_A -I../../asp3_dcre/mbed/hal -I../../asp3_dcre/mbed/platform -I../../asp3_dcre/mbed/targets/TARGET_RENESAS -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../../asp3_dcre/mbed/rtos/TARGET_CORTEX -I../../ntshell/echonet -I../../asp3_dcre/tinet/netapp -I../../ntshell/fatfs -I../../ntshell/ntshell -I../../ntshell/ntshell/core -I../../ntshell/ntshell/util -I../../ntshell/src -I../src -I../../asp3_dcre/tinet/netdev/if_mbed -I../../asp3_dcre/tinet -I./gen -I../../asp3_dcre/tecs_kernel -I../../musl-1.1.18/include -nodefaultlibs  -mlittle-endian -mcpu=cortex-a9 -mthumb -mthumb-interwork -marm -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -mno-unaligned-access -L. -T ../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/TOOLCHAIN_GCC_ARM/RZA1H.ld  -L../../asp3_dcre/Debug -o app2_light.elf -Wl,-Map=app2_light.map,--cref \
+		startup_RZ1AH.o  echonet.o echonet_agent.o echonet_dbg.o echonet_fbs.o echonet_task.o echonet_udp_task.o echonet_udp6_task.o fbs_string.o ping.o ping6.o resolver.o dhcp4_cli.o netapp_subr.o ntp_cli.o net_misc.o netcmd.o fdtable.o stdio_stub.o io_stub.o socket_stub.o ffarch.o diskio.o ff.o sdfs.o ccsbcs.o ntshell.o text_editor.o text_history.o usrcmd.o vtrecv.o vtsend.o ntlibc.o ntstdio.o ntopt.o syscall.o main.o ntshell_main.o echonet_main.o log_output.o vasyslog.o t_perror.o strerror.o mbed_stub.o  rom_fs.o  init_tecs.o tTask_tecsgen.o tSemaphore_tecsgen.o tInitializeRoutine_tecsgen.o tTerminateRoutine_tecsgen.o tSerialPortMain_tecsgen.o tSerialAdapter_tecsgen.o tSysLog_tecsgen.o tSysLogAdapter_tecsgen.o tLogTaskMain_tecsgen.o tBannerMain_tecsgen.o tPutLogSIOPort_tecsgen.o tSIOPortNTShellMain_tecsgen.o tMainTask_tecsgen.o tLight_tecsgen.o   tTask.o tInitializeRoutine.o tTerminateRoutine.o tSerialPortMain.o tSerialAdapter.o tSysLog.o tSysLogAdapter.o tLogTaskMain.o tBannerMain.o tPutLogSIOPort.o tSIOPortNTShellMain.o tMainTask.o tLight.o   mbed_critical_section_api.o mbed_flash_api.o mbed_gpio.o mbed_lp_ticker_api.o mbed_lp_ticker_wrapper.o mbed_pinmap_common.o mbed_sleep_manager.o mbed_mktime.o mbed_ticker_api.o mbed_us_ticker_api.o mbed_assert.o mbed_board.o mbed_critical.o mbed_error.o mbed_error_hist.o mbed_interface.o mbed_rtc_time.o mbed_semihost_api.o mbed_stats.o PeripheralPins.o RZ_A1_Init.o mbed_sf_boot.o mmu_RZ_A1H.o system_RZ_A1H.o trng_api_esp32.o analogin_api.o can_api.o cmsis_nvic.o irq_ctrl_gic.o nvic_wrapper.o rza_io_regrw.o ethernet_api.o flash_api.o gpio_api.o gpio_irq_api.o i2c_api.o lp_ticker.o mtu2.o pinmap.o port_api.o pwmout_api.o rtc_api.o serial_api.o sleep.o spi_api.o trng_api.o us_ticker.o  net_buf.o net_count.o net_subr.o net_timer.o if.o in_subr.o route_cfg.o in6.o in6_ifattach.o nd6_rtr.o in6_subr.o ip6_input.o icmp6.o dest6.o route6.o frag6.o ah_input.o esp_input.o nd6.o nd6_nbr.o ip6_output.o scope6.o ip_input.o ip_output.o ip_icmp.o ip_igmp.o in4_subr.o tinet_target_config.o ethernet.o if6_ether.o if_ether.o if_mbed.o tcp_input.o tcp_output.o tcp_timer.o tcp_subr.o tcp_subr_cs.o tcp_subr_ncs.o  udp_input.o udp_output.o udp_subr.o tcp_usrreq.o  udp_usrreq.o udp_usrreq_nblk.o    kernel_cfg.o echonet_cfg.o   tinet_cfg.o \
+		-Wl,--start-group -lkernel ../../asp3_dcre/../musl-1.1.18/Debug/libmusl.a -lgcc  -Wl,--end-group 
+arm-none-eabi-nm -n app2_light.elf > app2_light.syms
+arm-none-eabi-objcopy -O srec -S app2_light.elf app2_light.srec
+arm-none-eabi-objcopy -O binary -S app2_light.elf app2_light.bin
+arm-none-eabi-objdump -h app2_light.elf
+ruby -Eutf-8 ../../asp3_dcre/cfg/cfg.rb --pass 3 --kernel asp -O -I. -I../../asp3_dcre/include -I../../asp3_dcre -I../../asp3_dcre/../btstack/include -I../../asp3_dcre/../btstack/src -I../../asp3_dcre/../btstack/chipset -I../../asp3_dcre/../btstack/platform/embedded -I../../asp3_dcre/../usbhost/src  -I../../asp3_dcre/target/gr_peach_gcc -I../../asp3_dcre/arch/arm_gcc/rza1 -I../../asp3_dcre/arch/arm_gcc/common -I../../asp3_dcre/arch/gcc -I../../asp3_dcre/mbed -I../../asp3_dcre/mbed/cmsis -I../../asp3_dcre/mbed/cmsis/TARGET_CORTEX_A -I../../asp3_dcre/mbed/hal -I../../asp3_dcre/mbed/platform -I../../asp3_dcre/mbed/targets/TARGET_RENESAS -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/TARGET_MBED_MBRZA1H -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iobitmasks -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/TARGET_RZ_A1H/device/inc/iodefines -I../../asp3_dcre/mbed/targets/TARGET_RENESAS/TARGET_RZA1XX/common -I../../asp3_dcre/mbed/rtos/TARGET_CORTEX -I../../ntshell/echonet -I../../asp3_dcre/tinet/netapp -I../../ntshell/fatfs -I../../ntshell/ntshell -I../../ntshell/ntshell/core -I../../ntshell/ntshell/util -I../../ntshell/src -I../src -I../../asp3_dcre/tinet/netdev/if_mbed -I../../asp3_dcre/tinet -I./gen -I../../asp3_dcre/tecs_kernel -I../../musl-1.1.18/include -T ../../asp3_dcre/target/gr_peach_gcc/target_check.trb \
+			--rom-symbol app2_light.syms --rom-image app2_light.srec
+
+app2_light.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .boot         00003100  18000000  18000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         00068848  18004000  18004000  00014000  2**8
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .vector       0000003c  1806c860  1806c860  0007c860  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .ARM.exidx    00000008  1806c89c  1806c89c  0007c89c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .copy.table   00000024  1806c8a4  1806c8a4  0007c8a4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .ram_code     00000ce8  20020000  1806c8d8  00080000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  6 .zero.table   00000010  1806c8c8  1806c8c8  0007c8c8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .ttb          00004000  20000000  20000000  00090000  2**0
+                  ALLOC
+  8 .data         00002d90  20020ce8  1806d5c0  00080ce8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .jcr          00000004  20023a78  18070350  00083a78  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .bss          00013848  20023a80  18070358  00083a7c  2**14
+                  ALLOC
+ 11 .heap         00080000  200372c8  200372c8  00083a80  2**3
+                  CONTENTS, READONLY
+ 12 .stack_dummy  00014300  200372c8  200372c8  00103a80  2**3
+                  CONTENTS, READONLY
+ 13 .nc_data      00000000  20900000  20900000  00117d80  2**0
+                  CONTENTS
+ 14 .nc_bss       00003280  20900000  20900000  00090000  2**4
+                  ALLOC
+ 15 .ARM.attributes 00000033  00000000  00000000  00117d80  2**0
+                  CONTENTS, READONLY
+ 16 .comment      000000f5  00000000  00000000  00117db3  2**0
+                  CONTENTS, READONLY
+ 17 .debug_line   00040422  00000000  00000000  00117ea8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .debug_info   000d0bf6  00000000  00000000  001582ca  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 19 .debug_abbrev 00020213  00000000  00000000  00228ec0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 20 .debug_aranges 00005508  00000000  00000000  002490d8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 21 .debug_loc    00050d05  00000000  00000000  0024e5e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 22 .debug_ranges 00005cd8  00000000  00000000  0029f2e8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 23 .debug_str    000387eb  00000000  00000000  002a4fc0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 24 .debug_frame  0000d810  00000000  00000000  002dd7ac  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 25 .debug_macro  000121d4  00000000  00000000  002eafbc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+arm-none-eabi-size app2_light.elf
+   text	   data	    bss	    dec	    hex	filename
+ 444020	  11720	 109256	 564996	  89f04	app2_light.elf
+"configuration check passed"
+make[1]: Leaving directory 'C:/trunk_tecs+ecnl/trunk/app2_light/DebugEther'
+
+13:57:29 Build Finished. 0 errors, 7 warnings. (took 2s.805ms)
+

@@ -475,7 +475,6 @@ void echonet_main_task(intptr_t exinf)
 		}
 
 		/* タイムアウト処理 */
-		//syslog(LOG_NOTICE,"[@@timeout]");
 		main_timeout();
 	}
 }

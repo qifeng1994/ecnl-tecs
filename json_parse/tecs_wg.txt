@@ -170,20 +170,59 @@ rbスクリプト：
     $ ruby ○○_gen.rb src_json gen_dir  "className1" "className2"
 
     optionalプロパティを指定する
-    $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"　
+    $ ruby ○○_gen.rb src_json gen_dir -c "className1" -p "propertyName1" "propertyName2"
     
 
-2021/10/25(月) TOPPERS開発者会議　TECS WG の最新研究  14:40-15:40 
+2021/10/25(月) TOPPERS開発者会議TECS WG の最新研究  14:40-15:40 
 
 2021/11/22
 
-コードジェネレータ　.cfg .c .h 対応した
-APRIS 論文採択 11/29　ポスターセッション発表
+コードジェネレータ.cfg .c .h 対応した
+APRIS 論文採択 11/29ポスターセッション発表
 修論：
     blockly : 
         簡単なユースケース:
-        実用性：UI 、デバイス検索、プロパティ更新
-        評価方法：cognitive dimensions
+        実用性：UI 、デバイス検索
+        評価方法：system usability scale (SUS)
+
+
+2021/12/20
+APRIS ポスター発表
+論文誌ECTI-CIT 合格した ECHONET Lite Framework Based on Embedded Component Systems
+情報処理学会全国大会 投稿締め切り2022/01/07 https://www.ipsj.or.jp/event/taikai/84/index.html
+
+修論評価：ユーザインタフェースの実用性
+    基準：system usability scale (SUS)
+    方法：ユーザアンケート
+    1.ブロックを日本語化 
+    2.localからwebに移植
+
+    TODO:
+    3.使い方の説明動画
+    4.アンケートの質問を作る 15~20, 調査対象 20人
+    参考:https://qiqumo.jp/
+
+    アンケート1版：https://enq.qiqumo.jp/q/OGJzekhxWXhtdU1Tc2VaS3pUZFNRdz09
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
